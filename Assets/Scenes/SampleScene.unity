@@ -391,6 +391,10 @@ PrefabInstance:
     - target: {fileID: 4041499232908990732, guid: 9f01e7aa7cf9945478120771dc72fcc6, type: 3}
       propertyPath: PrefabProjectile
       value: 
+      objectReference: {fileID: 1366479922185898125, guid: 2f65db1a4f662b1478f245abc1e91c1c, type: 3}
+    - target: {fileID: 4041499232908990732, guid: 9f01e7aa7cf9945478120771dc72fcc6, type: 3}
+      propertyPath: ProjectileStartSpeed
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 6332262989682761633, guid: 9f01e7aa7cf9945478120771dc72fcc6, type: 3}
       propertyPath: m_RootOrder
