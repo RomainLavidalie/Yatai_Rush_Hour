@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6332262989682761633}
   - component: {fileID: 6332262989682761634}
+  - component: {fileID: 6768125263212506415}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -51,6 +52,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6768125263212506415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6332262989682761635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3f029752e09f6447bf87c2b829c73d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WantsToShoot: 0
 --- !u!1 &6332262990583525811
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7618822052979723863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.345, z: 0}
+  m_LocalPosition: {x: 0, y: 0.067, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6332262989682761633}
@@ -192,3 +206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d27dabec0d93c49805c79aa320b92a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Controller: {fileID: 6768125263212506415}
+  PrefabProjectile: {fileID: 1366479922185898125, guid: 2f65db1a4f662b1478f245abc1e91c1c, type: 3}
+  ProjectileStartSpeed: 50
+  OffsetForwardShoot: 2
+  TimeBetweenShots: 0.5

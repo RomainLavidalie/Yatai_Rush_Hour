@@ -5,6 +5,7 @@ using UnityEngine;
 public class InputController : MonoBehaviour
 {
     public bool WantsToShoot = false;
+    public bool ModeSwitch = false;
     void Start()
     {
         
@@ -14,5 +15,6 @@ public class InputController : MonoBehaviour
     void Update()
     {
         WantsToShoot = Input.GetButton("Fire1");
+        ModeSwitch = Input.GetButton("G");
     }
 }
