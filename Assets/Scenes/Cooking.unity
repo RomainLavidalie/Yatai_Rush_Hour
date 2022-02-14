@@ -414,6 +414,50 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6856390960810040729, guid: d4c6268af57191d418c5cdc467872ff5, type: 3}
   m_PrefabInstance: {fileID: 6856390961104758787}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &476556663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 476556665}
+  - component: {fileID: 476556664}
+  m_Layer: 0
+  m_Name: RamenBowl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &476556664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476556663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7373ca2a1ea07440a562f5cff26788b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientList: []
+--- !u!4 &476556665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476556663}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.907477, y: 0.94427633, z: -7.5910606}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &517557068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,6 +1128,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436113210}
   m_CullTransparentMesh: 1
+--- !u!1 &1507139095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1507139097}
+  - component: {fileID: 1507139096}
+  m_Layer: 0
+  m_Name: Client
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1507139096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507139095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f6b029cacdbe74fbf5b76c4c85423a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  command:
+    ingredients: []
+--- !u!4 &1507139097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507139095}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.907477, y: 0.94427633, z: -7.5910606}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1514955220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1373,7 +1462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: carrot
-  cookingDevice: 0
+  cookingDevice: 1
   cookingTime: 10
   isCooked: 0
   isBurned: 0
@@ -1511,6 +1600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83bb21f22960234f958652eca34d6fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deviceType: 1
   ingredient: {fileID: 1861121451}
   UI: {fileID: 1573359019}
   UICookFiller: {fileID: 1315284167}
