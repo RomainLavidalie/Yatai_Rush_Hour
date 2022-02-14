@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class CuttingBoard : Interactable
 {
-    
-    
     [SerializeField] private CuttableFood ingredient;
     
+    [Header("Cutting Settings")]
     [SerializeField] private int cuttingMaxAmount = 100;
     [SerializeField] private int cuttingAmountPerClick = 10;
     [SerializeField] private int cuttingDecreaseRate = 20;
     private float currentCuttingAmount = 0;
     
+    [Header("Cutting UI")]
     [SerializeField] private GameObject UI;
     [SerializeField] private GameObject UIFiller;
     

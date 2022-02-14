@@ -411,7 +411,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6856390961784718975}
+  - component: {fileID: 3776338559898737664}
   - component: {fileID: 6856390961784718968}
+  - component: {fileID: 1586672270593172899}
   m_Layer: 0
   m_Name: Carrot
   m_TagString: Untagged
@@ -434,6 +436,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3776338559898737664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6856390961784718969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643dd70c2e4e8374291039a8ed3d198c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: carrot
 --- !u!114 &6856390961784718968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,8 +461,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84c1aee25bc33c47b19ee69279c0102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nonCuttedModel: {fileID: 0}
-  cuttedModel: {fileID: 0}
+  isCutted: 0
+  nonCuttedModel: {fileID: 6856390962450010996}
+  cuttedModel: {fileID: 6856390960810040729}
+--- !u!114 &1586672270593172899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6856390961784718969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aac5f6c5e586574a99596ca5eab24aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cookingDevice: 0
+  cookingTime: 10
+  isCooked: 0
+  isBurned: 0
 --- !u!1 &6856390962093508030
 GameObject:
   m_ObjectHideFlags: 0

@@ -409,11 +409,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280808378}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &294729114 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6856390960810040729, guid: d4c6268af57191d418c5cdc467872ff5, type: 3}
-  m_PrefabInstance: {fileID: 6856390961104758787}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &476556663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,7 +1266,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6856390961784718968, guid: d4c6268af57191d418c5cdc467872ff5, type: 3}
   m_PrefabInstance: {fileID: 6856390961104758787}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861121450}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e84c1aee25bc33c47b19ee69279c0102, type: 3}
@@ -1444,28 +1439,6 @@ MonoBehaviour:
   cuttingDecreaseRate: 50
   UI: {fileID: 865430139}
   UIFiller: {fileID: 556697508}
---- !u!1 &1861121450 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6856390961784718969, guid: d4c6268af57191d418c5cdc467872ff5, type: 3}
-  m_PrefabInstance: {fileID: 6856390961104758787}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1861121451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861121450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aac5f6c5e586574a99596ca5eab24aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: carrot
-  cookingDevice: 1
-  cookingTime: 10
-  isCooked: 0
-  isBurned: 0
 --- !u!1 &1895786699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,17 +1516,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895786699}
   m_LocalRotation: {x: 0.08381575, y: -0, z: -0, w: 0.9964813}
-  m_LocalPosition: {x: -1.185, y: 1.947, z: -10.936}
+  m_LocalPosition: {x: -0.545, y: 1.947, z: -10.936}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 9.616, y: 0, z: 0}
---- !u!1 &1943092087 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6856390962450010996, guid: d4c6268af57191d418c5cdc467872ff5, type: 3}
-  m_PrefabInstance: {fileID: 6856390961104758787}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1975340996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,8 +1568,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83bb21f22960234f958652eca34d6fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deviceType: 1
-  ingredient: {fileID: 1861121451}
+  deviceType: 0
+  ingredient: {fileID: 0}
   UI: {fileID: 1573359019}
   UICookFiller: {fileID: 1315284167}
   UIBurnFiller: {fileID: 1277103753}
@@ -1627,21 +1595,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6856390961784718968, guid: d4c6268af57191d418c5cdc467872ff5, type: 3}
-      propertyPath: name
-      value: carrot
+    - target: {fileID: 1586672270593172899, guid: d4c6268af57191d418c5cdc467872ff5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6856390961784718968, guid: d4c6268af57191d418c5cdc467872ff5, type: 3}
-      propertyPath: cuttedModel
-      value: 
-      objectReference: {fileID: 294729114}
-    - target: {fileID: 6856390961784718968, guid: d4c6268af57191d418c5cdc467872ff5, type: 3}
-      propertyPath: nonCuttedModel
-      value: 
-      objectReference: {fileID: 1943092087}
+    - target: {fileID: 3776338559898737664, guid: d4c6268af57191d418c5cdc467872ff5, type: 3}
+      propertyPath: toggleCookableOnCut
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6856390961784718969, guid: d4c6268af57191d418c5cdc467872ff5, type: 3}
       propertyPath: m_Name
       value: Carrot
+      objectReference: {fileID: 0}
+    - target: {fileID: 6856390961784718969, guid: d4c6268af57191d418c5cdc467872ff5, type: 3}
+      propertyPath: m_TagString
+      value: Food
       objectReference: {fileID: 0}
     - target: {fileID: 6856390961784718975, guid: d4c6268af57191d418c5cdc467872ff5, type: 3}
       propertyPath: m_RootOrder

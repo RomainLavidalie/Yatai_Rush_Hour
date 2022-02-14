@@ -1,31 +1,38 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public class CookableFood : Food
+[RequireComponent(typeof(Food))]
+public class CookableFood : MonoBehaviour
 {
-    
+
     [HideInInspector] public enum cookingDevices
     {
         grill,
         pot
     }
+    
     public cookingDevices cookingDevice;
     public int cookingTime;
     
     public bool isCooked;
     public bool isBurned;
+    
+    private Food foodData;
+    public void Start()
+    {
+        foodData = GetComponent<Food>();
+    }
 
     public void Cook()
     {
         isCooked = true;
         Debug.Log(name + ": je suis cuit");
+        foodData.IdName += "_cooked";
     }
     
     public void Burn()
     {
         isBurned = true;
         Debug.Log(name + ": je crame !!!!");
+        foodData.IdName += "burned";
     }
 }
