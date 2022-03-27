@@ -14,7 +14,7 @@ public class InputController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        WantsToShoot = Input.GetButton("Fire1");
+        WantsToShoot = Input.GetButton("Shoot");
         ModeSwitch = Input.GetButton("G");
     }
 }

@@ -3,30 +3,21 @@
     "maps": [
         {
             "name": "Shooting",
-            "id": "fe8f53b7-6f03-4f89-92f0-d4bf576b671d",
+            "id": "e2babb9b-768a-4d84-b20b-fc51d50c0dd7",
             "actions": [
                 {
-                    "name": "LookXAxis",
+                    "name": "Look",
                     "type": "Value",
-                    "id": "96e9583f-7701-4bac-901e-d2517830fbc9",
-                    "expectedControlType": "Axis",
+                    "id": "2262a36b-ff4f-461d-9d4a-f0baad58d240",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "LookYAxis",
-                    "type": "Value",
-                    "id": "30c32e14-2483-4ea1-bbf0-023b464204da",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Shoot",
+                    "name": "Fire",
                     "type": "Button",
-                    "id": "c5646a94-bcac-4c07-8477-8fd1e97ec7d4",
+                    "id": "b3fa88e3-6256-4057-b2e8-6d36bd1b8c95",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -36,39 +27,45 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "ddbb3b4f-4e75-4505-9841-acab3f39f61c",
-                    "path": "<Mouse>/delta/x",
+                    "id": "8c8e490b-c610-4785-884f-f04217b23ca4",
+                    "path": "<Pointer>/delta",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "LookXAxis",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "9ddd9ee6-8443-412b-89f1-5cadfbcd6721",
-                    "path": "<Mouse>/delta/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "LookYAxis",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1b6e5b76-ec93-4d9b-a7bf-f2845b1874f3",
+                    "id": "05f6913d-c316-48b2-a6bb-e225f14c7960",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Shoot",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "Keyboard&Mouse",
+            "bindingGroup": "Keyboard&Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }
