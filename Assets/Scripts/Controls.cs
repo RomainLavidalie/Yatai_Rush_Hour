@@ -44,6 +44,15 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Switch Mode"",
+                    ""type"": ""Button"",
+                    ""id"": ""98d13454-8e10-48a3-88c9-c95df278d72b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -66,6 +75,45 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9575a2a4-8a4e-427a-be68-886e11fbf60a"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Switch Mode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Cooking"",
+            ""id"": ""44848158-9289-484b-bf7e-db111283f7e5"",
+            ""actions"": [
+                {
+                    ""name"": ""Switch Mode"",
+                    ""type"": ""Button"",
+                    ""id"": ""9c2ccb28-e88c-4d06-bb8b-e2319ad0c54c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""8ac641a2-4138-4773-82ef-0e989f3aac32"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Switch Mode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -95,6 +143,10 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_Shooting = asset.FindActionMap("Shooting", throwIfNotFound: true);
         m_Shooting_Look = m_Shooting.FindAction("Look", throwIfNotFound: true);
         m_Shooting_Fire = m_Shooting.FindAction("Fire", throwIfNotFound: true);
+        m_Shooting_SwitchMode = m_Shooting.FindAction("Switch Mode", throwIfNotFound: true);
+        // Cooking
+        m_Cooking = asset.FindActionMap("Cooking", throwIfNotFound: true);
+        m_Cooking_SwitchMode = m_Cooking.FindAction("Switch Mode", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -156,12 +208,14 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private IShootingActions m_ShootingActionsCallbackInterface;
     private readonly InputAction m_Shooting_Look;
     private readonly InputAction m_Shooting_Fire;
+    private readonly InputAction m_Shooting_SwitchMode;
     public struct ShootingActions
     {
         private @Controls m_Wrapper;
         public ShootingActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Look => m_Wrapper.m_Shooting_Look;
         public InputAction @Fire => m_Wrapper.m_Shooting_Fire;
+        public InputAction @SwitchMode => m_Wrapper.m_Shooting_SwitchMode;
         public InputActionMap Get() { return m_Wrapper.m_Shooting; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -177,6 +231,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Fire.started -= m_Wrapper.m_ShootingActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_ShootingActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_ShootingActionsCallbackInterface.OnFire;
+                @SwitchMode.started -= m_Wrapper.m_ShootingActionsCallbackInterface.OnSwitchMode;
+                @SwitchMode.performed -= m_Wrapper.m_ShootingActionsCallbackInterface.OnSwitchMode;
+                @SwitchMode.canceled -= m_Wrapper.m_ShootingActionsCallbackInterface.OnSwitchMode;
             }
             m_Wrapper.m_ShootingActionsCallbackInterface = instance;
             if (instance != null)
@@ -187,10 +244,46 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
+                @SwitchMode.started += instance.OnSwitchMode;
+                @SwitchMode.performed += instance.OnSwitchMode;
+                @SwitchMode.canceled += instance.OnSwitchMode;
             }
         }
     }
     public ShootingActions @Shooting => new ShootingActions(this);
+
+    // Cooking
+    private readonly InputActionMap m_Cooking;
+    private ICookingActions m_CookingActionsCallbackInterface;
+    private readonly InputAction m_Cooking_SwitchMode;
+    public struct CookingActions
+    {
+        private @Controls m_Wrapper;
+        public CookingActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SwitchMode => m_Wrapper.m_Cooking_SwitchMode;
+        public InputActionMap Get() { return m_Wrapper.m_Cooking; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CookingActions set) { return set.Get(); }
+        public void SetCallbacks(ICookingActions instance)
+        {
+            if (m_Wrapper.m_CookingActionsCallbackInterface != null)
+            {
+                @SwitchMode.started -= m_Wrapper.m_CookingActionsCallbackInterface.OnSwitchMode;
+                @SwitchMode.performed -= m_Wrapper.m_CookingActionsCallbackInterface.OnSwitchMode;
+                @SwitchMode.canceled -= m_Wrapper.m_CookingActionsCallbackInterface.OnSwitchMode;
+            }
+            m_Wrapper.m_CookingActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @SwitchMode.started += instance.OnSwitchMode;
+                @SwitchMode.performed += instance.OnSwitchMode;
+                @SwitchMode.canceled += instance.OnSwitchMode;
+            }
+        }
+    }
+    public CookingActions @Cooking => new CookingActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -204,5 +297,10 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     {
         void OnLook(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
+        void OnSwitchMode(InputAction.CallbackContext context);
+    }
+    public interface ICookingActions
+    {
+        void OnSwitchMode(InputAction.CallbackContext context);
     }
 }
