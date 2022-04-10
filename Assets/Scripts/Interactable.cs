@@ -14,7 +14,7 @@ public class Interactable : MonoBehaviour
         
     }
 
-    public void OnInteract()
+    public void Interact()
     {
         
     }

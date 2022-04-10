@@ -74,9 +74,27 @@
             "id": "44848158-9289-484b-bf7e-db111283f7e5",
             "actions": [
                 {
-                    "name": "Switch Mode",
+                    "name": "LookX",
+                    "type": "PassThrough",
+                    "id": "3387591a-bb3c-43c5-8ff8-43d3cab97965",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LookY",
+                    "type": "PassThrough",
+                    "id": "de737605-571e-4315-b75c-2443aed0a5cf",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
                     "type": "Button",
-                    "id": "9c2ccb28-e88c-4d06-bb8b-e2319ad0c54c",
+                    "id": "ecc24f08-04ab-4fce-a74f-b5cc2ee05aa8",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -86,12 +104,34 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "8ac641a2-4138-4773-82ef-0e989f3aac32",
-                    "path": "<Keyboard>/g",
+                    "id": "4cd6f508-41f4-4c9b-920e-b6a500318a05",
+                    "path": "<Mouse>/delta/x",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Switch Mode",
+                    "groups": "",
+                    "action": "LookX",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5cb5b0db-9382-4c8c-8e56-98ce18f4bf11",
+                    "path": "<Mouse>/delta/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LookY",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c5496b9a-cf98-488e-95ae-a120cc2643e1",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

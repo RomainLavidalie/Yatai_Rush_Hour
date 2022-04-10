@@ -96,9 +96,27 @@ public partial class @Controls : IInputActionCollection2, IDisposable
             ""id"": ""44848158-9289-484b-bf7e-db111283f7e5"",
             ""actions"": [
                 {
-                    ""name"": ""Switch Mode"",
+                    ""name"": ""LookX"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""3387591a-bb3c-43c5-8ff8-43d3cab97965"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LookY"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""de737605-571e-4315-b75c-2443aed0a5cf"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
                     ""type"": ""Button"",
-                    ""id"": ""9c2ccb28-e88c-4d06-bb8b-e2319ad0c54c"",
+                    ""id"": ""ecc24f08-04ab-4fce-a74f-b5cc2ee05aa8"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -108,12 +126,34 @@ public partial class @Controls : IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""8ac641a2-4138-4773-82ef-0e989f3aac32"",
-                    ""path"": ""<Keyboard>/g"",
+                    ""id"": ""4cd6f508-41f4-4c9b-920e-b6a500318a05"",
+                    ""path"": ""<Mouse>/delta/x"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Switch Mode"",
+                    ""groups"": """",
+                    ""action"": ""LookX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5cb5b0db-9382-4c8c-8e56-98ce18f4bf11"",
+                    ""path"": ""<Mouse>/delta/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LookY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c5496b9a-cf98-488e-95ae-a120cc2643e1"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -146,7 +186,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_Shooting_SwitchMode = m_Shooting.FindAction("Switch Mode", throwIfNotFound: true);
         // Cooking
         m_Cooking = asset.FindActionMap("Cooking", throwIfNotFound: true);
-        m_Cooking_SwitchMode = m_Cooking.FindAction("Switch Mode", throwIfNotFound: true);
+        m_Cooking_LookX = m_Cooking.FindAction("LookX", throwIfNotFound: true);
+        m_Cooking_LookY = m_Cooking.FindAction("LookY", throwIfNotFound: true);
+        m_Cooking_Interact = m_Cooking.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -255,12 +297,16 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     // Cooking
     private readonly InputActionMap m_Cooking;
     private ICookingActions m_CookingActionsCallbackInterface;
-    private readonly InputAction m_Cooking_SwitchMode;
+    private readonly InputAction m_Cooking_LookX;
+    private readonly InputAction m_Cooking_LookY;
+    private readonly InputAction m_Cooking_Interact;
     public struct CookingActions
     {
         private @Controls m_Wrapper;
         public CookingActions(@Controls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @SwitchMode => m_Wrapper.m_Cooking_SwitchMode;
+        public InputAction @LookX => m_Wrapper.m_Cooking_LookX;
+        public InputAction @LookY => m_Wrapper.m_Cooking_LookY;
+        public InputAction @Interact => m_Wrapper.m_Cooking_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Cooking; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -270,16 +316,28 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_CookingActionsCallbackInterface != null)
             {
-                @SwitchMode.started -= m_Wrapper.m_CookingActionsCallbackInterface.OnSwitchMode;
-                @SwitchMode.performed -= m_Wrapper.m_CookingActionsCallbackInterface.OnSwitchMode;
-                @SwitchMode.canceled -= m_Wrapper.m_CookingActionsCallbackInterface.OnSwitchMode;
+                @LookX.started -= m_Wrapper.m_CookingActionsCallbackInterface.OnLookX;
+                @LookX.performed -= m_Wrapper.m_CookingActionsCallbackInterface.OnLookX;
+                @LookX.canceled -= m_Wrapper.m_CookingActionsCallbackInterface.OnLookX;
+                @LookY.started -= m_Wrapper.m_CookingActionsCallbackInterface.OnLookY;
+                @LookY.performed -= m_Wrapper.m_CookingActionsCallbackInterface.OnLookY;
+                @LookY.canceled -= m_Wrapper.m_CookingActionsCallbackInterface.OnLookY;
+                @Interact.started -= m_Wrapper.m_CookingActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_CookingActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_CookingActionsCallbackInterface.OnInteract;
             }
             m_Wrapper.m_CookingActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @SwitchMode.started += instance.OnSwitchMode;
-                @SwitchMode.performed += instance.OnSwitchMode;
-                @SwitchMode.canceled += instance.OnSwitchMode;
+                @LookX.started += instance.OnLookX;
+                @LookX.performed += instance.OnLookX;
+                @LookX.canceled += instance.OnLookX;
+                @LookY.started += instance.OnLookY;
+                @LookY.performed += instance.OnLookY;
+                @LookY.canceled += instance.OnLookY;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
         }
     }
@@ -301,6 +359,8 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     }
     public interface ICookingActions
     {
-        void OnSwitchMode(InputAction.CallbackContext context);
+        void OnLookX(InputAction.CallbackContext context);
+        void OnLookY(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

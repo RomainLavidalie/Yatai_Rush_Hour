@@ -26,10 +26,10 @@ public class CuttingBoard : Interactable
     {
         
         //Supprimer cette partie une fois que le contrôleur sera mis en place
-        if (Input.GetButtonDown("Fire1"))
+        /*if (Input.GetButtonDown("Fire1"))
         {
             OnInteract();
-        }
+        }*/
 
         if (ingredient != null)
         {
@@ -49,7 +49,7 @@ public class CuttingBoard : Interactable
         }
     }
 
-    public new void OnInteract()
+    public new void Interact()
     {
         if (ingredient != null)
         {

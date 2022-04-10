@@ -21,11 +21,11 @@ public class CookingDevice : Interactable
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        /*if (Input.GetKeyDown(KeyCode.E))
         {
             OnInteract();
             //startCooking = true;
-        }
+        }*/
         
         if (ingredient != null && !ingredient.isBurned && ingredient.cookingDevice == deviceType)
         {
@@ -55,7 +55,7 @@ public class CookingDevice : Interactable
         
     }
 
-    public new void OnInteract()
+    public new void Interact()
     {
         /*if (ingredient != null && ingredient.isCooked)
         {
