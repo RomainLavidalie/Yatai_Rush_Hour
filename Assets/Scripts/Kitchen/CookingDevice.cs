@@ -7,6 +7,7 @@ public class CookingDevice : Interactable
     [SerializeField] private CookableFood.cookingDevices deviceType;
     //Retirer le SerializeField lorsque les interactions seront mises en place
     [SerializeField] private CookableFood ingredient;
+    [SerializeField] private Transform placeholder;
     
     [Header("Cooking Settings")]
     [SerializeField] private int burningDelay = 10;
@@ -50,25 +51,44 @@ public class CookingDevice : Interactable
         else
         {
             UI.SetActive(false);
-            //cookingAmount = 0;
+            cookingAmount = 0;
         }
         
     }
 
-    public new void Interact()
+    public override void Interact()
     {
-        /*if (ingredient != null && ingredient.isCooked)
+        Debug.Log("grill");
+        if (ingredient != null && ingredient.isCooked)
         {
-            ingredient.gameObject.transform.parent = null;
-            ingredient = null; 
-        }*/
+            PlayerController.instance.PickUpObject(ingredient.gameObject);
+            ingredient.gameObject.tag = "Pickup";
+            ingredient = null;
+        }
         if (ingredient == null)
         {
-            ingredient = GameObject.FindGameObjectWithTag("Food").GetComponent<CookableFood>();
-            if (!ingredient.enabled)
-            {
-                ingredient = null;
-            }
+            Debug.Log("poser l'objet sur le grill");
+                try
+                {
+                    ingredient = PlayerController.instance.itemInHand.GetComponent<CookableFood>();
+                    if (ingredient.cookingDevice != deviceType || ingredient.isCooked)
+                    {
+                        ingredient = null;
+                        return;
+                    }   
+                    else
+                    { PlayerController.instance.itemInHand = null;
+                        var o = ingredient.gameObject;
+                        o.transform.parent = placeholder;
+                        o.transform.localPosition = Vector3.zero;
+                        o.tag = "Untagged";
+                    }
+
+                }
+                catch
+                {
+                    return;
+                }
         }
     }
 }

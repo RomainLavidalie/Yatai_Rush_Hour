@@ -1,9 +1,10 @@
-
+using System;
 using UnityEngine;
 
 public class CuttingBoard : Interactable
 {
     [SerializeField] private CuttableFood ingredient;
+    [SerializeField] private Transform placeholder;
     
     [Header("Cutting Settings")]
     [SerializeField] private int cuttingMaxAmount = 100;
@@ -24,13 +25,6 @@ public class CuttingBoard : Interactable
     // Update is called once per frame
     void Update()
     {
-        
-        //Supprimer cette partie une fois que le contrôleur sera mis en place
-        /*if (Input.GetButtonDown("Fire1"))
-        {
-            OnInteract();
-        }*/
-
         if (ingredient != null)
         {
             if (currentCuttingAmount >= cuttingMaxAmount)
@@ -49,20 +43,41 @@ public class CuttingBoard : Interactable
         }
     }
 
-    public new void Interact()
+    public override void Interact()
     {
+        //Debug.Log("planche");
         if (ingredient != null)
         {
             if (!ingredient.isCutted)
                 currentCuttingAmount += cuttingAmountPerClick;
             else
             {
-                //Pick up object if holding nothing
+                PlayerController.instance.PickUpObject(ingredient.gameObject);
+                ingredient.gameObject.tag = "Pickup";
+                ingredient = null;
             }
         }
         else
         {
-            //Put object on the board, if holding one
+            //Debug.Log("poser sur planche");
+            try
+            {
+               ingredient = PlayerController.instance.itemInHand.GetComponent<CuttableFood>();
+               if (ingredient.isCutted)
+               {
+                   ingredient = null;
+                   return;
+               }
+               PlayerController.instance.itemInHand = null;
+               var o = ingredient.gameObject;
+               o.transform.parent = placeholder;
+               o.transform.localPosition = Vector3.zero;
+               o.tag = "Untagged";
+            }
+            catch
+            {
+                return;
+            }
         }
     }
 }
