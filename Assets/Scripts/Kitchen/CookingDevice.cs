@@ -22,12 +22,6 @@ public class CookingDevice : Interactable
     
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.E))
-        {
-            OnInteract();
-            //startCooking = true;
-        }*/
-        
         if (ingredient != null && !ingredient.isBurned && ingredient.cookingDevice == deviceType)
         {
             cookingAmount += increaseRate * Time.deltaTime;
@@ -59,12 +53,16 @@ public class CookingDevice : Interactable
     public override void Interact()
     {
         Debug.Log("grill");
+        
+        //S'il y a un ingrédient et qu'il est cuit, le récupérer
         if (ingredient != null && ingredient.isCooked)
         {
             PlayerController.instance.PickUpObject(ingredient.gameObject);
             ingredient.gameObject.tag = "Pickup";
+            cookingAmount = 0;
             ingredient = null;
         }
+        
         if (ingredient == null)
         {
             Debug.Log("poser l'objet sur le grill");
@@ -74,10 +72,10 @@ public class CookingDevice : Interactable
                     if (ingredient.cookingDevice != deviceType || ingredient.isCooked)
                     {
                         ingredient = null;
-                        return;
                     }   
                     else
-                    { PlayerController.instance.itemInHand = null;
+                    { 
+                        PlayerController.instance.itemInHand = null;
                         var o = ingredient.gameObject;
                         o.transform.parent = placeholder;
                         o.transform.localPosition = Vector3.zero;

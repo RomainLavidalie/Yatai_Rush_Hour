@@ -54,6 +54,7 @@ public class CuttingBoard : Interactable
             {
                 PlayerController.instance.PickUpObject(ingredient.gameObject);
                 ingredient.gameObject.tag = "Pickup";
+                currentCuttingAmount = 0;
                 ingredient = null;
             }
         }

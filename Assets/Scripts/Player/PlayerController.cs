@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
     #endregion
     
     #region INTERACTION
-    private void OnInteract()
+    public void OnInteract()
     {
 
         RaycastHit hit;
@@ -85,16 +85,16 @@ public class PlayerController : MonoBehaviour
             {
                 PickUpObject(interactObj);
             }
-            
-            else
-            {
-                    //Ajouter du feedback pour signifier qu'on ne peut pas prendre l'objet
-                    //Son ? Visuel ?
-            }
-            if (hit.collider.CompareTag("Interactable"))
+ 
+            if (interactObj.CompareTag("Interactable"))
             {
                 Debug.Log("j'interagis");
-                hit.collider.gameObject.GetComponent<Interactable>().Interact();
+                interactObj.GetComponent<Interactable>().Interact();
+            }
+            
+            if(interactObj.CompareTag("YataiBoard") && itemInHand != null)
+            {
+                PutOnYatai(hit);
             }
         }
     }
@@ -106,34 +106,59 @@ public class PlayerController : MonoBehaviour
             {
                 obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             }
-            catch {}
+            catch
+            {
+                return;
+            }
             
             obj.transform.parent = hand;
             obj.transform.localPosition = Vector3.zero;
+            obj.transform.rotation = Quaternion.Euler(Vector3.zero);
             itemInHand = obj;
         }
     }
 
-    public void OnDrop()
-    {
-        hand.transform.DetachChildren();
-        itemInHand.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        itemInHand = null;
-    }
+    
     #endregion
 
     #region THROW
 
     public void OnShoot()
     {
-        //itemInHand.transform.position = playerCamera.position;
-        //itemInHand.transform.rotation = playerCamera.rotation;
-        itemInHand.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        itemInHand.GetComponent<Rigidbody>().AddForce(playerCamera.forward*force, ForceMode.Impulse);
-        //itemInHand.GetComponent<Rigidbody>().AddForce(playerCamera.forward*force, ForceMode.Impulse);
-        hand.transform.DetachChildren();
-        
+        if (itemInHand == null)
+            return;
+
+        RaycastHit hit;
+        if (Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, 3f))
+        {
+            if(hit.collider.CompareTag("YataiBoard"))
+            {
+                PutOnYatai(hit);
+            }
+        }
+        else
+        {
+            try
+            {
+                Drop();
+                itemInHand.GetComponent<Rigidbody>().AddForce(playerCamera.forward * force, ForceMode.Impulse);
+                itemInHand = null;
+            }
+            catch{}
+        }
+    }
+
+    private void PutOnYatai(RaycastHit _hit)
+    {
+        Drop();
+        itemInHand.transform.position = _hit.point;
         itemInHand = null;
+        
+    }
+    private void Drop()
+    {
+        hand.transform.DetachChildren();
+        itemInHand.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
     }
 
     #endregion

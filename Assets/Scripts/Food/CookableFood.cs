@@ -26,13 +26,13 @@ public class CookableFood : MonoBehaviour
     {
         isCooked = true;
         Debug.Log(name + ": je suis cuit");
-        foodData.IdName += "_cooked";
+        foodData.UpdateReadyForBowl(1);
     }
     
     public void Burn()
     {
         isBurned = true;
         Debug.Log(name + ": je crame !!!!");
-        foodData.IdName += "burned";
+        foodData.UpdateReadyForBowl(2);
     }
 }

@@ -19,7 +19,7 @@ public class CuttableFood : MonoBehaviour
         isCutted = true;
         nonCuttedModel.SetActive(false);
         cuttedModel.SetActive(true);
-        foodData.IdName += "_cutted";
+        foodData.UpdateReadyForBowl(0);
         foodData.ActivateCookOnCut();
     }
 }

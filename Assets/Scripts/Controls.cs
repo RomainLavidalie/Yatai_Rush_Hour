@@ -121,6 +121,15 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""816228d5-e9b8-41d2-b925-cde3f20cd0e5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -156,6 +165,17 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4b043f1c-debf-497a-ad32-88d1de0998a8"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -189,6 +209,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_Cooking_LookX = m_Cooking.FindAction("LookX", throwIfNotFound: true);
         m_Cooking_LookY = m_Cooking.FindAction("LookY", throwIfNotFound: true);
         m_Cooking_Interact = m_Cooking.FindAction("Interact", throwIfNotFound: true);
+        m_Cooking_Shoot = m_Cooking.FindAction("Shoot", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -300,6 +321,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Cooking_LookX;
     private readonly InputAction m_Cooking_LookY;
     private readonly InputAction m_Cooking_Interact;
+    private readonly InputAction m_Cooking_Shoot;
     public struct CookingActions
     {
         private @Controls m_Wrapper;
@@ -307,6 +329,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         public InputAction @LookX => m_Wrapper.m_Cooking_LookX;
         public InputAction @LookY => m_Wrapper.m_Cooking_LookY;
         public InputAction @Interact => m_Wrapper.m_Cooking_Interact;
+        public InputAction @Shoot => m_Wrapper.m_Cooking_Shoot;
         public InputActionMap Get() { return m_Wrapper.m_Cooking; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -325,6 +348,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Interact.started -= m_Wrapper.m_CookingActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_CookingActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_CookingActionsCallbackInterface.OnInteract;
+                @Shoot.started -= m_Wrapper.m_CookingActionsCallbackInterface.OnShoot;
+                @Shoot.performed -= m_Wrapper.m_CookingActionsCallbackInterface.OnShoot;
+                @Shoot.canceled -= m_Wrapper.m_CookingActionsCallbackInterface.OnShoot;
             }
             m_Wrapper.m_CookingActionsCallbackInterface = instance;
             if (instance != null)
@@ -338,6 +364,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @Shoot.started += instance.OnShoot;
+                @Shoot.performed += instance.OnShoot;
+                @Shoot.canceled += instance.OnShoot;
             }
         }
     }
@@ -362,5 +391,6 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         void OnLookX(InputAction.CallbackContext context);
         void OnLookY(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
     }
 }
