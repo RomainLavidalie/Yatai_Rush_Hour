@@ -786,6 +786,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Interactable
       objectReference: {fileID: 0}
+    - target: {fileID: 9187495973596767730, guid: 2f65db1a4f662b1478f245abc1e91c1c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f65db1a4f662b1478f245abc1e91c1c, type: 3}
 --- !u!1 &613601408
@@ -1274,6 +1278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientList: []
+  isComplete: 0
 --- !u!1 &908182755
 GameObject:
   m_ObjectHideFlags: 0
