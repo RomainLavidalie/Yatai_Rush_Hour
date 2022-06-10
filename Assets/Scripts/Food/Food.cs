@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-    //public string IdName;
+    public string IdName;
     [SerializeField] private bool toggleCookableOnCut;
     private CookableFood cookable;
     private CuttableFood cuttable;
 
     private bool[] conditionsForBowl;
-    private bool readyForBowl = false;
+    public bool readyForBowl = false;
 
     private void Start()
     {
@@ -20,16 +20,16 @@ public class Food : MonoBehaviour
 
         conditionsForBowl = new bool[3];
         
+        //Si on n'a pas la possibilité de cuire l'ingrédient, valider le 2eme critère automatiquement
+        conditionsForBowl[1] = cookable == null;
+        
         //Vérifier que les conditions sont réunies (2 composants existent + déclenchement activé)
         toggleCookableOnCut = (cookable != null && cuttable != null && toggleCookableOnCut);
         
         //S'il est bien activé, désactiver la possibilité de cuisiner
         if (toggleCookableOnCut)
             cookable.enabled = false;
-        else
-        {
-            Debug.Log("manque un");
-        }
+
     }
 
     public void ActivateCookOnCut()
