@@ -1,0 +1,1312 @@
+fileFormatVersion: 2
+guid: 350db240aa83a7c4798c81566e650479
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00000
+    second: {fileID: 2100000, guid: 54ab5417b25c7fb44baf14a380080dcd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00001
+    second: {fileID: 2100000, guid: 597b16055ed6d6847b614a25441f4c84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00002
+    second: {fileID: 2100000, guid: d481116f002b80244a84c0336b28c98a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00003
+    second: {fileID: 2100000, guid: fe42e39c732e44d4f89ac9a3e5a7238e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00004
+    second: {fileID: 2100000, guid: c2418c366475b9241bffc88b02c91ec6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00005
+    second: {fileID: 2100000, guid: b361ce9cdabf0a04bbe48369a8dcff1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00006
+    second: {fileID: 2100000, guid: df115c10818520f40bc756fc2b6e7ef1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00007
+    second: {fileID: 2100000, guid: 1c2d1daf3e3d1a84a8cf031534b84adc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00008
+    second: {fileID: 2100000, guid: 8e0cb9d9298cac94fb58498e03307c7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00009
+    second: {fileID: 2100000, guid: 6f96e8112b8c44b4bb9eb954bdbc8b2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00010
+    second: {fileID: 2100000, guid: a3a0f8c15f4c2af4d910a9f735bbc923, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00011
+    second: {fileID: 2100000, guid: c9fb981d74f98a845904b7c7437c9292, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00012
+    second: {fileID: 2100000, guid: d7339843e75723448a4f5eef7879d23c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00013
+    second: {fileID: 2100000, guid: 7f15b7e57d0710f45abc2fcf150a61ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00014
+    second: {fileID: 2100000, guid: 72650130954899e4d9722af069385e88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00015
+    second: {fileID: 2100000, guid: a2afe8d2518162b4cb1f2a05b7812395, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00016
+    second: {fileID: 2100000, guid: c11944031c3c78d4ab3af6cd4062c8db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00017
+    second: {fileID: 2100000, guid: 2398a88b9cd64f74483f6a730335c865, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00018
+    second: {fileID: 2100000, guid: 279b1fb3e7bf39d4a913e1f778258c49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00019
+    second: {fileID: 2100000, guid: 79261cf309e4b4843a725869716b1a6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00020
+    second: {fileID: 2100000, guid: 0732b65404801a544adb8e5335feff4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00021
+    second: {fileID: 2100000, guid: 64570210ee764cf45b2a9cb4a4b02efb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00022
+    second: {fileID: 2100000, guid: f2ff1de8df5ed7543bfb21a7f46ff24b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00023
+    second: {fileID: 2100000, guid: 9a85fd42563603a468addaa6276269f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00024
+    second: {fileID: 2100000, guid: ae03c334348777b4698ba3d20d4bd8e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00025
+    second: {fileID: 2100000, guid: 1af5896a0f5e6ee4cb1faf9095cba6c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00026
+    second: {fileID: 2100000, guid: 959f0d0fd53febd49a7f9f7884bd9727, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00027
+    second: {fileID: 2100000, guid: 5261fad6565beb6499f72b3f58b91f1d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00028
+    second: {fileID: 2100000, guid: 58eefe3bd8d3c8748a82451a8c26662c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00029
+    second: {fileID: 2100000, guid: de96ba0f7f203c14d870bdaaccc6947c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00030
+    second: {fileID: 2100000, guid: ed3497e7fac1c6844b38066d298d3679, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00031
+    second: {fileID: 2100000, guid: 8857af82042121e438764d953d4e1468, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00032
+    second: {fileID: 2100000, guid: 571fc25643618784c83dec021eee9a17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00033
+    second: {fileID: 2100000, guid: 7f88bcc7b3450c3499888e9d097aa097, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00034
+    second: {fileID: 2100000, guid: 474e34aa047d6cf478ef69362ab04137, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00035
+    second: {fileID: 2100000, guid: 6158cbbd215fefa4ca6506d811655809, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00036
+    second: {fileID: 2100000, guid: 6d6320a1b39d3524b9338c5a609843b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00037
+    second: {fileID: 2100000, guid: 5128bc27fa506144f821047761b87fbc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00038
+    second: {fileID: 2100000, guid: 1782184fa0a7ab54887171c04dcb436e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00039
+    second: {fileID: 2100000, guid: f65e82eaa407fcc43b1456ee11aad7f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00040
+    second: {fileID: 2100000, guid: 019171cc4cc731140be1d787c2052ceb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00041
+    second: {fileID: 2100000, guid: 9de67a74819e9564ca72efd6b46f63ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00042
+    second: {fileID: 2100000, guid: 00f288d62e88c8b4e9e10da9750bd7b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00043
+    second: {fileID: 2100000, guid: 9ca01ca3494129b40a90bbebd9d96ca2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00044
+    second: {fileID: 2100000, guid: dd3579d559c6ef743b62b02eb9742390, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00045
+    second: {fileID: 2100000, guid: b76757c0b45869c4e9e7b7ef42fa3104, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00046
+    second: {fileID: 2100000, guid: 709fc4bc7baada84683cf486b88729f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00047
+    second: {fileID: 2100000, guid: 63a56e782011c4f4487ae9bb8c14f177, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00048
+    second: {fileID: 2100000, guid: 6eb154f3b31ef2d4d8af6e8ae1c86ebd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00049
+    second: {fileID: 2100000, guid: 602f7b615afee2d4dbba964cb9a5e44f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00050
+    second: {fileID: 2100000, guid: e36386c846dd9f041af2d4018415b4ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00053
+    second: {fileID: 2100000, guid: 5fefd09f27104e74895754bbdfab2e0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00056
+    second: {fileID: 2100000, guid: 88edb2dc70c82ac42b66d40a318bc75e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00057
+    second: {fileID: 2100000, guid: fcb4ca2e38a62e84987ba061e32c9d24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00058
+    second: {fileID: 2100000, guid: 88641afcb4729604aa75d7da1ca30221, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00059
+    second: {fileID: 2100000, guid: fbd07a1a153a0204aafa9c8ddfee9781, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00060
+    second: {fileID: 2100000, guid: 66075c1172c498d45a1762410f582318, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00061
+    second: {fileID: 2100000, guid: 21ddbd748e39d1d448f4a9f7bb3b7ad8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00062
+    second: {fileID: 2100000, guid: a3f10313a45d7ae498e771dc1cde7854, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00063
+    second: {fileID: 2100000, guid: e852b69742dbd47449c1fcd3acf5e24c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00066
+    second: {fileID: 2100000, guid: 05e89d0b2f07b974b92e4d75fe27fc7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00067
+    second: {fileID: 2100000, guid: 3eb5091979c3fe94ab2541d581232f21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00068
+    second: {fileID: 2100000, guid: 884d010e7e951724ca3ff6762923eb4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00069
+    second: {fileID: 2100000, guid: b90d82df79aa51e42bef9468d1d28db3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00070
+    second: {fileID: 2100000, guid: 273fe131d42b4d74eaf5ca1d0544dab8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00071
+    second: {fileID: 2100000, guid: a14de969f805fb1429ac6121745d81cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00072
+    second: {fileID: 2100000, guid: 3c71ee5444542174b9e127dc420eb272, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00073
+    second: {fileID: 2100000, guid: 4879f202f90905a4d8c41cd8d578c87a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00074
+    second: {fileID: 2100000, guid: 3679150daad3d254ca3c48258a438a3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00075
+    second: {fileID: 2100000, guid: a39a4f12e8957c24ea8e4dd336c79bb3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00076
+    second: {fileID: 2100000, guid: fdbf580df3d8fea40a4e959b51d43c65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00077
+    second: {fileID: 2100000, guid: 1ed49d253b73ece448a6fd145099397f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00078
+    second: {fileID: 2100000, guid: fe38763b82f52584eb61e57a994d6501, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00081
+    second: {fileID: 2100000, guid: 66298819c38ac034486889924c2d1e2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00082
+    second: {fileID: 2100000, guid: e6df39158fc4f9741b5fe895fa960b46, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00083
+    second: {fileID: 2100000, guid: c02861764ed38a8428403cd1e3921ce6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00084
+    second: {fileID: 2100000, guid: aafea6ee56a975742a7fbfd7bddfead1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00085
+    second: {fileID: 2100000, guid: 63bbad878c5564d43bbc5acb84d5a1de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00086
+    second: {fileID: 2100000, guid: 7ca1c9856a112c04cab314d288853794, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00087
+    second: {fileID: 2100000, guid: 4b2f9daaa5f0d3040acbb2604beccc1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00088
+    second: {fileID: 2100000, guid: cfb8539d9bf413346aec10da7cbf65ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00089
+    second: {fileID: 2100000, guid: a66e28a7add2779479460da890c072eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00090
+    second: {fileID: 2100000, guid: 1083ec44d0668804d8e480cb436af67b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00091
+    second: {fileID: 2100000, guid: bacc093bfa211eb44a6b3e1ad4cc94a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00092
+    second: {fileID: 2100000, guid: da90faf992f8bd94cb00357b8ef39ea9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00093
+    second: {fileID: 2100000, guid: aad5b986c3038e5438b32211b8bfe73e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00094
+    second: {fileID: 2100000, guid: 206ebc7fa3bc2704fb1e9ae520a61da9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00095
+    second: {fileID: 2100000, guid: 339c767cc9997f34bac1f254e69a3381, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00096
+    second: {fileID: 2100000, guid: 25156b8483f04a648b48796e51206864, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00097
+    second: {fileID: 2100000, guid: 0537a3e1962924340805649f8c651423, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00098
+    second: {fileID: 2100000, guid: 22765037294f50646b497f58e906f00f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00099
+    second: {fileID: 2100000, guid: 119043ab8baf08247bb93e6a79c2495b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00100
+    second: {fileID: 2100000, guid: bdf83088041b63f4faafd7df3714c3d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00101
+    second: {fileID: 2100000, guid: 82ae8b8966ef671468e716d0bb11bc64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00102
+    second: {fileID: 2100000, guid: ab8a312af8932444cae4309cbf9a1df4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00103
+    second: {fileID: 2100000, guid: 7343304c564029f4d96454d9133d0bd7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00104
+    second: {fileID: 2100000, guid: 696fca2317f38b04291deadafd3bf7d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00105
+    second: {fileID: 2100000, guid: 60281aacc580db044b1be8cec0c23067, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00106
+    second: {fileID: 2100000, guid: 86e5d5c9b8e17d745847d5130074161e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00107
+    second: {fileID: 2100000, guid: dce31a95e376062419efbd6c7815d87b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00108
+    second: {fileID: 2100000, guid: 1fd56ab9091baf944a4190e495718dc2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00109
+    second: {fileID: 2100000, guid: 8a8a5fd4222742747ba6ade70efde65d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00110
+    second: {fileID: 2100000, guid: b163a193e5ef11e47aa6c325d91f4932, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00111
+    second: {fileID: 2100000, guid: 6fd00a7d4548a214783915facdc59a73, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00112
+    second: {fileID: 2100000, guid: d15c4d5e19261cc47b324d7efc008eab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00113
+    second: {fileID: 2100000, guid: aedb795a6eff0054a9eefe1de56d5257, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00114
+    second: {fileID: 2100000, guid: 454e30e6e6b009643a894181105ba87b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00115
+    second: {fileID: 2100000, guid: fcdd7ffeb1ceedc4998097980be53f8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00116
+    second: {fileID: 2100000, guid: 586a7c0b0f12ece4ebffc21dca2b80da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00117
+    second: {fileID: 2100000, guid: c71bbd25f96f0994ca0f45cf9d980041, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00118
+    second: {fileID: 2100000, guid: ca045f58e5190c84a9ed9487de0972ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00119
+    second: {fileID: 2100000, guid: ad313bec20087e4488e2cc359742209d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00120
+    second: {fileID: 2100000, guid: 8c14d83b4c899384a8965b63de3c7f84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00121
+    second: {fileID: 2100000, guid: 662ea516c5880294ca6cd92d292cb895, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00122
+    second: {fileID: 2100000, guid: 5b406b7caa1c5ea449b78fd4dfca88ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00123
+    second: {fileID: 2100000, guid: 67ccc03560261fc4eb6e46f29d973b9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00124
+    second: {fileID: 2100000, guid: 9cf4e2786f181af47bb7e05286ea687b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00126
+    second: {fileID: 2100000, guid: 358e56a7252caaa4db7787edab95df52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00128
+    second: {fileID: 2100000, guid: 69049fcdcf497a449a802d458d537230, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00130
+    second: {fileID: 2100000, guid: f1b6a987abf2eb548915796669390061, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BuildingMat-00132
+    second: {fileID: 2100000, guid: b72761b62ef49b842a6e53afcb5f16fe, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00000-texture
+    second: {fileID: 2800000, guid: 2eb44abdfaf03e84fa663a684cd9b5c6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00001-texture
+    second: {fileID: 2800000, guid: 79702886730f81b4f80c7be4e4bca75b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00002-texture
+    second: {fileID: 2800000, guid: 56b4c77ea107b874b81501ba14bdb548, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00003-texture
+    second: {fileID: 2800000, guid: acda49476a746af45b46b175b564c36d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00004-texture
+    second: {fileID: 2800000, guid: 3a8cd836e7decb44aa74b0395abf1ce0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00005-texture
+    second: {fileID: 2800000, guid: 5d38f99b6a333654d84b9fa3f464aa16, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00006-texture
+    second: {fileID: 2800000, guid: f0ee80207d1634345826997545dfc547, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00007-texture
+    second: {fileID: 2800000, guid: 619f737858f31014383ace36da6d566a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00008-texture
+    second: {fileID: 2800000, guid: 17740586b122fdf449068bd205dbf030, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00009-texture
+    second: {fileID: 2800000, guid: b8d31d333c03d604c9dc6f6a45f27967, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00010-texture
+    second: {fileID: 2800000, guid: 38b5f95ca41801b4d8289fa20fc41ab7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00011-texture
+    second: {fileID: 2800000, guid: f43537a453fb49b468c03b6d6adf1619, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00012-texture
+    second: {fileID: 2800000, guid: ca867e80ad9aa2e4f8d35167414b11e2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00013-texture
+    second: {fileID: 2800000, guid: ef3439a57db9d20428346d2fcb382e8a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00014-texture
+    second: {fileID: 2800000, guid: 03cfc43e062348c48b38654469624382, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00015-texture
+    second: {fileID: 2800000, guid: f0cc1b512e5327549afc3a5283511d18, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00016-texture
+    second: {fileID: 2800000, guid: 762757c7eac30f947addbbf0536491e5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00017-texture
+    second: {fileID: 2800000, guid: 2f1f2281663c8bb45bdd2b2d5172bc88, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00018-texture
+    second: {fileID: 2800000, guid: f7d6997efdb375a4da78d3fca1bb4264, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00019-texture
+    second: {fileID: 2800000, guid: df33937428a7d094fa8924d0d9fb6bc8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00020-texture
+    second: {fileID: 2800000, guid: e02ec9052e6a2264cb9a43ac2787a4aa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00021-texture
+    second: {fileID: 2800000, guid: 62643759e0de1874ebdd7f2c62459295, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00022-texture
+    second: {fileID: 2800000, guid: 0ec3c85dc592fc547a8c157bdefd1c3d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00023-texture
+    second: {fileID: 2800000, guid: 58b75b81620403841b070b006de52234, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00024-texture
+    second: {fileID: 2800000, guid: 17bb0ccaee90fb548a6506b9a44bf01c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00025-texture
+    second: {fileID: 2800000, guid: 25581581bb183c047a08f05613fddf67, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00026-texture
+    second: {fileID: 2800000, guid: a0b90c66ac821594f91120b94d5d6d60, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00027-texture
+    second: {fileID: 2800000, guid: 00f4057f57ff76946ac49c2ff3d693ca, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00028-texture
+    second: {fileID: 2800000, guid: 2b3cfd6a6081a5a4690d206dee3bb90e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00029-texture
+    second: {fileID: 2800000, guid: ca83206dad3cdf14388ea2691fd1fb74, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00030-texture
+    second: {fileID: 2800000, guid: cabf6f07d6b754943a1745bf52a56bea, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00031-texture
+    second: {fileID: 2800000, guid: 9a1a516256b3290419c999ecd9a90acc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00032-texture
+    second: {fileID: 2800000, guid: 7d4732bff73684547b10a6191fc869bd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00033-texture
+    second: {fileID: 2800000, guid: 3f643a4e0a110934b8b4a6ea956eb8d0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00034-texture
+    second: {fileID: 2800000, guid: 1e057970d10efa048bdb42b5a199aad1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00035-texture
+    second: {fileID: 2800000, guid: d4907eba9aac1b24f84d70a5ba8eea21, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00036-texture
+    second: {fileID: 2800000, guid: 82c60b877b81242468a7a167aea9f652, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00037-texture
+    second: {fileID: 2800000, guid: 4267b04cc77876e4cb0f450af43de605, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00038-texture
+    second: {fileID: 2800000, guid: 9f7970b0e6770934ca02ce62e546985b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00039-texture
+    second: {fileID: 2800000, guid: 755f715bc3f967843bb13ced85feed25, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00040-texture
+    second: {fileID: 2800000, guid: 5ea3b98f3134bdd43905aa234e3d901f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00041-texture
+    second: {fileID: 2800000, guid: f742552f940af3b4d9aab5dba5b8d89c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00042-texture
+    second: {fileID: 2800000, guid: b32ed2d07cf85c94691f8eafcb754f29, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00043-texture
+    second: {fileID: 2800000, guid: aa2d45f21f8cf63489545913ab309120, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00044-texture
+    second: {fileID: 2800000, guid: dcf7fc6ef6c911842bad98424d475ffa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00045-texture
+    second: {fileID: 2800000, guid: 804a3e82dbac396429ca71af18cf4966, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00046-texture
+    second: {fileID: 2800000, guid: 8c9cb364a25fb6b4a9eb7e187522b4c2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00047-texture
+    second: {fileID: 2800000, guid: 0956778950e10ed4fbcc7723a62d8c47, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00048-texture
+    second: {fileID: 2800000, guid: 796056d41a950ae4faa271c6f43f2819, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00049-texture
+    second: {fileID: 2800000, guid: 45c3b6a3ccd30fa4e97d0b4228c16f4e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00050-texture
+    second: {fileID: 2800000, guid: 809d987c2781553439e36b5c19cedfce, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00053-texture
+    second: {fileID: 2800000, guid: 140c822f5b7a7f84b8ade7249f51671a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00056-texture
+    second: {fileID: 2800000, guid: 2566dfbc49603c848b9d2d975c92365b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00057-texture
+    second: {fileID: 2800000, guid: a5525c3c13783f2438be04c27ae5b9a2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00058-texture
+    second: {fileID: 2800000, guid: 1416764e3aedff14c8d06235ded14d37, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00059-texture
+    second: {fileID: 2800000, guid: 165b61b63e417b947814cbccd08b0921, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00060-texture
+    second: {fileID: 2800000, guid: 654e98d3133d3684da4ff321df852975, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00061-texture
+    second: {fileID: 2800000, guid: 6d348aa9c8d9eab46a6ea00dd5f3e360, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00062-texture
+    second: {fileID: 2800000, guid: 9d122dd5afd1518459b7d17243208e54, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00063-texture
+    second: {fileID: 2800000, guid: f0cbcafb7ff43f5479a2672ec4151516, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00066-texture
+    second: {fileID: 2800000, guid: aa1f34fb57db8f14db1fbc248d7d2ed1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00067-texture
+    second: {fileID: 2800000, guid: 2d07eed4bb0e4044584ea725e71dd038, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00068-texture
+    second: {fileID: 2800000, guid: be88791676531b642a14c8c127f48874, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00069-texture
+    second: {fileID: 2800000, guid: 82f758ddb1eb93943ad5495bb591e3ec, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00070-texture
+    second: {fileID: 2800000, guid: ecab438aede569045bc5e89d2d77ed5d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00071-texture
+    second: {fileID: 2800000, guid: f343032c51311da4a937c99057bd3fa0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00072-texture
+    second: {fileID: 2800000, guid: 3cc8d9b0ebec3a5488814bf50a669ebc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00073-texture
+    second: {fileID: 2800000, guid: e77b148707d125943ad8a431c63b4de8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00074-texture
+    second: {fileID: 2800000, guid: 4ae97bbd6cad47c4db150a722b3a3ac0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00075-texture
+    second: {fileID: 2800000, guid: 3ecfdb156e62c05479bdb6895cd8d2a5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00076-texture
+    second: {fileID: 2800000, guid: 5cfd30c7208aba545b707870d6945fd7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00077-texture
+    second: {fileID: 2800000, guid: 77e624d13427f9346b70808a69baa05b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00078-texture
+    second: {fileID: 2800000, guid: 9ae7dbb7318a806439e9c87e3a3dc387, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00081-texture
+    second: {fileID: 2800000, guid: 1c7117c2ac65d8f498fd73117ec45b5e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00082-texture
+    second: {fileID: 2800000, guid: 723ab60b31804e144a00cc02929f175b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00083-texture
+    second: {fileID: 2800000, guid: ca151c1feb121af4db1addaf54ebcfed, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00084-texture
+    second: {fileID: 2800000, guid: e86a4fb4a9630444eaada3369405d613, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00085-texture
+    second: {fileID: 2800000, guid: f958f17322c3a9d45b3f8fa27aa5eecb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00086-texture
+    second: {fileID: 2800000, guid: 37d4e3fd169c9cd47bfc5b9e97e1196e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00087-texture
+    second: {fileID: 2800000, guid: 26234c92579c05a4eb86a198f3b1b711, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00088-texture
+    second: {fileID: 2800000, guid: be338285da5022544bce529a4626f4d5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00089-texture
+    second: {fileID: 2800000, guid: 7765b443565eb70438111e046c54916d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00090-texture
+    second: {fileID: 2800000, guid: 47ee339ff6b53954e8cee1eea94084b5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00091-texture
+    second: {fileID: 2800000, guid: 97547f26730ab9c47833315f961e7723, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00092-texture
+    second: {fileID: 2800000, guid: d5e4793ef9b090c41b0f03d250f10d03, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00093-texture
+    second: {fileID: 2800000, guid: b64e6b5db661eae4abddb550388bf6ad, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00094-texture
+    second: {fileID: 2800000, guid: 77828d9fa6943974a9f52237cadabb64, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00095-texture
+    second: {fileID: 2800000, guid: 3a722f3991f594d4f9acb7926062e341, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00096-texture
+    second: {fileID: 2800000, guid: 22a52853cb2854f4d9b29db5e08c6e65, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00097-texture
+    second: {fileID: 2800000, guid: 457600b9622688f43be92ec2b20ea0bb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00098-texture
+    second: {fileID: 2800000, guid: 4ea0a4d6b9e813a4aa2405423e675647, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00099-texture
+    second: {fileID: 2800000, guid: 8025dfba5b359f64382cff1ce2d5d5a0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00100-texture
+    second: {fileID: 2800000, guid: f1c16e6c564ff524ea7b7de815d6e744, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00101-texture
+    second: {fileID: 2800000, guid: 8d1f8bf08c891bb4a859354183fc7120, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00102-texture
+    second: {fileID: 2800000, guid: 2cd60c59955269b419382a4931e17700, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00103-texture
+    second: {fileID: 2800000, guid: 62b79c996d60baf49a7d53a4b3ae0d86, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00104-texture
+    second: {fileID: 2800000, guid: c72725670eff9e94ea8ad3bd935b2c80, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00105-texture
+    second: {fileID: 2800000, guid: 6fdb0b69a83cf72449a65e057e9f9baa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00106-texture
+    second: {fileID: 2800000, guid: 5f9a323c1cf85e146afe41e12234b43a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00107-texture
+    second: {fileID: 2800000, guid: bb99c26096223b9408796f88a00d01bc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00108-texture
+    second: {fileID: 2800000, guid: 609d0cf3e6364844ab85043371e2dac3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00109-texture
+    second: {fileID: 2800000, guid: b525c89642a887d4bbf948764ac7e35c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00110-texture
+    second: {fileID: 2800000, guid: 1cb16b608e66b364798f06c74d56e723, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00111-texture
+    second: {fileID: 2800000, guid: 48fb51d06db1d09408a6b1fdd8b3199e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00112-texture
+    second: {fileID: 2800000, guid: f7cba7f02c4e49c4f85ee887ae98b9d4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00113-texture
+    second: {fileID: 2800000, guid: da055f88a1982c7428bc80fa965d9349, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00114-texture
+    second: {fileID: 2800000, guid: d54ed510ffaa44249a9a2353b0c4f6ea, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00115-texture
+    second: {fileID: 2800000, guid: 405629f910b90194d97acac13b5c9c62, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00116-texture
+    second: {fileID: 2800000, guid: 962186e00cadb6144972bf8f47939f72, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00117-texture
+    second: {fileID: 2800000, guid: 1fd267592ebc63c49aaca464826bdeb6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00118-texture
+    second: {fileID: 2800000, guid: 1595d71577e159040ab78b0096baf22d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00119-texture
+    second: {fileID: 2800000, guid: 2d02f3f9ae227d44fae3c2a000b0aa6b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00120-texture
+    second: {fileID: 2800000, guid: 04b50d985609c4c45b55aca35cbb0f79, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00121-texture
+    second: {fileID: 2800000, guid: 1b87f5a1d05eaf44ba33b6f8f2437a34, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00122-texture
+    second: {fileID: 2800000, guid: 288b86341fb52914db640f2fc63deb40, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00123-texture
+    second: {fileID: 2800000, guid: 2b3de5172d1fa0e458f1b9b34fd24c76, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00124-texture
+    second: {fileID: 2800000, guid: 1dca20769bcd0d9438795eced9824f6f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00126-texture
+    second: {fileID: 2800000, guid: c2feadda2b9e1e04ab90b066025cdaf6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00128-texture
+    second: {fileID: 2800000, guid: 0eff1e2cf5d7036418ea2115d8c0c763, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00130-texture
+    second: {fileID: 2800000, guid: afa9d1856bcb02d4e8704510c6e0f24a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: naka river-00132-texture
+    second: {fileID: 2800000, guid: 66fe391285959a94e912b94c9660e015, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 3
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
