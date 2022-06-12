@@ -7,6 +7,7 @@ public class Food : MonoBehaviour
 {
     public string IdName;
     [SerializeField] private bool toggleCookableOnCut;
+    
     private CookableFood cookable;
     private CuttableFood cuttable;
 
@@ -20,13 +21,14 @@ public class Food : MonoBehaviour
 
         conditionsForBowl = new bool[3];
         
-        //Si on n'a pas la possibilité de cuire l'ingrédient, valider le 2eme critère automatiquement
+        //Set corresponding bool tu true if the ingredient can't be cut/cooked
+        conditionsForBowl[0] = cuttable == null;
         conditionsForBowl[1] = cookable == null;
         
-        //Vérifier que les conditions sont réunies (2 composants existent + déclenchement activé)
+        //The toggle will only work if the ingredient can be both cut and cooked, and if it's activated itself
         toggleCookableOnCut = (cookable != null && cuttable != null && toggleCookableOnCut);
         
-        //S'il est bien activé, désactiver la possibilité de cuisiner
+        //Disable the possibility to cook
         if (toggleCookableOnCut)
             cookable.enabled = false;
 
@@ -34,16 +36,15 @@ public class Food : MonoBehaviour
 
     public void ActivateCookOnCut()
     {
+        //Enable the possibility to cook if it depends of the toggle
         if (toggleCookableOnCut)
             cookable.enabled = true;
     }
 
     public void UpdateReadyForBowl(int id)
     {
+        //Checks a condition and verify if the food is ready for the bowl (cut, cooked and not burned)
         conditionsForBowl[id] = true;
-        if (conditionsForBowl[0] && conditionsForBowl[1] && !conditionsForBowl[2])
-        {
-            readyForBowl = true;
-        }
+        readyForBowl = (conditionsForBowl[0] && conditionsForBowl[1] && !conditionsForBowl[2]);
     }
 }

@@ -3,16 +3,13 @@ using UnityEngine;
 [RequireComponent(typeof(Food))]
 public class CookableFood : MonoBehaviour
 {
-
-    [HideInInspector] public enum cookingDevices
-    {
-        grill,
-        pot
-    }
-    
-    public cookingDevices cookingDevice;
+    public CookingDevice.cookingDevices cookingDevice;
     public int cookingTime;
     
+    [SerializeField] private GameObject nonCookedModel;
+    [SerializeField] private GameObject cookedModel;
+    [SerializeField] private GameObject burnedModel;
+
     public bool isCooked;
     public bool isBurned;
     
@@ -20,19 +17,28 @@ public class CookableFood : MonoBehaviour
     public void Start()
     {
         foodData = GetComponent<Food>();
+        
+        cookedModel.SetActive(false);
+        burnedModel.SetActive(false);
     }
 
     public void Cook()
     {
         isCooked = true;
-        Debug.Log(name + ": je suis cuit");
         foodData.UpdateReadyForBowl(1);
+        
+        nonCookedModel.SetActive(false);
+        cookedModel.SetActive(true);
+        burnedModel.SetActive(false);
     }
     
     public void Burn()
     {
         isBurned = true;
-        Debug.Log(name + ": je crame !!!!");
         foodData.UpdateReadyForBowl(2);
+        
+        nonCookedModel.SetActive(false);
+        cookedModel.SetActive(false);
+        burnedModel.SetActive(true);
     }
 }

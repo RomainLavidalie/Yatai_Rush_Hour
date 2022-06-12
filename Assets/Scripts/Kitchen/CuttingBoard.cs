@@ -16,13 +16,11 @@ public class CuttingBoard : Interactable
     [SerializeField] private GameObject UI;
     [SerializeField] private GameObject UIFiller;
     
-    // Start is called before the first frame update
     void Start()
     {
         UI.SetActive(false);
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (ingredient != null)
@@ -36,7 +34,7 @@ public class CuttingBoard : Interactable
             {
                 currentCuttingAmount -= cuttingDecreaseRate * Time.deltaTime;
                 currentCuttingAmount = Mathf.Clamp(currentCuttingAmount, 0, cuttingMaxAmount);
-                //Debug.Log(currentCuttingAmount);
+
                 UI.SetActive(currentCuttingAmount != 0);
                 UIFiller.transform.localScale = new Vector3(currentCuttingAmount / cuttingMaxAmount,1, 1);
             }
@@ -45,11 +43,13 @@ public class CuttingBoard : Interactable
 
     public override void Interact()
     {
-        //Debug.Log("planche");
         if (ingredient != null)
         {
-            if (!ingredient.isCutted)
+            //Cut the ingredient on the board if it isn't
+            if (!ingredient.isCut)
                 currentCuttingAmount += cuttingAmountPerClick;
+            
+            //Pick it up if it is
             else
             {
                 PlayerController.instance.PickUpObject(ingredient.gameObject);
@@ -58,13 +58,14 @@ public class CuttingBoard : Interactable
                 ingredient = null;
             }
         }
+        
+        //If there's no ingredient, put one on the board
         else
         {
-            //Debug.Log("poser sur planche");
             try
             {
                ingredient = PlayerController.instance.itemInHand.GetComponent<CuttableFood>();
-               if (ingredient.isCutted)
+               if (ingredient.isCut)
                {
                    ingredient = null;
                    return;

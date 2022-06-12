@@ -1105,6 +1105,8 @@ MonoBehaviour:
   recipesList:
   - ingredients:
     - onion
+    - carrot
+    - chashu
 --- !u!4 &795079072
 Transform:
   m_ObjectHideFlags: 0
