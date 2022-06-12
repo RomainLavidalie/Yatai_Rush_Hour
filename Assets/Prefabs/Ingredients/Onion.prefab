@@ -172,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6856390960810040728}
   m_Layer: 0
-  m_Name: Cutted
+  m_Name: Cut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 2942579691072760959}
   m_Layer: 0
   m_Name: Onion
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -327,6 +327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IdName: onion
   toggleCookableOnCut: 1
+  readyForBowl: 0
 --- !u!114 &6856390961784718968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,9 +340,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84c1aee25bc33c47b19ee69279c0102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCutted: 0
-  nonCuttedModel: {fileID: 6856390962450010996}
-  cuttedModel: {fileID: 6856390960810040729}
+  nonCutModel: {fileID: 6856390962450010996}
+  cutModel: {fileID: 6856390960810040729}
+  isCut: 0
 --- !u!65 &231504989090792248
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -494,7 +495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6856390962450011003}
   m_Layer: 0
-  m_Name: NonCutted
+  m_Name: NonCut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -28,8 +28,8 @@ public class CookableFood : MonoBehaviour
         foodData.UpdateReadyForBowl(1);
         
         nonCookedModel.SetActive(false);
-        cookedModel.SetActive(true);
         burnedModel.SetActive(false);
+        cookedModel.SetActive(true);
     }
     
     public void Burn()

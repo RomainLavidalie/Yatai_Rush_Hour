@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1961858629810989197}
   m_Layer: 0
   m_Name: Chashu
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IdName: chashu
   toggleCookableOnCut: 0
+  readyForBowl: 0
 --- !u!114 &1586672270593172899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +145,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cookingDevice: 0
   cookingTime: 5
+  nonCookedModel: {fileID: 1958684395151507389}
+  cookedModel: {fileID: 1958684395151507389}
+  burnedModel: {fileID: 1958684395151507389}
   isCooked: 0
   isBurned: 0
 --- !u!65 &7538639857904901193

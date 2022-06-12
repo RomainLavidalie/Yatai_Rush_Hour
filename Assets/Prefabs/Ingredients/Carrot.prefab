@@ -172,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6856390960810040728}
   m_Layer: 0
-  m_Name: Cutted
+  m_Name: Cut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 8348199865953021825}
   m_Layer: 0
   m_Name: Carrot
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -409,6 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IdName: carrot
   toggleCookableOnCut: 1
+  readyForBowl: 0
 --- !u!114 &6856390961784718968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,9 +422,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84c1aee25bc33c47b19ee69279c0102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCutted: 0
-  nonCuttedModel: {fileID: 6856390962450010996}
-  cuttedModel: {fileID: 6856390960810040729}
+  nonCutModel: {fileID: 6856390962450010996}
+  cutModel: {fileID: 6856390960810040729}
+  isCut: 0
 --- !u!114 &1586672270593172899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,8 +437,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aac5f6c5e586574a99596ca5eab24aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cookingDevice: 1
+  cookingDevice: 0
   cookingTime: 10
+  nonCookedModel: {fileID: 6856390960810040729}
+  cookedModel: {fileID: 6856390960810040729}
+  burnedModel: {fileID: 6856390960810040729}
   isCooked: 0
   isBurned: 0
 --- !u!65 &231504989090792248
@@ -451,8 +455,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.1, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.32208824, y: 0.1, z: 0.13143063}
+  m_Center: {x: -0.030177116, y: 0, z: -0.0024619102}
 --- !u!54 &8348199865953021825
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -592,7 +596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6856390962450011003}
   m_Layer: 0
-  m_Name: NonCutted
+  m_Name: NonCut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

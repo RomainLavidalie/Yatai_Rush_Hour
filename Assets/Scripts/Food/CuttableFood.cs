@@ -13,8 +13,8 @@ public class CuttableFood : MonoBehaviour
     {
         foodData = GetComponent<Food>();
         
-        nonCutModel.SetActive(true);
         cutModel.SetActive(false);
+        nonCutModel.SetActive(true);
     }
     public void OnCutFood()
     {
