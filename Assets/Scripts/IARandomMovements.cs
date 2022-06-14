@@ -10,39 +10,45 @@ public class IARandomMovements : MonoBehaviour
 
     private Vector3 _aiTarget;
     
-    private float _currentDistanceToTarget;
-    private NavMeshAgent _agent;
+    private float _currentDistanceToTarget; 
+    
+    public NavMeshAgent agent;
 
     private void Awake()
     {
-        _agent = GetComponent<NavMeshAgent>();
-    }
-
-    private void Start()
-    {
-        RandomTargetAI();
-        _currentDistanceToTarget = _agent.remainingDistance;
+        agent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
+        _currentDistanceToTarget = agent.remainingDistance;
+        //Debug.Log(_currentDistanceToTarget);
         SetRandomPos();
-        Debug.Log($"IA Agent destination : {_aiTarget}");
     }
 
-    private void RandomTargetAI()
+    public void RandomTargetAI()
     {
         _aiTarget = Random.insideUnitSphere * _randomPositionRadius;
-        _agent.destination = _aiTarget;
+        _aiTarget.y = transform.position.y;    
+        agent.destination = _aiTarget;
     }
 
-    private void SetRandomPos()
+    public void SetRandomPos()
     {
         
         if (_currentDistanceToTarget <= 0)
         {
             RandomTargetAI();
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, _randomPositionRadius);
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, _aiTarget);
+        Gizmos.DrawWireCube(_aiTarget, new Vector3(0.1f,2,0.1f));
     }
 }
     
