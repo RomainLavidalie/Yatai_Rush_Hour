@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -10,7 +9,9 @@ public class IARandomMovements : MonoBehaviour
 
     private Vector3 _aiTarget;
     
-    private float _currentDistanceToTarget; 
+    private float _currentDistanceToTarget;
+
+    public bool _hasTarget;
     
     public NavMeshAgent agent;
 
@@ -22,8 +23,11 @@ public class IARandomMovements : MonoBehaviour
     private void Update()
     {
         _currentDistanceToTarget = agent.remainingDistance;
-        //Debug.Log(_currentDistanceToTarget);
-        SetRandomPos();
+
+        if (_aiTarget != Vector3.zero)
+        {
+            _hasTarget = true;
+        }
     }
 
     public void RandomTargetAI()
@@ -35,11 +39,17 @@ public class IARandomMovements : MonoBehaviour
 
     public void SetRandomPos()
     {
-        
         if (_currentDistanceToTarget <= 0)
         {
             RandomTargetAI();
         }
+    }
+
+    public void SetIATarget(Vector3 posToTarget)
+    {
+        _aiTarget = posToTarget;
+        _aiTarget.y = transform.position.y;
+        agent.destination = _aiTarget;
     }
 
     private void OnDrawGizmos()

@@ -1,4 +1,7 @@
 using System;
+using System.Collections;
+using System.Linq.Expressions;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,7 +11,8 @@ public enum IABehaviours
         WALKING,
         RUNNING,
         DANCING,
-        ORDERING
+        ORDERING,
+        SERVED
     }
 
 public class IAStateMachine : MonoBehaviour
@@ -21,7 +25,7 @@ public class IAStateMachine : MonoBehaviour
 
     private void Start()
     {
-        _currentIAState = IABehaviours.IDLE;
+        _currentIAState = IABehaviours.ORDERING;
         OnStateEnter(_currentIAState);
     }
 
@@ -51,6 +55,9 @@ public class IAStateMachine : MonoBehaviour
             case IABehaviours.ORDERING:
                 OnEnterOrdering();
                 break;
+            case IABehaviours.SERVED:
+                OnEnterServed();
+                break;
             default: 
                 Debug.LogError($"Trying to entering non-existent state : {state.ToString()}");
                 break;
@@ -76,11 +83,13 @@ public class IAStateMachine : MonoBehaviour
             case IABehaviours.ORDERING:
                 OnUpdateOrdering();
                 break;
+            case IABehaviours.SERVED:
+                OnUpdateServed();
+                break;
             default: 
                 Debug.LogError($"Trying to updating non-existent state : {state.ToString()}");
                 break;
         }
-        Debug.Log(_currentIAState.ToString());
     }
 
     private void OnStateExit(IABehaviours state)
@@ -102,6 +111,9 @@ public class IAStateMachine : MonoBehaviour
             case IABehaviours.ORDERING:
                 OnExitOrdering();
                 break;
+            case IABehaviours.SERVED:
+                OnExitServed();
+                break;
             default: 
                 Debug.LogError($"Trying to exit non-existent state : {state.ToString()}");
                 break;
@@ -121,8 +133,7 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnEnterIdle()
     {
-        _iaControler.RandomTargetAI();
-        _animControls.Play("Ninja Idle");
+        _animControls.SetTrigger("IDLE");
     }
 
     private void OnUpdateIdle()
@@ -156,7 +167,7 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnEnterRunning()
     {
-        _animControls.Play("Running");
+        _animControls.SetTrigger("RUN");
     }
 
     private void OnUpdateRunning()
@@ -171,7 +182,7 @@ public class IAStateMachine : MonoBehaviour
         //Running => Dancing
 
         //Running => Idle
-        if (_agent.velocity.magnitude == 0f)
+        if (_agent.velocity.magnitude == 0f && _iaControler._hasTarget == false)
         {
             TransitionToState(IABehaviours.IDLE);
         } 
@@ -214,7 +225,7 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnEnterWalking()
     {
-        _animControls.Play("Walking");
+        _animControls.SetTrigger("WALK");
     }
 
     private void OnUpdateWalking()
@@ -229,7 +240,7 @@ public class IAStateMachine : MonoBehaviour
         //Walking => Dancing
         
         //Walking => Idle
-        if (_agent.velocity.magnitude == 0f)
+        if (_agent.velocity.magnitude == 0f && _iaControler._hasTarget == false)
         {
             TransitionToState(IABehaviours.IDLE);
         } 
@@ -260,9 +271,50 @@ public class IAStateMachine : MonoBehaviour
         //Ordering => Walking
         
         //Ordering => Idle
+        
+        _iaControler.SetIATarget(_startPosition.position);
+
+        if (!transform.position.Compare(_startPosition.position, 1))
+        {
+            _animControls.Play("Walking");
+        }
+        
+        else
+        {
+            _animControls.SetBool("WALK", false);
+            _animControls.SetBool("ORDER", true);
+            
+            if(_animControls.GetCurrentAnimatorStateInfo(0).IsName("Talking") && _animControls.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+            {
+                _animControls.SetBool("ORDER", false);
+                TransitionToState(IABehaviours.IDLE);
+                
+            }
+        }
+        
+        
     }
 
     private void OnExitOrdering()
+    {
+        
+    }
+
+    #endregion
+
+    #region SERVED state
+
+    private void OnEnterServed()
+    {
+        
+    }
+
+    private void OnUpdateServed()
+    {
+        
+    }
+
+    private void OnExitServed()
     {
         
     }
@@ -277,6 +329,14 @@ public class IAStateMachine : MonoBehaviour
 
     [SerializeField] private float _runSpeedThreshold;
     [SerializeField] private Animator _animControls;
+    [SerializeField] private Transform _startPosition;
 
     #endregion
+
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireCube(_startPosition.position, new Vector3(.2f,2,.2f));
+    }
 }
