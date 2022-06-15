@@ -17,6 +17,12 @@ public enum IABehaviours
 
 public class IAStateMachine : MonoBehaviour
 {
+    #region Public
+    
+    public bool _orderArrived;
+
+    #endregion
+    
     private void Awake()
     {
         _iaControler = transform.GetComponent<IARandomMovements>();
@@ -25,6 +31,7 @@ public class IAStateMachine : MonoBehaviour
 
     private void Start()
     {
+        transform.position = _startPosition.position;
         _currentIAState = IABehaviours.ORDERING;
         OnStateEnter(_currentIAState);
     }
@@ -138,6 +145,10 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnUpdateIdle()
     {
+        if (!_iaControler._hasTarget)
+        {
+            _iaControler.SetRandomPos();
+        }
         //Idle => Running
         
         if (_agent.velocity.magnitude > 0f && _agent.velocity.magnitude >= _runSpeedThreshold)
@@ -172,26 +183,28 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnUpdateRunning()
     {
-        //Running => Idle
+        if (!_iaControler._hasTarget)
+        {
+            _iaControler.RandomTargetAI();
+        }
+        
+        //Running => Walking
         
         if (_agent.velocity.magnitude > 0f && _agent.velocity.magnitude < _runSpeedThreshold)
         {
             TransitionToState(IABehaviours.WALKING);
-        } 
+        }
         
-        //Running => Dancing
-
-        //Running => Idle
-        if (_agent.velocity.magnitude == 0f && _iaControler._hasTarget == false)
+        //Running => Served
+        if (_orderArrived)
         {
-            TransitionToState(IABehaviours.IDLE);
-        } 
-        //Running => Ordering
+            TransitionToState(IABehaviours.SERVED);
+        }
     }
 
     private void OnExitRunning()
     {
-        
+        _animControls.ResetTrigger("RUN");
     }
 
     #endregion
@@ -225,11 +238,26 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnEnterWalking()
     {
+        _animControls.SetBool("WALK", true);
+        
         _animControls.SetTrigger("WALK");
+        
     }
 
     private void OnUpdateWalking()
     {
+        //Teleport to respawn
+        if (transform.position.Compare(_endPosition.position, 1))
+        {
+            transform.position = _startPosition.position;
+            TransitionToState(IABehaviours.ORDERING);
+        }
+        
+        if (!_iaControler._hasTarget)
+        {
+            _iaControler.RandomTargetAI();
+        }
+        
         //Walking => Running
         
         if (_agent.velocity.magnitude > 0f && _agent.velocity.magnitude >= _runSpeedThreshold)
@@ -237,20 +265,16 @@ public class IAStateMachine : MonoBehaviour
             TransitionToState(IABehaviours.RUNNING);
         } 
         
-        //Walking => Dancing
-        
-        //Walking => Idle
-        if (_agent.velocity.magnitude == 0f && _iaControler._hasTarget == false)
+        //Walking => Served
+        if (_orderArrived)
         {
-            TransitionToState(IABehaviours.IDLE);
-        } 
-        
-        //Walking => Ordering
+            TransitionToState(IABehaviours.SERVED);
+        }
     }
 
     private void OnExitWalking()
     {
-        
+        _animControls.SetBool("WALK", false);
     }
 
     #endregion
@@ -272,9 +296,9 @@ public class IAStateMachine : MonoBehaviour
         
         //Ordering => Idle
         
-        _iaControler.SetIATarget(_startPosition.position);
+        _iaControler.SetIATarget(_orderPosition.position);
 
-        if (!transform.position.Compare(_startPosition.position, 1))
+        if (!transform.position.Compare(_orderPosition.position, 1))
         {
             _animControls.Play("Walking");
         }
@@ -284,15 +308,12 @@ public class IAStateMachine : MonoBehaviour
             _animControls.SetBool("WALK", false);
             _animControls.SetBool("ORDER", true);
             
-            if(_animControls.GetCurrentAnimatorStateInfo(0).IsName("Talking") && _animControls.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+            if(_animControls.GetCurrentAnimatorStateInfo(0).IsName("Talking") && _animControls.GetCurrentAnimatorStateInfo(0).normalizedTime >= .9f)
             {
                 _animControls.SetBool("ORDER", false);
-                TransitionToState(IABehaviours.IDLE);
-                
+                TransitionToState(IABehaviours.WALKING);
             }
         }
-        
-        
     }
 
     private void OnExitOrdering()
@@ -306,12 +327,19 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnEnterServed()
     {
-        
+        _iaControler.SetIATarget(transform.position);
+        _animControls.SetTrigger("WIN");
     }
 
     private void OnUpdateServed()
     {
-        
+        if(_animControls.GetCurrentAnimatorStateInfo(0).IsName("Win") && _animControls.GetCurrentAnimatorStateInfo(0).normalizedTime >= .9f)
+        {
+            _orderArrived = false;
+            _iaControler.SetIATarget(_endPosition.position);
+            _iaControler._hasTarget = true;
+            TransitionToState(IABehaviours.WALKING);
+        }
     }
 
     private void OnExitServed()
@@ -330,13 +358,19 @@ public class IAStateMachine : MonoBehaviour
     [SerializeField] private float _runSpeedThreshold;
     [SerializeField] private Animator _animControls;
     [SerializeField] private Transform _startPosition;
+    [SerializeField] private Transform _orderPosition;
+    [SerializeField] private Transform _endPosition;
 
     #endregion
 
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.cyan;
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(_orderPosition.position, new Vector3(.2f,2,.2f));
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(_endPosition.position, new Vector3(.2f,2,.2f));
+        Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(_startPosition.position, new Vector3(.2f,2,.2f));
     }
 }

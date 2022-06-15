@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -24,9 +25,9 @@ public class IARandomMovements : MonoBehaviour
     {
         _currentDistanceToTarget = agent.remainingDistance;
 
-        if (_aiTarget != Vector3.zero)
+        if (_aiTarget.Compare(transform.position, 1))
         {
-            _hasTarget = true;
+            _hasTarget = false;
         }
     }
 
@@ -34,7 +35,9 @@ public class IARandomMovements : MonoBehaviour
     {
         _aiTarget = Random.insideUnitSphere * _randomPositionRadius;
         _aiTarget.y = transform.position.y;    
+        
         agent.destination = _aiTarget;
+        _hasTarget = true;
     }
 
     public void SetRandomPos()
