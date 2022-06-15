@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: ce957a6d2d42c6948811fbd036625dda, type: 2}
---- !u!95 &4622568 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1585891512728158036, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
-  m_PrefabInstance: {fileID: 1665421473024626618}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &93990609
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,26 +492,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 34220353978764737, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
-      propertyPath: agent
-      value: 
-      objectReference: {fileID: 1665421473024626620}
-    - target: {fileID: 34220353978764737, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
-      propertyPath: _hasTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 34220353978764737, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
-      propertyPath: _randomPositionRadius
-      value: 14.58
-      objectReference: {fileID: 0}
     - target: {fileID: 777213635656053168, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: _endPosition
       value: 
       objectReference: {fileID: 888476182}
-    - target: {fileID: 777213635656053168, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
-      propertyPath: _animControls
-      value: 
-      objectReference: {fileID: 4622568}
     - target: {fileID: 777213635656053168, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: _orderPosition
       value: 
@@ -525,10 +504,6 @@ PrefabInstance:
       propertyPath: _startPosition
       value: 
       objectReference: {fileID: 93990610}
-    - target: {fileID: 777213635656053168, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
-      propertyPath: _runSpeedThreshold
-      value: 3.7
-      objectReference: {fileID: 0}
     - target: {fileID: 1024799986933797568, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -573,50 +548,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3425926702349551303, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
-      propertyPath: m_Height
-      value: 2.7024872
-      objectReference: {fileID: 0}
-    - target: {fileID: 3425926702349551303, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
-      propertyPath: m_Center.y
-      value: 1.3668734
-      objectReference: {fileID: 0}
-    - target: {fileID: 3425926702349551303, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Name
       value: IACharacter
       objectReference: {fileID: 0}
-    - target: {fileID: 5150816361521124266, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
-      propertyPath: m_Speed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5150816361521124266, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
-      propertyPath: m_Height
-      value: 2.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 5150816361521124266, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
-      propertyPath: m_BaseOffset
-      value: -0.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 5150816361521124266, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
-      propertyPath: m_Acceleration
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5150816361521124266, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 7876880980104341942, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
---- !u!195 &1665421473024626620 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 5150816361521124266, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
-  m_PrefabInstance: {fileID: 1665421473024626618}
-  m_PrefabAsset: {fileID: 0}

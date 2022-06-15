@@ -78,9 +78,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c10732cf83c76e4794cd590db80b3d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _randomPositionRadius: 1
   _hasTarget: 0
-  agent: {fileID: 0}
+  agent: {fileID: 5150816361521124266}
+  _randomPositionRadius: 14.58
 --- !u!114 &777213635656053168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,9 +93,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03053ea11f15904d8f08ae835aaa174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _runSpeedThreshold: 0
-  _animControls: {fileID: 0}
+  _orderArrived: 0
+  _runSpeedThreshold: 3.7
+  _animControls: {fileID: 1585891512728158036}
   _startPosition: {fileID: 0}
+  _orderPosition: {fileID: 0}
+  _endPosition: {fileID: 0}
 --- !u!195 &5150816361521124266
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -106,16 +109,16 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 6
+  m_Acceleration: 3
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 200
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
+  m_Height: 2.33
+  m_BaseOffset: -0.07
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!136 &3425926702349551303
@@ -126,12 +129,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3464070557923992277}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 2.7024872
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1.3668734, z: 0}
 --- !u!1001 &3518301903316990823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -181,6 +184,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a88f789a6f3dfb54b9784ed8fd548074, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2484921068739079471, guid: a88f789a6f3dfb54b9784ed8fd548074, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a88f789a6f3dfb54b9784ed8fd548074, type: 3}
