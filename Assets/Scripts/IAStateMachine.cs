@@ -1,10 +1,10 @@
-using System;
-using System.Collections;
-using System.Linq.Expressions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// States IA might go through
+/// </summary>
 public enum IABehaviours
     {
         IDLE,
@@ -19,30 +19,76 @@ public class IAStateMachine : MonoBehaviour
 {
     #region Public
     
+    /// <summary>
+    /// bool used to enter SERVED state and restart ia loop
+    /// </summary>
     public bool _orderArrived;
+
+    #endregion
+    
+    
+    #region Private
+
+    //references to ia agent component on this GO
+    private IABehaviours _currentIAState;
+    private NavMeshAgent _agent;
+    private IARandomMovements _iaControler;
+    
+    #endregion
+
+    #region Private exposed properties
+    
+    /// <summary>
+    /// threshold used to interpolate between walk and run animation
+    /// </summary>
+    [SerializeField] private float _runSpeedThreshold;
+    
+    [SerializeField] private Animator _animControls;
+    
+    /// <summary>
+    /// the position where we spawn each agent
+    /// </summary>
+    [SerializeField] private Transform _startPosition;
+    
+    /// <summary>
+    /// the position next to the yatai 
+    /// </summary>
+    [SerializeField] private Transform _orderPosition;
+    
+    /// <summary>
+    /// the last position the agent will go after we ended the order
+    /// </summary>
+    [SerializeField] private Transform _endPosition;
 
     #endregion
     
     private void Awake()
     {
+        //reference to the ia controler on this game object
         _iaControler = transform.GetComponent<IARandomMovements>();
+        
+        //store a reference to agent component of navMesh
         _agent = _iaControler.agent;
     }
 
     private void Start()
     {
         transform.position = _startPosition.position;
+        
+        //we set start state (in this case ORDERING)
         _currentIAState = IABehaviours.ORDERING;
         OnStateEnter(_currentIAState);
     }
 
     private void Update()
     {
+        //on the main thread we update each state
         OnStateUpdate(_currentIAState);
     }
 
     #region State Machine
-
+    
+    
     private void OnStateEnter(IABehaviours state)
     {
         switch (state)
@@ -50,21 +96,23 @@ public class IAStateMachine : MonoBehaviour
             case IABehaviours.IDLE:
                 OnEnterIdle();
                 break;
-            case IABehaviours.DANCING:
-                OnEnterDancing();
-                break;
+            
             case IABehaviours.RUNNING:
                 OnEnterRunning();
                 break;
+            
             case  IABehaviours.WALKING:
                 OnEnterWalking();
                 break;
+            
             case IABehaviours.ORDERING:
                 OnEnterOrdering();
                 break;
+            
             case IABehaviours.SERVED:
                 OnEnterServed();
                 break;
+            
             default: 
                 Debug.LogError($"Trying to entering non-existent state : {state.ToString()}");
                 break;
@@ -78,21 +126,23 @@ public class IAStateMachine : MonoBehaviour
             case IABehaviours.IDLE:
                 OnUpdateIdle();
                 break;
-            case IABehaviours.DANCING:
-                OnUpdateDancing();
-                break;
+            
             case IABehaviours.RUNNING:
                 OnUpdateRunning();
                 break;
+            
             case  IABehaviours.WALKING:
                 OnUpdateWalking();
                 break;
+            
             case IABehaviours.ORDERING:
                 OnUpdateOrdering();
                 break;
+            
             case IABehaviours.SERVED:
                 OnUpdateServed();
                 break;
+            
             default: 
                 Debug.LogError($"Trying to updating non-existent state : {state.ToString()}");
                 break;
@@ -106,27 +156,33 @@ public class IAStateMachine : MonoBehaviour
             case IABehaviours.IDLE:
                 OnExitIdle();
                 break;
-            case IABehaviours.DANCING:
-                OnExitDancing();
-                break;
+            
             case IABehaviours.RUNNING:
                 OnExitRunning();
                 break;
+            
             case  IABehaviours.WALKING:
                 OnExitWalking();
                 break;
+            
             case IABehaviours.ORDERING:
                 OnExitOrdering();
                 break;
+            
             case IABehaviours.SERVED:
                 OnExitServed();
                 break;
+            
             default: 
                 Debug.LogError($"Trying to exit non-existent state : {state.ToString()}");
                 break;
         }
     }
     
+    /// <summary>
+    /// core function of the state machine, call it to switch between states whenever you needs to
+    /// </summary>
+    /// <param name="newIAState">the state we want to enter</param>
     private void TransitionToState(IABehaviours newIAState)
     {
         OnStateExit(_currentIAState);
@@ -136,19 +192,24 @@ public class IAStateMachine : MonoBehaviour
 
     #endregion
 
+    //each state works the same way
     #region IDLE State
 
+    //works like a Start function for this state
     private void OnEnterIdle()
     {
         _animControls.SetTrigger("IDLE");
     }
 
+    //the main loop of the state where you want to check conditioons to enter other states
     private void OnUpdateIdle()
     {
+        //we check if the _iaControler has already a target position, if not we set a random position
         if (!_iaControler._hasTarget)
         {
             _iaControler.SetRandomPos();
         }
+        
         //Idle => Running
         
         if (_agent.velocity.magnitude > 0f && _agent.velocity.magnitude >= _runSpeedThreshold)
@@ -156,24 +217,22 @@ public class IAStateMachine : MonoBehaviour
             TransitionToState(IABehaviours.RUNNING);
         } 
         
-        //Idle => Dancing
         
         //Idle => Walking
         if (_agent.velocity.magnitude > 0f && _agent.velocity.magnitude < _runSpeedThreshold)
         {
             TransitionToState(IABehaviours.WALKING);
         } 
-        
-        //Idle => Ordering
     }
-
+    
+    //if you need to do some change just before switching state
     private void OnExitIdle()
     {
         
     }
 
     #endregion
-
+    
     #region RUN State
 
     private void OnEnterRunning()
@@ -189,7 +248,6 @@ public class IAStateMachine : MonoBehaviour
         }
         
         //Running => Walking
-        
         if (_agent.velocity.magnitude > 0f && _agent.velocity.magnitude < _runSpeedThreshold)
         {
             TransitionToState(IABehaviours.WALKING);
@@ -209,30 +267,30 @@ public class IAStateMachine : MonoBehaviour
 
     #endregion
 
-    #region DANCING State
-
-    private void OnEnterDancing()
-    {
-        
-    }
-
-    private void OnUpdateDancing()
-    {
-        //Dancing => Running
-        
-        //Dancing => Idle
-        
-        //Dancing => Walking
-        
-        //Dancing => Ordering
-    }
-
-    private void OnExitDancing()
-    {
-        
-    }
-
-    #endregion
+    // #region DANCING State
+    //
+    // private void OnEnterDancing()
+    // {
+    //     
+    // }
+    //
+    // private void OnUpdateDancing()
+    // {
+    //     //Dancing => Running
+    //     
+    //     //Dancing => Idle
+    //     
+    //     //Dancing => Walking
+    //     
+    //     //Dancing => Ordering
+    // }
+    //
+    // private void OnExitDancing()
+    // {
+    //     
+    // }
+    //
+    // #endregion
 
     #region WALKING State
 
@@ -246,7 +304,7 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnUpdateWalking()
     {
-        //Teleport to respawn
+        //Teleport to respawn when the agent hit _endPosition
         if (transform.position.Compare(_endPosition.position, 1))
         {
             transform.position = _startPosition.position;
@@ -259,7 +317,6 @@ public class IAStateMachine : MonoBehaviour
         }
         
         //Walking => Running
-        
         if (_agent.velocity.magnitude > 0f && _agent.velocity.magnitude >= _runSpeedThreshold)
         {
             TransitionToState(IABehaviours.RUNNING);
@@ -288,14 +345,7 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnUpdateOrdering()
     {
-        //Ordering => Running
-        
-        //Ordering => Dancing
-        
         //Ordering => Walking
-        
-        //Ordering => Idle
-        
         _iaControler.SetIATarget(_orderPosition.position);
 
         if (!transform.position.Compare(_orderPosition.position, 1))
@@ -333,6 +383,8 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnUpdateServed()
     {
+        //Served => Walking
+        //final step of the ia loop, we set the agent target position to _endPosition. _hasTarget is just here to ensure no random pos will change ia target
         if(_animControls.GetCurrentAnimatorStateInfo(0).IsName("Win") && _animControls.GetCurrentAnimatorStateInfo(0).normalizedTime >= .9f)
         {
             _orderArrived = false;
@@ -349,21 +401,7 @@ public class IAStateMachine : MonoBehaviour
 
     #endregion
     
-    #region Private
-
-    private IABehaviours _currentIAState;
-    private NavMeshAgent _agent;
-    private IARandomMovements _iaControler;
-
-    [SerializeField] private float _runSpeedThreshold;
-    [SerializeField] private Animator _animControls;
-    [SerializeField] private Transform _startPosition;
-    [SerializeField] private Transform _orderPosition;
-    [SerializeField] private Transform _endPosition;
-
-    #endregion
-
-
+    //Gizmos in editor to show where fixed target positions are
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
