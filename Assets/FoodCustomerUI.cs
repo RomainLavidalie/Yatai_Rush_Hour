@@ -27,6 +27,7 @@ public class FoodCustomerUI : MonoBehaviour
             {
                 Instantiate(Separator).transform.parent = RedBarOrderPanel.transform;
                 Instantiate(ColorizeOrder(RamenOrder,color)).transform.parent = RedBarOrderPanel.transform;
+                UnvisibleOrders.RemoveAt(0);
             }
             
         }
