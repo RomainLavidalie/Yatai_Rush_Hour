@@ -9,14 +9,11 @@ public class ClockDigital : MonoBehaviour
 {
     public GameObject EndGamePanel;
     public int EndGameHour = 24;
-    private TMP_Text textClock;
+    public TMP_Text textClock;
     private int hour;
     private float minute;
-
-    void Awake ()
-    { 
-        textClock = GetComponent<TMP_Text>(); 
-    }
+    public bool IsGameOver = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +48,8 @@ public class ClockDigital : MonoBehaviour
         {
             EndGamePanel.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0;
+            IsGameOver = true;
         }
     }
 }

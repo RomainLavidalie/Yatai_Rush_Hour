@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+/// <summary>
+/// Associate a slider with a mixer
+/// </summary>
 public class AudioSettings : MonoBehaviour
 {
     public AudioMixer mixer;
