@@ -130,6 +130,33 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AddRamen"",
+                    ""type"": ""Button"",
+                    ""id"": ""62d9212d-517e-42cb-a7b8-9f4a9c4d72a3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RemoveRamen"",
+                    ""type"": ""Button"",
+                    ""id"": ""a623d4a9-a711-479a-908d-f37f229310ec"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenCloseMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""fc846925-26e1-4eb7-96ac-de6b8d9fcb18"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -176,46 +203,11 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""UI"",
-            ""id"": ""bf19d9e3-955a-47a6-82b2-42d67c7196a0"",
-            ""actions"": [
-                {
-                    ""name"": ""AddRamen"",
-                    ""type"": ""Button"",
-                    ""id"": ""22c925ae-65da-476c-8e0b-53e5f3a6ea6a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 },
-                {
-                    ""name"": ""RemoveRamen"",
-                    ""type"": ""Button"",
-                    ""id"": ""949bff74-c7a1-42e4-a428-4d026497f95e"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""OpenCloseMenu"",
-                    ""type"": ""Button"",
-                    ""id"": ""5b7265b6-67cf-462f-81af-c82293c862fc"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""ebf56133-b0c0-49ba-8df6-693d86b8370a"",
-                    ""path"": ""<Keyboard>/#(+)"",
+                    ""id"": ""20af21af-72b2-4be2-95b8-88aad31b6c47"",
+                    ""path"": ""<Keyboard>/numpadPlus"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -225,8 +217,8 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""305811cf-a340-409c-89cd-a7b104473def"",
-                    ""path"": ""<Keyboard>/#(-)"",
+                    ""id"": ""f6330583-6cc7-4b72-bd7c-a912367d5932"",
+                    ""path"": ""<Keyboard>/numpadMinus"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -236,7 +228,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""09392b46-08d4-495d-8855-3f9475371f3d"",
+                    ""id"": ""e25ac501-ca46-408b-b805-d00db361b6dd"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -278,11 +270,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_Cooking_LookY = m_Cooking.FindAction("LookY", throwIfNotFound: true);
         m_Cooking_Interact = m_Cooking.FindAction("Interact", throwIfNotFound: true);
         m_Cooking_Shoot = m_Cooking.FindAction("Shoot", throwIfNotFound: true);
-        // UI
-        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
-        m_UI_AddRamen = m_UI.FindAction("AddRamen", throwIfNotFound: true);
-        m_UI_RemoveRamen = m_UI.FindAction("RemoveRamen", throwIfNotFound: true);
-        m_UI_OpenCloseMenu = m_UI.FindAction("OpenCloseMenu", throwIfNotFound: true);
+        m_Cooking_AddRamen = m_Cooking.FindAction("AddRamen", throwIfNotFound: true);
+        m_Cooking_RemoveRamen = m_Cooking.FindAction("RemoveRamen", throwIfNotFound: true);
+        m_Cooking_OpenCloseMenu = m_Cooking.FindAction("OpenCloseMenu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -395,6 +385,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Cooking_LookY;
     private readonly InputAction m_Cooking_Interact;
     private readonly InputAction m_Cooking_Shoot;
+    private readonly InputAction m_Cooking_AddRamen;
+    private readonly InputAction m_Cooking_RemoveRamen;
+    private readonly InputAction m_Cooking_OpenCloseMenu;
     public struct CookingActions
     {
         private @Controls m_Wrapper;
@@ -403,6 +396,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         public InputAction @LookY => m_Wrapper.m_Cooking_LookY;
         public InputAction @Interact => m_Wrapper.m_Cooking_Interact;
         public InputAction @Shoot => m_Wrapper.m_Cooking_Shoot;
+        public InputAction @AddRamen => m_Wrapper.m_Cooking_AddRamen;
+        public InputAction @RemoveRamen => m_Wrapper.m_Cooking_RemoveRamen;
+        public InputAction @OpenCloseMenu => m_Wrapper.m_Cooking_OpenCloseMenu;
         public InputActionMap Get() { return m_Wrapper.m_Cooking; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -424,6 +420,15 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Shoot.started -= m_Wrapper.m_CookingActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_CookingActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_CookingActionsCallbackInterface.OnShoot;
+                @AddRamen.started -= m_Wrapper.m_CookingActionsCallbackInterface.OnAddRamen;
+                @AddRamen.performed -= m_Wrapper.m_CookingActionsCallbackInterface.OnAddRamen;
+                @AddRamen.canceled -= m_Wrapper.m_CookingActionsCallbackInterface.OnAddRamen;
+                @RemoveRamen.started -= m_Wrapper.m_CookingActionsCallbackInterface.OnRemoveRamen;
+                @RemoveRamen.performed -= m_Wrapper.m_CookingActionsCallbackInterface.OnRemoveRamen;
+                @RemoveRamen.canceled -= m_Wrapper.m_CookingActionsCallbackInterface.OnRemoveRamen;
+                @OpenCloseMenu.started -= m_Wrapper.m_CookingActionsCallbackInterface.OnOpenCloseMenu;
+                @OpenCloseMenu.performed -= m_Wrapper.m_CookingActionsCallbackInterface.OnOpenCloseMenu;
+                @OpenCloseMenu.canceled -= m_Wrapper.m_CookingActionsCallbackInterface.OnOpenCloseMenu;
             }
             m_Wrapper.m_CookingActionsCallbackInterface = instance;
             if (instance != null)
@@ -440,46 +445,6 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
-            }
-        }
-    }
-    public CookingActions @Cooking => new CookingActions(this);
-
-    // UI
-    private readonly InputActionMap m_UI;
-    private IUIActions m_UIActionsCallbackInterface;
-    private readonly InputAction m_UI_AddRamen;
-    private readonly InputAction m_UI_RemoveRamen;
-    private readonly InputAction m_UI_OpenCloseMenu;
-    public struct UIActions
-    {
-        private @Controls m_Wrapper;
-        public UIActions(@Controls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @AddRamen => m_Wrapper.m_UI_AddRamen;
-        public InputAction @RemoveRamen => m_Wrapper.m_UI_RemoveRamen;
-        public InputAction @OpenCloseMenu => m_Wrapper.m_UI_OpenCloseMenu;
-        public InputActionMap Get() { return m_Wrapper.m_UI; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
-        public void SetCallbacks(IUIActions instance)
-        {
-            if (m_Wrapper.m_UIActionsCallbackInterface != null)
-            {
-                @AddRamen.started -= m_Wrapper.m_UIActionsCallbackInterface.OnAddRamen;
-                @AddRamen.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnAddRamen;
-                @AddRamen.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnAddRamen;
-                @RemoveRamen.started -= m_Wrapper.m_UIActionsCallbackInterface.OnRemoveRamen;
-                @RemoveRamen.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnRemoveRamen;
-                @RemoveRamen.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnRemoveRamen;
-                @OpenCloseMenu.started -= m_Wrapper.m_UIActionsCallbackInterface.OnOpenCloseMenu;
-                @OpenCloseMenu.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnOpenCloseMenu;
-                @OpenCloseMenu.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnOpenCloseMenu;
-            }
-            m_Wrapper.m_UIActionsCallbackInterface = instance;
-            if (instance != null)
-            {
                 @AddRamen.started += instance.OnAddRamen;
                 @AddRamen.performed += instance.OnAddRamen;
                 @AddRamen.canceled += instance.OnAddRamen;
@@ -492,7 +457,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
             }
         }
     }
-    public UIActions @UI => new UIActions(this);
+    public CookingActions @Cooking => new CookingActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -514,9 +479,6 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         void OnLookY(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
-    }
-    public interface IUIActions
-    {
         void OnAddRamen(InputAction.CallbackContext context);
         void OnRemoveRamen(InputAction.CallbackContext context);
         void OnOpenCloseMenu(InputAction.CallbackContext context);

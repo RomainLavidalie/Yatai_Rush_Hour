@@ -9,26 +9,34 @@ public class MusicListManager : MonoBehaviour
     public List<AudioClip> musics;
 
     private int musicIndex = 0;
+
+    public GameObject PauseMenu;
     // Start is called before the first frame update
     void Start()
     {
         source.clip = musics[musicIndex];
         source.Play();
         source.loop = false;
+        musicIndex = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!source.isPlaying)
+        if (!source.isPlaying && !PauseMenu.activeSelf)
         {
             musicIndex++;
             if (musicIndex > musics.Count)
             {
-                musicIndex = 0;
+                //musicIndex = 0;
+                source.Pause();
             }
-            source.clip = musics[musicIndex];
-            source.Play();
+            else
+            {
+                source.clip = musics[musicIndex];
+                source.Play();
+            }
+            
         }
     }
 }

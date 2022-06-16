@@ -118,13 +118,17 @@ public class PlayerController : MonoBehaviour
     {
         if (PauseMenu.activeSelf && !Clock.IsGameOver)
         {
+            Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
             PauseMenu.SetActive(false);
+            this.GetComponent<AudioSource>().Play();
         }
         else
         {
+            Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
             PauseMenu.SetActive(true);
+            this.GetComponent<AudioSource>().Pause();
         }
     }
     

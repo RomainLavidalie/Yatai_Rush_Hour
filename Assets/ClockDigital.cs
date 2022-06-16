@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class ClockDigital : MonoBehaviour
 {
     public GameObject EndGamePanel;
+    public int StartHour = 18;
+    public int StartMinutes = 30;
     public int EndGameHour = 24;
     public TMP_Text textClock;
     private int hour;
@@ -18,8 +20,8 @@ public class ClockDigital : MonoBehaviour
     void Start()
     {
         EndGamePanel.SetActive(false);
-        hour = 19;
-        minute = 0;
+        hour = StartHour;
+        minute = StartMinutes;
     }
 
     // Update is called once per frame

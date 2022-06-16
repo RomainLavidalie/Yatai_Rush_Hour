@@ -39,7 +39,7 @@ public class FoodCustomerUI : MonoBehaviour
         {
             UnvisibleOrders.Add(ColorizeOrder(RamenOrder,color));
         }
-        if (RedBarOrderPanel.transform.childCount>0 && RedBarOrderPanel.transform.childCount % 2 != 0)
+        else if (RedBarOrderPanel.transform.childCount>0 && RedBarOrderPanel.transform.childCount % 2 != 0)
         {
             Instantiate(Separator).transform.parent = RedBarOrderPanel.transform;
             Instantiate(ColorizeOrder(RamenOrder,color)).transform.parent = RedBarOrderPanel.transform;
@@ -54,9 +54,14 @@ public class FoodCustomerUI : MonoBehaviour
     {
         if (RedBarOrderPanel.transform.childCount > 1)
         {
-            Destroy(RedBarOrderPanel.transform.GetChild(0));
+            Destroy(RedBarOrderPanel.transform.GetChild(0).gameObject);
+            Destroy(RedBarOrderPanel.transform.GetChild(1).gameObject);
         }
-        Destroy(RedBarOrderPanel.transform.GetChild(0));
+        else
+        {
+            Destroy(RedBarOrderPanel.transform.GetChild(0).gameObject);
+        }
+        
     }
 
     public GameObject ColorizeOrder(GameObject obj, Color clr)
