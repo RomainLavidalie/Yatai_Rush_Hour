@@ -15,6 +15,8 @@ public class ClockDigital : MonoBehaviour
     private int hour;
     private float minute;
     public bool IsGameOver = false;
+
+    public MusicListManager musicListManager;
     
     // Start is called before the first frame update
     void Start()
@@ -52,6 +54,7 @@ public class ClockDigital : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
             IsGameOver = true;
+            musicListManager.isGameOver = true;
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MusicListManager : MonoBehaviour
 {
@@ -10,7 +11,12 @@ public class MusicListManager : MonoBehaviour
 
     private int musicIndex = 0;
 
+    public bool isGameOver = false;
+    public AudioClip endGameMusic;
+
     public GameObject PauseMenu;
+
+    private bool checkOnce = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +29,7 @@ public class MusicListManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!source.isPlaying && !PauseMenu.activeSelf)
+        if (!source.isPlaying && !PauseMenu.activeSelf && !isGameOver)
         {
             musicIndex++;
             if (musicIndex > musics.Count)
@@ -37,6 +43,14 @@ public class MusicListManager : MonoBehaviour
                 source.Play();
             }
             
+        }
+
+        if (isGameOver && checkOnce)
+        {
+            source.Stop();
+            source.clip = null;
+            source.PlayOneShot(endGameMusic);
+            checkOnce = false;
         }
     }
 }

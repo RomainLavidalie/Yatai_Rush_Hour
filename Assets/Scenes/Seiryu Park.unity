@@ -328,6 +328,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6332262990583525808, guid: 9f01e7aa7cf9945478120771dc72fcc6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f01e7aa7cf9945478120771dc72fcc6, type: 3}
 --- !u!1001 &58190451
@@ -10188,6 +10192,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 78e6e30d3fb5d3544ad5e95da03ab3ce, type: 3}
   - {fileID: 8300000, guid: 5dfdc49b4389d344bbeb2e4bece0e33b, type: 3}
   - {fileID: 8300000, guid: 5a519d14fdabfc543a4635249833cf40, type: 3}
+  isGameOver: 0
+  endGameMusic: {fileID: 8300000, guid: 5b9390bfebd836c44b3dfde650d2bf8a, type: 3}
   PauseMenu: {fileID: 1218707631}
 --- !u!82 &1767248874
 AudioSource:
@@ -11071,6 +11077,7 @@ MonoBehaviour:
   EndGameHour: 24
   textClock: {fileID: 1272630596}
   IsGameOver: 0
+  musicListManager: {fileID: 1767248873}
 --- !u!114 &2000177071
 MonoBehaviour:
   m_ObjectHideFlags: 0
