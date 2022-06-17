@@ -6,12 +6,12 @@ using UnityEngine;
 public class ScoreText : MonoBehaviour
 {
     public int score;
-    private TMP_Text textScore;
+    public TMP_Text textScore;
     
     // Start is called before the first frame update
     void Start()
     {
-        textScore = GetComponent<TMP_Text>();
+        
     }
 
     // Update is called once per frame

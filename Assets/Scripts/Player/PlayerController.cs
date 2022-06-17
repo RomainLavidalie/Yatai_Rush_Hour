@@ -19,10 +19,15 @@ public class PlayerController : MonoBehaviour
     public float sensitivityY = 1f;
     [SerializeField] private float XAxisClamp = 85f;
     [SerializeField] private float YAxisClamp = 85f;
-    
-    
+
+
     //Gestion des lancers
     public float force;
+    
+    //Gestion des input de l'UI
+    public FoodCustomerUI _foodCustomerUI;
+    public GameObject PauseMenu;
+    public ClockDigital Clock;
 
     private void Awake()
     {
@@ -98,6 +103,35 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    public void OnAddRamen()
+    {
+        _foodCustomerUI.AddRamen();
+    }
+
+    public void OnRemoveRamen()
+    {
+        _foodCustomerUI.RemoveRamen();
+    }
+
+    public void OnOpenCloseMenu()
+    {
+        if (PauseMenu.activeSelf && !Clock.IsGameOver)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Time.timeScale = 1;
+            PauseMenu.SetActive(false);
+            this.GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0;
+            PauseMenu.SetActive(true);
+            this.GetComponent<AudioSource>().Pause();
+        }
+    }
+    
     public void PickUpObject(GameObject obj)
     {
         if (itemInHand == null)
@@ -118,7 +152,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+
     #endregion
 
     #region THROW

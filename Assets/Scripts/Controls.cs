@@ -130,6 +130,33 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AddRamen"",
+                    ""type"": ""Button"",
+                    ""id"": ""62d9212d-517e-42cb-a7b8-9f4a9c4d72a3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RemoveRamen"",
+                    ""type"": ""Button"",
+                    ""id"": ""a623d4a9-a711-479a-908d-f37f229310ec"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenCloseMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""fc846925-26e1-4eb7-96ac-de6b8d9fcb18"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -176,6 +203,39 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""20af21af-72b2-4be2-95b8-88aad31b6c47"",
+                    ""path"": ""<Keyboard>/numpadPlus"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AddRamen"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f6330583-6cc7-4b72-bd7c-a912367d5932"",
+                    ""path"": ""<Keyboard>/numpadMinus"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RemoveRamen"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e25ac501-ca46-408b-b805-d00db361b6dd"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenCloseMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -210,6 +270,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_Cooking_LookY = m_Cooking.FindAction("LookY", throwIfNotFound: true);
         m_Cooking_Interact = m_Cooking.FindAction("Interact", throwIfNotFound: true);
         m_Cooking_Shoot = m_Cooking.FindAction("Shoot", throwIfNotFound: true);
+        m_Cooking_AddRamen = m_Cooking.FindAction("AddRamen", throwIfNotFound: true);
+        m_Cooking_RemoveRamen = m_Cooking.FindAction("RemoveRamen", throwIfNotFound: true);
+        m_Cooking_OpenCloseMenu = m_Cooking.FindAction("OpenCloseMenu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -322,6 +385,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Cooking_LookY;
     private readonly InputAction m_Cooking_Interact;
     private readonly InputAction m_Cooking_Shoot;
+    private readonly InputAction m_Cooking_AddRamen;
+    private readonly InputAction m_Cooking_RemoveRamen;
+    private readonly InputAction m_Cooking_OpenCloseMenu;
     public struct CookingActions
     {
         private @Controls m_Wrapper;
@@ -330,6 +396,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         public InputAction @LookY => m_Wrapper.m_Cooking_LookY;
         public InputAction @Interact => m_Wrapper.m_Cooking_Interact;
         public InputAction @Shoot => m_Wrapper.m_Cooking_Shoot;
+        public InputAction @AddRamen => m_Wrapper.m_Cooking_AddRamen;
+        public InputAction @RemoveRamen => m_Wrapper.m_Cooking_RemoveRamen;
+        public InputAction @OpenCloseMenu => m_Wrapper.m_Cooking_OpenCloseMenu;
         public InputActionMap Get() { return m_Wrapper.m_Cooking; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -351,6 +420,15 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Shoot.started -= m_Wrapper.m_CookingActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_CookingActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_CookingActionsCallbackInterface.OnShoot;
+                @AddRamen.started -= m_Wrapper.m_CookingActionsCallbackInterface.OnAddRamen;
+                @AddRamen.performed -= m_Wrapper.m_CookingActionsCallbackInterface.OnAddRamen;
+                @AddRamen.canceled -= m_Wrapper.m_CookingActionsCallbackInterface.OnAddRamen;
+                @RemoveRamen.started -= m_Wrapper.m_CookingActionsCallbackInterface.OnRemoveRamen;
+                @RemoveRamen.performed -= m_Wrapper.m_CookingActionsCallbackInterface.OnRemoveRamen;
+                @RemoveRamen.canceled -= m_Wrapper.m_CookingActionsCallbackInterface.OnRemoveRamen;
+                @OpenCloseMenu.started -= m_Wrapper.m_CookingActionsCallbackInterface.OnOpenCloseMenu;
+                @OpenCloseMenu.performed -= m_Wrapper.m_CookingActionsCallbackInterface.OnOpenCloseMenu;
+                @OpenCloseMenu.canceled -= m_Wrapper.m_CookingActionsCallbackInterface.OnOpenCloseMenu;
             }
             m_Wrapper.m_CookingActionsCallbackInterface = instance;
             if (instance != null)
@@ -367,6 +445,15 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
+                @AddRamen.started += instance.OnAddRamen;
+                @AddRamen.performed += instance.OnAddRamen;
+                @AddRamen.canceled += instance.OnAddRamen;
+                @RemoveRamen.started += instance.OnRemoveRamen;
+                @RemoveRamen.performed += instance.OnRemoveRamen;
+                @RemoveRamen.canceled += instance.OnRemoveRamen;
+                @OpenCloseMenu.started += instance.OnOpenCloseMenu;
+                @OpenCloseMenu.performed += instance.OnOpenCloseMenu;
+                @OpenCloseMenu.canceled += instance.OnOpenCloseMenu;
             }
         }
     }
@@ -392,5 +479,8 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         void OnLookY(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnAddRamen(InputAction.CallbackContext context);
+        void OnRemoveRamen(InputAction.CallbackContext context);
+        void OnOpenCloseMenu(InputAction.CallbackContext context);
     }
 }
