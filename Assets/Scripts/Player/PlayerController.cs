@@ -9,21 +9,25 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
     
    
+    [Header("Hand")]
     //Objets à gérer via le controlleur
     [SerializeField] private Transform playerCamera;
     [SerializeField] private Transform hand;
     public GameObject itemInHand;
     
+    //Gestion des lancers
+    public float force;
+    [SerializeField] private AudioClip throwSFX;
+    [SerializeField] private AudioSource source;
+    
+    [Header("Camera")]
     //Gestion de la mobilité de la caméra
     public float sensitivityX = 1f;
     public float sensitivityY = 1f;
     [SerializeField] private float XAxisClamp = 85f;
     [SerializeField] private float YAxisClamp = 85f;
-
-
-    //Gestion des lancers
-    public float force;
     
+    [Header("UIManagement")]
     //Gestion des input de l'UI
     public FoodCustomerUI _foodCustomerUI;
     public GameObject PauseMenu;
@@ -83,7 +87,7 @@ public class PlayerController : MonoBehaviour
     {
 
         RaycastHit hit;
-        if (Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, 3f))
+        if (Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, 5f))
         {
             GameObject interactObj = hit.collider.gameObject;
             if (interactObj.CompareTag("Pickup"))
@@ -176,6 +180,7 @@ public class PlayerController : MonoBehaviour
             {
                 Drop();
                 itemInHand.GetComponent<Rigidbody>().AddForce(playerCamera.forward * force, ForceMode.Impulse);
+                source.PlayOneShot(throwSFX);
                 itemInHand = null;
             }
             catch{}

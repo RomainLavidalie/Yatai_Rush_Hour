@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Random = System.Random;
 
 public class CuttingBoard : Interactable
 {
@@ -15,10 +16,15 @@ public class CuttingBoard : Interactable
     [Header("Cutting UI")]
     [SerializeField] private GameObject UI;
     [SerializeField] private GameObject UIFiller;
+
+    [SerializeField] private AudioClip[] sounds;
+    [SerializeField] private AudioSource source;
+    private Random random;
     
     void Start()
     {
         UI.SetActive(false);
+        random = new Random();
     }
     
     void Update()
@@ -47,7 +53,12 @@ public class CuttingBoard : Interactable
         {
             //Cut the ingredient on the board if it isn't
             if (!ingredient.isCut)
+            {
                 currentCuttingAmount += cuttingAmountPerClick;
+                source.PlayOneShot(sounds[random.Next(sounds.Length)]);
+            }
+
+            
             
             //Pick it up if it is
             else

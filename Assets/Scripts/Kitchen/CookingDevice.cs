@@ -25,11 +25,24 @@ public class CookingDevice : Interactable
     [SerializeField] private GameObject UICookFiller;
     [SerializeField] private GameObject UIBurnFiller;
     
+    [SerializeField] private AudioClip cooking;
+    [SerializeField] private AudioClip burning;
+    [SerializeField] private AudioClip alarm;
+    [SerializeField] private AudioSource source;
+
+
+    void Start()
+    {
+        source.playOnAwake = false;
+        source.loop = true;
+        source.Stop();
+    }
     void Update()
     {
         
         if (ingredient != null && !ingredient.isBurned && ingredient.cookingDevice == deviceType)
         {
+            
             cookingAmount += increaseRate * Time.deltaTime;
             
             //If we go beyond the cooking time, the ingredient is cooked
@@ -50,6 +63,18 @@ public class CookingDevice : Interactable
             float burnFillerScale = Mathf.Clamp((cookingAmount - ingredient.cookingTime)/burningDelay, 0, 1);
             UIBurnFiller.transform.localScale = new Vector3(burnFillerScale,1, 1);
 
+            if (!ingredient.isCooked && source.clip != cooking)
+            {
+                source.clip = cooking;
+                source.Play();
+            }
+            if (ingredient.isCooked && source.clip != burning)
+            {
+                source.PlayOneShot(alarm);
+                source.clip = burning;
+                source.Play();
+            }
+
         }
         
         //resets all data
@@ -57,6 +82,8 @@ public class CookingDevice : Interactable
         {
             UI.SetActive(false);
             cookingAmount = 0;
+            source.Stop();
+            source.clip = null;
         }
         
     }
@@ -71,6 +98,8 @@ public class CookingDevice : Interactable
             ingredient.gameObject.tag = "Pickup";
             cookingAmount = 0;
             ingredient = null;
+            source.Stop();
+            source.clip = null;
         }
         
         
