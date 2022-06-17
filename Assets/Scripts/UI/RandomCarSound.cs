@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manage the sound of the passing car with a random playtime (to put on an object)
+/// </summary>
 public class RandomCarSound : MonoBehaviour
 {
     private AudioSource source;

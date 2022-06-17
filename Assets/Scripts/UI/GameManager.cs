@@ -7,24 +7,18 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /// <summary>
+    /// Reload the scene
+    /// </summary>
     public void OnClickRetry()
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }
 
+    /// <summary>
+    /// Quit the game
+    /// </summary>
     public void OnClickQuit()
     {
         Application.Quit();

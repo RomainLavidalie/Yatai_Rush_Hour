@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
+/// <summary>
+/// Manage the music playlist and the sound of the end of the game.
+/// </summary>
 public class MusicListManager : MonoBehaviour
 {
     public AudioSource source;

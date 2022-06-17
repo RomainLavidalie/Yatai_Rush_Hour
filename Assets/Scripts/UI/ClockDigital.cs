@@ -5,6 +5,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Make the clock functioning and manage the End of the Game.
+/// </summary>
 public class ClockDigital : MonoBehaviour
 {
     public GameObject EndGamePanel;
@@ -43,10 +46,18 @@ public class ClockDigital : MonoBehaviour
         EndGame();
     }
     
+    /// <summary>
+    /// Make sure there is an 0 before the number fi there is only one.
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
     string LeadingZero (int n){
         return n.ToString().PadLeft(2, '0');
     }
 
+    /// <summary>
+    /// Stop the game and activate the endGame UI.
+    /// </summary>
     private void EndGame()
     {
         if (hour == EndGameHour)

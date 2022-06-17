@@ -4,6 +4,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+/// <summary>
+/// Manage the texts that anouce every phases of the game.
+/// </summary>
 public class PhaseTextManager : MonoBehaviour
 {
     public TMP_Text hours;
@@ -20,6 +23,7 @@ public class PhaseTextManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //show the first phase 1sec before the start of the game
         ingredientPhase = clockScript.StartHour + ":" + (clockScript.StartMinutes + 1);
     }
 
@@ -29,6 +33,9 @@ public class PhaseTextManager : MonoBehaviour
         PhaseTimeCheck();
     }
 
+    /// <summary>
+    /// Check if and wich phase should be activated
+    /// </summary>
     public void PhaseTimeCheck()
     {
         if (hours.text == ingredientPhase)
@@ -54,11 +61,18 @@ public class PhaseTextManager : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Activate the text
+    /// </summary>
+    /// <param name="childIndex"></param>
     public void ActivateText(int childIndex)
     {
         phaseTextParent.transform.GetChild(childIndex).gameObject.SetActive(true);
     }
 
+    /// <summary>
+    /// Deactivate all texts (to be sure)
+    /// </summary>
     public void DeactivateText()
     {
         foreach (Transform child in phaseTextParent.transform)

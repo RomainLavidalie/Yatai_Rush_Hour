@@ -11,36 +11,34 @@ public class MenuManager : MonoBehaviour
     public string scenePath;
 
     public GameObject settingsPanel;
-    
-    
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-
+    /// <summary>
+    /// Load the Game scene
+    /// </summary>
     public void OnClickPlay()
     {
         SceneManager.LoadScene(scenePath);
     }
 
+    /// <summary>
+    /// Open the settings panel
+    /// </summary>
     public void OnClickSettings()
     {
         settingsPanel.gameObject.SetActive(true);
     }
     
+    /// <summary>
+    /// Close the settings panel
+    /// </summary>
     public void OnClickSettingsOff()
     {
         settingsPanel.gameObject.SetActive(false);
     }
 
+    /// <summary>
+    /// Quit the game
+    /// </summary>
     public void OnClickQuit()
     {
         Application.Quit();

@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Manage the display of the score (not finished)
+/// </summary>
 public class ScoreText : MonoBehaviour
 {
     public int score;
     public TMP_Text textScore;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

@@ -5,18 +5,15 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+/// <summary>
+/// Manage the Main menu buttons selection with the mouse.
+/// </summary>
 public class SelectedMenu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public bool isSelected;
 
     public Sprite OrangeText;
     public Sprite RedText;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

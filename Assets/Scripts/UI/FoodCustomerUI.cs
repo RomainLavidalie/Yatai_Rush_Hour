@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Manage the RedBar of Food Orders
+/// </summary>
 public class FoodCustomerUI : MonoBehaviour
 {
     public GameObject RedBarOrderPanel;
@@ -33,6 +36,9 @@ public class FoodCustomerUI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Add a ramen order in the bar (or the list if there is no place)
+    /// </summary>
     public void AddRamen()
     {
         if (RedBarOrderPanel.transform.childCount > 4)
@@ -50,6 +56,9 @@ public class FoodCustomerUI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Remove the first order from the bar
+    /// </summary>
     public void RemoveRamen()
     {
         if (RedBarOrderPanel.transform.childCount > 1)
@@ -64,6 +73,12 @@ public class FoodCustomerUI : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Colorize the customer color indicator in the order gameObject.
+    /// </summary>
+    /// <param name="obj"></param>
+    /// <param name="clr"></param>
+    /// <returns></returns>
     public GameObject ColorizeOrder(GameObject obj, Color clr)
     {
         obj.GetComponentInChildren<Image>().color = color;
