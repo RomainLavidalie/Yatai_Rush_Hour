@@ -12,6 +12,7 @@ public class ClockDigital : MonoBehaviour
     public int StartMinutes = 30;
     public int EndGameHour = 24;
     public TMP_Text textClock;
+    public TMP_Text pauseText;
     private int hour;
     private float minute;
     public bool IsGameOver = false;
@@ -55,6 +56,7 @@ public class ClockDigital : MonoBehaviour
             Time.timeScale = 0;
             IsGameOver = true;
             musicListManager.isGameOver = true;
+            pauseText.text = "Fin de partie";
         }
     }
 }
