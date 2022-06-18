@@ -17,7 +17,7 @@ public class MenuManager : MonoBehaviour
     /// </summary>
     public void OnClickPlay()
     {
-        SceneManager.LoadScene(scenePath);
+        Initiate.Fade(scenePath, Color.black, 5f);
     }
 
     /// <summary>
