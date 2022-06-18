@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     public FoodCustomerUI _foodCustomerUI;
     public GameObject PauseMenu;
     public ClockDigital Clock;
+    public AudioSource musicSource;
 
     private void Awake()
     {
@@ -125,14 +126,14 @@ public class PlayerController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
             PauseMenu.SetActive(false);
-            this.GetComponent<AudioSource>().Play();
+            musicSource.Play();
         }
         else
         {
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
             PauseMenu.SetActive(true);
-            this.GetComponent<AudioSource>().Pause();
+            musicSource.Pause();
         }
     }
     
