@@ -361,6 +361,7 @@ public class IAStateMachine : MonoBehaviour
             if(_animControls.GetCurrentAnimatorStateInfo(0).IsName("Talking") && _animControls.GetCurrentAnimatorStateInfo(0).normalizedTime >= .9f)
             {
                 _animControls.SetBool("ORDER", false);
+                _iaControler._hasTarget = false;
                 TransitionToState(IABehaviours.WALKING);
             }
         }

@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
@@ -19,6 +20,8 @@ public class IARandomMovements : MonoBehaviour
     #region Private
     
     private Vector3 _agentTarget;
+    private Vector3 _minPosition;
+    private Vector3 _maxPosition;
     
     /// <summary>
     /// store remaining distance to set target
@@ -31,6 +34,8 @@ public class IARandomMovements : MonoBehaviour
     
     //radius of the area where we'll generate random position
     [SerializeField] private float _randomPositionRadius = 1;
+    [SerializeField] private Transform _minArea;
+    [SerializeField] private Transform _maxArea;
 
     #endregion
 
@@ -38,6 +43,12 @@ public class IARandomMovements : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+    }
+
+    private void Start()
+    {
+        _minPosition = _minArea.position;
+        _maxPosition = _maxArea.position;
     }
 
     private void Update()
@@ -58,11 +69,21 @@ public class IARandomMovements : MonoBehaviour
     /// </summary>
     public void RandomTargetAI()
     {
-        _agentTarget = Random.insideUnitSphere * _randomPositionRadius;
-        _agentTarget.y = transform.position.y;    
-        
+        _agentTarget = new Vector3(
+            Random.Range(_minPosition.x, _maxPosition.x),
+            transform.position.y,
+            Random.Range(_minPosition.z, _maxPosition.z)
+        );
+
+        if (_agentTarget == transform.position)
+        {
+            RandomTargetAI();
+        }
+
         agent.destination = _agentTarget;
         _hasTarget = true;
+        
+        Debug.Log(agent.destination);
     }
 
     /// <summary>
@@ -94,9 +115,14 @@ public class IARandomMovements : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, _randomPositionRadius);
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.yellow;
         Gizmos.DrawLine(transform.position, _agentTarget);
-        Gizmos.DrawWireCube(_agentTarget, new Vector3(0.1f,2,0.1f));
+        Gizmos.DrawWireCube(_agentTarget, new Vector3(0.1f,6,0.1f));
+        
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireCube(_minPosition, new Vector3(0.01f,3,0.01f));
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(_maxPosition, new Vector3(0.01f,3,0.01f));
     }
 }
     
