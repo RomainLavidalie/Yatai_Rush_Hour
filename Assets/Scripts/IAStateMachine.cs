@@ -33,6 +33,8 @@ public class IAStateMachine : MonoBehaviour
     private IABehaviours _currentIAState;
     private NavMeshAgent _agent;
     private IARandomMovements _iaControler;
+
+    private float changeDestinationTimer;
     
     #endregion
 
@@ -84,6 +86,11 @@ public class IAStateMachine : MonoBehaviour
     {
         //on the main thread we update each state
         OnStateUpdate(_currentIAState);
+
+        if (_currentIAState == IABehaviours.WALKING)
+        {
+            changeDestinationTimer += Time.deltaTime;
+        }
     }
 
     #region State Machine
@@ -310,6 +317,12 @@ public class IAStateMachine : MonoBehaviour
             transform.position = _startPosition.position;
             TransitionToState(IABehaviours.ORDERING);
         }
+
+        if (changeDestinationTimer > 10)
+        {
+            _iaControler._hasTarget = false;
+            TransitionToState(IABehaviours.WALKING);
+        }
         
         if (!_iaControler._hasTarget)
         {
@@ -331,6 +344,7 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnExitWalking()
     {
+        changeDestinationTimer = 0;
         _animControls.SetBool("WALK", false);
     }
 
