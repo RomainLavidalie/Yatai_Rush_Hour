@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void OnClickRetry()
     {
+        Time.timeScale = 1;
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }

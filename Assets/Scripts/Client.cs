@@ -18,11 +18,11 @@ public class Client : MonoBehaviour
         command = RecipesManager.instance.recipesList[rand.Next(RecipesManager.instance.recipesList.Count)];
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision other)
     {
         try
         {
-            recievedBowl = other.GetComponent<RamenBowl>().ingredientList;
+            recievedBowl = other.collider.GetComponent<RamenBowl>().ingredientList;
         }
         catch
         {
@@ -44,5 +44,6 @@ public class Client : MonoBehaviour
     private void Angry()
     {
         Debug.Log("mauvaise commande");
+        
     }
 }
