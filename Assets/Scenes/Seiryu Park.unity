@@ -334,7 +334,11 @@ PrefabInstance:
       objectReference: {fileID: 1218707631}
     - target: {fileID: 6332262989185830037, guid: 9f01e7aa7cf9945478120771dc72fcc6, type: 3}
       propertyPath: XAxisClamp
-      value: 70
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6332262989185830037, guid: 9f01e7aa7cf9945478120771dc72fcc6, type: 3}
+      propertyPath: YAxisClamp
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6332262989185830037, guid: 9f01e7aa7cf9945478120771dc72fcc6, type: 3}
       propertyPath: musicSource
