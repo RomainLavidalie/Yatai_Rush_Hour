@@ -317,6 +317,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2000177070}
     - target: {fileID: 6332262989185830037, guid: 9f01e7aa7cf9945478120771dc72fcc6, type: 3}
+      propertyPath: force
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6332262989185830037, guid: 9f01e7aa7cf9945478120771dc72fcc6, type: 3}
       propertyPath: source
       value: 
       objectReference: {fileID: 1767248872}
@@ -10491,6 +10495,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 889269256, guid: 2f65db1a4f662b1478f245abc1e91c1c, type: 3}
+      propertyPath: ingredientList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 889269256, guid: 2f65db1a4f662b1478f245abc1e91c1c, type: 3}
+      propertyPath: ingredientList.Array.data[0]
+      value: chashu
+      objectReference: {fileID: 0}
+    - target: {fileID: 889269256, guid: 2f65db1a4f662b1478f245abc1e91c1c, type: 3}
+      propertyPath: ingredientList.Array.data[1]
+      value: onion
+      objectReference: {fileID: 0}
+    - target: {fileID: 889269256, guid: 2f65db1a4f662b1478f245abc1e91c1c, type: 3}
+      propertyPath: ingredientList.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1366479922185898125, guid: 2f65db1a4f662b1478f245abc1e91c1c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -13550,6 +13570,7 @@ GameObject:
   - component: {fileID: 2000177072}
   - component: {fileID: 2000177074}
   - component: {fileID: 2000177073}
+  - component: {fileID: 2000177075}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -13768,6 +13789,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2000177075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000177066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed542a3ad636272488736e5fdf9b1b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipesList:
+  - ingredients:
+    - onion
+    - chashu
+    - carrot
 --- !u!1001 &2024806003
 PrefabInstance:
   m_ObjectHideFlags: 0
