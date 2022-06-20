@@ -76,7 +76,7 @@ public class CuttingBoard : Interactable
             try
             {
                ingredient = PlayerController.instance.itemInHand.GetComponent<CuttableFood>();
-               if (ingredient.isCut)
+               if (ingredient.isCut || !ingredient.enabled)
                {
                    ingredient = null;
                    return;

@@ -23,6 +23,21 @@ public class IAStateMachine : MonoBehaviour
     /// bool used to enter SERVED state and restart ia loop
     /// </summary>
     public bool _orderArrived;
+    
+    /// <summary>
+    /// the position where we spawn each agent
+    /// </summary>
+    public Transform _startPosition;
+    
+    /// <summary>
+    /// the position next to the yatai 
+    /// </summary>
+    public Transform _orderPosition;
+    
+    /// <summary>
+    /// the last position the agent will go after we ended the order
+    /// </summary>
+    public Transform _endPosition;
 
     #endregion
     
@@ -44,23 +59,11 @@ public class IAStateMachine : MonoBehaviour
     /// threshold used to interpolate between walk and run animation
     /// </summary>
     [SerializeField] private float _runSpeedThreshold;
-    
+
+    [SerializeField] FoodCustomerUI _foodCustomerUI;
     [SerializeField] private Animator _animControls;
     
-    /// <summary>
-    /// the position where we spawn each agent
-    /// </summary>
-    [SerializeField] private Transform _startPosition;
-    
-    /// <summary>
-    /// the position next to the yatai 
-    /// </summary>
-    [SerializeField] private Transform _orderPosition;
-    
-    /// <summary>
-    /// the last position the agent will go after we ended the order
-    /// </summary>
-    [SerializeField] private Transform _endPosition;
+ 
 
     #endregion
     
@@ -383,7 +386,7 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnExitOrdering()
     {
-        
+        _foodCustomerUI.AddRamen();
     }
 
     #endregion
@@ -394,6 +397,7 @@ public class IAStateMachine : MonoBehaviour
     {
         _iaControler.SetIATarget(transform.position);
         _animControls.SetTrigger("WIN");
+        _foodCustomerUI.RemoveRamen();
     }
 
     private void OnUpdateServed()
