@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5e23483cb74edad4ead1f7fc4021c0c6
+guid: 9aa45c6d92507ab4d8ad6cd350310b45
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,13 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 565b2e31706a3f2458ddfae5a07fca5b, type: 2}
+      name: porkRawBone
+    second: {fileID: 2100000, guid: 2fad92b378731054292f5751032473d3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.002
-    second: {fileID: 2100000, guid: 3726b6e4fae1e2543ab2d315cb5607b1, type: 2}
+      name: porkRawFront
+    second: {fileID: 2100000, guid: 0db5a16a0cb3ea14097d72168b7ef972, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: porkRawSkin
+    second: {fileID: 2100000, guid: 72c28e15adfd70b4fbb55e9695c11fc2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5e23483cb74edad4ead1f7fc4021c0c6
+guid: 3c713f54843ea71419acd85b1bb9e984
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,13 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 565b2e31706a3f2458ddfae5a07fca5b, type: 2}
+      name: porkCookedBone
+    second: {fileID: 2100000, guid: 658fefd866ef7674a87d602116ea847a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.002
-    second: {fileID: 2100000, guid: 3726b6e4fae1e2543ab2d315cb5607b1, type: 2}
+      name: porkCookedFront
+    second: {fileID: 2100000, guid: 73b0910bbff90f64e9b35d010be2ad69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: porkCookedSkin
+    second: {fileID: 2100000, guid: e8037e15504b1ab4985d520462e162dc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
