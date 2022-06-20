@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 777213635656053168}
   - component: {fileID: 5150816361521124266}
   - component: {fileID: 3425926702349551303}
+  - component: {fileID: 2278713283294132672}
   m_Layer: 0
   m_Name: IACharacter
   m_TagString: Untagged
@@ -81,6 +82,8 @@ MonoBehaviour:
   _hasTarget: 0
   agent: {fileID: 5150816361521124266}
   _randomPositionRadius: 14.58
+  _minArea: {fileID: 0}
+  _maxArea: {fileID: 0}
 --- !u!114 &777213635656053168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +138,19 @@ CapsuleCollider:
   m_Height: 2.7024872
   m_Direction: 1
   m_Center: {x: 0, y: 1.3668734, z: 0}
+--- !u!114 &2278713283294132672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3464070557923992277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bfc515d9b61814992a9b650f6abe8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ramenBowl: {fileID: 1024799986933797568}
 --- !u!1001 &3518301903316990823
 PrefabInstance:
   m_ObjectHideFlags: 0

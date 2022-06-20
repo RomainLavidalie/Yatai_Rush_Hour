@@ -8,12 +8,18 @@ using UnityEngine;
 /// </summary>
 public class ScoreText : MonoBehaviour
 {
-    public int score;
+    public static int score;
     public TMP_Text textScore;
+    public static int combo;
 
     // Update is called once per frame
     void Update()
     {
         textScore.text = "Score : " + score;
+    }
+
+    public static void IncrementScore(int scoreadd)
+    {
+        score = score + (scoreadd * combo);
     }
 }
