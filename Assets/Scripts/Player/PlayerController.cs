@@ -173,19 +173,16 @@ public class PlayerController : MonoBehaviour
             if(hit.collider.CompareTag("YataiBoard"))
             {
                 PutOnYatai(hit);
+                return;
             }
         }
-        else
-        {
-            try
-            {
-                Drop();
-                itemInHand.GetComponent<Rigidbody>().AddForce(playerCamera.forward * force, ForceMode.Impulse);
-                source.PlayOneShot(throwSFX);
-                itemInHand = null;
-            }
-            catch{}
+        try {
+            Drop(); 
+            itemInHand.GetComponent<Rigidbody>().AddForce(playerCamera.forward * force, ForceMode.Impulse); 
+            source.PlayOneShot(throwSFX); 
+            itemInHand = null;
         }
+        catch{}
     }
 
     private void PutOnYatai(RaycastHit _hit)

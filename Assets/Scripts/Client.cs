@@ -33,6 +33,7 @@ public class Client : MonoBehaviour
             Happy();
         else
             Angry();
+        Destroy(other.gameObject);
     }
 
     private void Happy()
