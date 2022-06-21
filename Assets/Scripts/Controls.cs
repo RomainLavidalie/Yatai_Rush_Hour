@@ -157,6 +157,15 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenCloseRecipe"",
+                    ""type"": ""Button"",
+                    ""id"": ""4c220244-b119-40c4-a974-af5943a6ceed"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -236,6 +245,17 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""action"": ""OpenCloseMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""92228009-46f9-45a1-9733-112d04caa81c"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenCloseRecipe"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -273,6 +293,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_Cooking_AddRamen = m_Cooking.FindAction("AddRamen", throwIfNotFound: true);
         m_Cooking_RemoveRamen = m_Cooking.FindAction("RemoveRamen", throwIfNotFound: true);
         m_Cooking_OpenCloseMenu = m_Cooking.FindAction("OpenCloseMenu", throwIfNotFound: true);
+        m_Cooking_OpenCloseRecipe = m_Cooking.FindAction("OpenCloseRecipe", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -388,6 +409,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Cooking_AddRamen;
     private readonly InputAction m_Cooking_RemoveRamen;
     private readonly InputAction m_Cooking_OpenCloseMenu;
+    private readonly InputAction m_Cooking_OpenCloseRecipe;
     public struct CookingActions
     {
         private @Controls m_Wrapper;
@@ -399,6 +421,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         public InputAction @AddRamen => m_Wrapper.m_Cooking_AddRamen;
         public InputAction @RemoveRamen => m_Wrapper.m_Cooking_RemoveRamen;
         public InputAction @OpenCloseMenu => m_Wrapper.m_Cooking_OpenCloseMenu;
+        public InputAction @OpenCloseRecipe => m_Wrapper.m_Cooking_OpenCloseRecipe;
         public InputActionMap Get() { return m_Wrapper.m_Cooking; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -429,6 +452,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @OpenCloseMenu.started -= m_Wrapper.m_CookingActionsCallbackInterface.OnOpenCloseMenu;
                 @OpenCloseMenu.performed -= m_Wrapper.m_CookingActionsCallbackInterface.OnOpenCloseMenu;
                 @OpenCloseMenu.canceled -= m_Wrapper.m_CookingActionsCallbackInterface.OnOpenCloseMenu;
+                @OpenCloseRecipe.started -= m_Wrapper.m_CookingActionsCallbackInterface.OnOpenCloseRecipe;
+                @OpenCloseRecipe.performed -= m_Wrapper.m_CookingActionsCallbackInterface.OnOpenCloseRecipe;
+                @OpenCloseRecipe.canceled -= m_Wrapper.m_CookingActionsCallbackInterface.OnOpenCloseRecipe;
             }
             m_Wrapper.m_CookingActionsCallbackInterface = instance;
             if (instance != null)
@@ -454,6 +480,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @OpenCloseMenu.started += instance.OnOpenCloseMenu;
                 @OpenCloseMenu.performed += instance.OnOpenCloseMenu;
                 @OpenCloseMenu.canceled += instance.OnOpenCloseMenu;
+                @OpenCloseRecipe.started += instance.OnOpenCloseRecipe;
+                @OpenCloseRecipe.performed += instance.OnOpenCloseRecipe;
+                @OpenCloseRecipe.canceled += instance.OnOpenCloseRecipe;
             }
         }
     }
@@ -482,5 +511,6 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         void OnAddRamen(InputAction.CallbackContext context);
         void OnRemoveRamen(InputAction.CallbackContext context);
         void OnOpenCloseMenu(InputAction.CallbackContext context);
+        void OnOpenCloseRecipe(InputAction.CallbackContext context);
     }
 }
