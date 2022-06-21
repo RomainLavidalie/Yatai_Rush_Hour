@@ -64,6 +64,8 @@ public class IAStateMachine : MonoBehaviour
 
     [SerializeField] FoodCustomerUI _foodCustomerUI;
     [SerializeField] private Animator _animControls;
+
+    [SerializeField] private IABehaviours initialState;
     
  
 
@@ -82,8 +84,8 @@ public class IAStateMachine : MonoBehaviour
     {
         transform.position = _startPosition.position;
         
-        //we set start state (in this case ORDERING)
-        _currentIAState = IABehaviours.ORDERING;
+        //we set initial state 
+        _currentIAState = initialState;
         OnStateEnter(_currentIAState);
     }
 
