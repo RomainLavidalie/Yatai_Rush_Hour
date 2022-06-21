@@ -6,24 +6,26 @@ using Random = System.Random;
 
 public class IASpawner : MonoBehaviour
 {
-    
+
+    [Header("IaToActivate")]
     private List<GameObject> IaActive;
     [SerializeField] private List<GameObject> IaInactive;
+    private int phase = 0;
     
-    private List<GameObject> passerbyActive;
-    [SerializeField] private List<GameObject> passerbyInactive;
-    
+    [Header("Spawning delay")]
     public int delayMin;
     public int DelayMax;
-    
-    private int phase = 0;
-    private Random _random;
     [SerializeField] private float[] delayMultByPhase;
+    
+    [Header("Become Client")]
+    public float probability;
+    private Random _random;
+    [SerializeField] private List<Material> _materials;
+    
 
     public static IASpawner instance;
     
-    public int[] ClientToSpawnByPhase;
-    public int[] PasserbyToSpawnByPhase;
+    public int[] IaToSpawnByPhase;
 
     private void Awake()
     {
@@ -34,17 +36,34 @@ public class IASpawner : MonoBehaviour
     private void Start()
     {
         IaActive = new List<GameObject>();
-        passerbyActive = new List<GameObject>();
         _random = new Random();
         foreach (GameObject ia in IaInactive)
         {
+            try
+            {
+                ia.GetComponent<Client>().enabled = false;
+            }
+            catch
+            {
+
+            }
             ia.SetActive(false);
         }
-        
-        foreach (GameObject ia in passerbyInactive)
+    }
+
+    public bool SetIaAsClient(IAStateMachine ia)
+    {
+        if(_random.NextDouble() < phase * Time.deltaTime * probability && _materials.Count > 0)
         {
-            ia.SetActive(false);
+            Material mat = _materials[_random.Next(_materials.Count)];
+            _materials.Remove(mat);
+            ia._character.GetComponent<SkinnedMeshRenderer>().material = mat;
+            Debug.Log("ça sent bon");
+            return true;
+            
         }
+        Debug.Log("ça pue");
+        return false;
     }
 
     public void SpawnIA(int phaseID)
@@ -52,10 +71,8 @@ public class IASpawner : MonoBehaviour
         if (phaseID != phase)
         {
             phase = phaseID;
-            StartCoroutine(Spawn(ClientToSpawnByPhase[phase], IaInactive, IaActive));
-            StartCoroutine(Spawn(PasserbyToSpawnByPhase[phase], passerbyInactive, passerbyActive));
+            StartCoroutine(Spawn(IaToSpawnByPhase[phase], IaInactive, IaActive));
         }
-
     }
    
     private IEnumerator Spawn(int nb, List<GameObject> iaInact, List<GameObject> iaAct)
