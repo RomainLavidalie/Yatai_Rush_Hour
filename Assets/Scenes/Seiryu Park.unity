@@ -17345,6 +17345,10 @@ PrefabInstance:
       propertyPath: textScore
       value: 
       objectReference: {fileID: 1077966582}
+    - target: {fileID: 3494090333839641722, guid: c37c97fd5e290d44492fda76b8b4a7a5, type: 3}
+      propertyPath: textScorePauseMenu
+      value: 
+      objectReference: {fileID: 1307070906}
     - target: {fileID: 3494090333839641723, guid: c37c97fd5e290d44492fda76b8b4a7a5, type: 3}
       propertyPath: pauseText
       value: 
