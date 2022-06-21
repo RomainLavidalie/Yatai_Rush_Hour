@@ -134,10 +134,13 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Cursor.lockState = CursorLockMode.None;
-            Time.timeScale = 0;
-            PauseMenu.SetActive(true);
-            musicSource.Pause();
+            if (!RecipeMenu.activeSelf)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Time.timeScale = 0;
+                PauseMenu.SetActive(true);
+                musicSource.Pause();
+            }
         }
     }
 
@@ -155,10 +158,13 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Cursor.lockState = CursorLockMode.None;
-            Time.timeScale = 0;
-            RecipeMenu.SetActive(true);
-            musicSource.Pause();
+            if (!PauseMenu.activeSelf)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Time.timeScale = 0;
+                RecipeMenu.SetActive(true);
+                musicSource.Pause();
+            }
         }
     }
     
