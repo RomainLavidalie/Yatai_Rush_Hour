@@ -12,6 +12,5 @@ public class Storage : Interactable
             GameObject obj = Instantiate(objectToGenerate);
             PlayerController.instance.PickUpObject(obj);
         }
-
     }
 }

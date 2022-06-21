@@ -5,24 +5,27 @@ using UnityEngine;
 public class RamenBowl : Interactable
 {
     public List<string> ingredientList;
-    public bool isComplete;
-    
+    public CapsuleCollider targetCharacter;
+
+    private bool hasWater;
     // Start is called before the first frame update
     public override void Interact()
     {
-        if (PlayerController.instance.itemInHand == null && isComplete)
+        
+        if (PlayerController.instance.itemInHand == null)
         {
             PlayerController.instance.PickUpObject(gameObject);
         }
         else
         {
+            
             try
             {
                 Food ingredient = PlayerController.instance.itemInHand.GetComponent<Food>();
                 if (ingredient.readyForBowl)
                 {
-                    AddIngredient(ingredient);
-                    Destroy(ingredient.gameObject);
+                    if(AddIngredient(ingredient))
+                        Destroy(ingredient.gameObject);
                 }
 
             }
@@ -33,25 +36,30 @@ public class RamenBowl : Interactable
         }
     }
 
-    private void AddIngredient(Food ing)
+    private bool AddIngredient(Food ing)
     {
-        if (ingredientList.Contains(ing.name))
+        if (ing.IdName == "bouillon")
         {
-            return;
+            Debug.Log("bouillon");
+            hasWater = true;
         }
+        
+        if (ingredientList.Contains(ing.name) || !hasWater)
+        {
+            return false;
+        }
+        
         ingredientList.Add(ing.IdName);
         transform.Find(ing.IdName).gameObject.SetActive(true);
+        return true;
+    }
 
-        foreach (Recipe validRecipe in RecipesManager.instance.recipesList)
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.CompareTag("Terrain"))
         {
-            bool isEqual = Enumerable.SequenceEqual(ingredientList.OrderBy(e => e), validRecipe.ingredients.OrderBy(e => e));
-            if (isEqual)
-            {
-                isComplete = true;
-                break;
-            }
+            ScoreText.instance.LoosePoints(-100);
+            Destroy(gameObject);
         }
-        
-        
     }
 }

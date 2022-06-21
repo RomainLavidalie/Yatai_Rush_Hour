@@ -9,20 +9,31 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
     
    
+    [Header("Hand")]
     //Objets à gérer via le controlleur
     [SerializeField] private Transform playerCamera;
     [SerializeField] private Transform hand;
     public GameObject itemInHand;
     
+    //Gestion des lancers
+    public float force;
+    [SerializeField] private AudioClip throwSFX;
+    [SerializeField] private AudioSource source;
+    
+    [Header("Camera")]
     //Gestion de la mobilité de la caméra
     public float sensitivityX = 1f;
     public float sensitivityY = 1f;
     [SerializeField] private float XAxisClamp = 85f;
     [SerializeField] private float YAxisClamp = 85f;
     
-    
-    //Gestion des lancers
-    public float force;
+    [Header("UIManagement")]
+    //Gestion des input de l'UI
+    public FoodCustomerUI _foodCustomerUI;
+    public GameObject PauseMenu;
+    public GameObject RecipeMenu;
+    public ClockDigital Clock;
+    public AudioSource musicSource;
 
     private void Awake()
     {
@@ -78,17 +89,19 @@ public class PlayerController : MonoBehaviour
     {
 
         RaycastHit hit;
-        if (Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, 3f))
+        if (Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, 10f))
         {
+            
             GameObject interactObj = hit.collider.gameObject;
+            //Debug.Log(interactObj.name);
             if (interactObj.CompareTag("Pickup"))
             {
+                
                 PickUpObject(interactObj);
             }
  
             if (interactObj.CompareTag("Interactable"))
             {
-                Debug.Log("j'interagis");
                 interactObj.GetComponent<Interactable>().Interact();
             }
             
@@ -98,6 +111,65 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    public void OnAddRamen()
+    {
+        _foodCustomerUI.AddRamen();
+    }
+
+    public void OnRemoveRamen()
+    {
+        _foodCustomerUI.RemoveRamen();
+    }
+
+    public void OnOpenCloseMenu()
+    {
+        if (PauseMenu.activeSelf && !Clock.IsGameOver)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Time.timeScale = 1;
+            PauseMenu.SetActive(false);
+            if (!RecipeMenu.activeSelf)
+            {
+                musicSource.Play();
+            }
+        }
+        else
+        {
+            if (!RecipeMenu.activeSelf)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Time.timeScale = 0;
+                PauseMenu.SetActive(true);
+                musicSource.Pause();
+            }
+        }
+    }
+
+    public void OnOpenCloseRecipe()
+    {
+        if (RecipeMenu.activeSelf && !Clock.IsGameOver)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Time.timeScale = 1;
+            RecipeMenu.SetActive(false);
+            if (!PauseMenu.activeSelf)
+            {
+                musicSource.Play();
+            }
+        }
+        else
+        {
+            if (!PauseMenu.activeSelf)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Time.timeScale = 0;
+                RecipeMenu.SetActive(true);
+                musicSource.Pause();
+            }
+        }
+    }
+    
     public void PickUpObject(GameObject obj)
     {
         if (itemInHand == null)
@@ -118,7 +190,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+
     #endregion
 
     #region THROW
@@ -134,18 +206,16 @@ public class PlayerController : MonoBehaviour
             if(hit.collider.CompareTag("YataiBoard"))
             {
                 PutOnYatai(hit);
+                return;
             }
         }
-        else
-        {
-            try
-            {
-                Drop();
-                itemInHand.GetComponent<Rigidbody>().AddForce(playerCamera.forward * force, ForceMode.Impulse);
-                itemInHand = null;
-            }
-            catch{}
+        try {
+            Drop(); 
+            itemInHand.GetComponent<Rigidbody>().AddForce(playerCamera.forward * force, ForceMode.Impulse); 
+            source.PlayOneShot(throwSFX); 
+            itemInHand = null;
         }
+        catch{}
     }
 
     private void PutOnYatai(RaycastHit _hit)
