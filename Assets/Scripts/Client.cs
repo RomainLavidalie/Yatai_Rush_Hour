@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.XR;
 using Random = System.Random;
 
@@ -40,12 +41,13 @@ public class Client : MonoBehaviour
     {
         Debug.Log("bonne commande");
         stateMachine._orderArrived = true;
+        ScoreText.instance.IncrementScore(100);
         
     }
 
     private void Angry()
     {
         Debug.Log("mauvaise commande");
-        
+        ScoreText.instance.LoosePoints(100);
     }
 }

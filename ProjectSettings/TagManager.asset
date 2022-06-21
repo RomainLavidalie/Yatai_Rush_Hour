@@ -8,6 +8,8 @@ TagManager:
   - Interactable
   - Pickup
   - YataiBoard
+  - Client
+  - Terrain
   layers:
   - Default
   - TransparentFX

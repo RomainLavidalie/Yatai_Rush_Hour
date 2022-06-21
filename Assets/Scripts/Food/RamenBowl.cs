@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class RamenBowl : Interactable
 {
     public List<string> ingredientList;
     public bool isComplete;
+    public CapsuleCollider targetCharacter;
     
     // Start is called before the first frame update
     public override void Interact()
@@ -53,5 +55,13 @@ public class RamenBowl : Interactable
         }
         
         
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.CompareTag("Terrain"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
