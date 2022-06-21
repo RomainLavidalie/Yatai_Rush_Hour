@@ -89,17 +89,19 @@ public class PlayerController : MonoBehaviour
     {
 
         RaycastHit hit;
-        if (Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, 5f))
+        if (Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, 10f))
         {
+            
             GameObject interactObj = hit.collider.gameObject;
+            //Debug.Log(interactObj.name);
             if (interactObj.CompareTag("Pickup"))
             {
+                
                 PickUpObject(interactObj);
             }
  
             if (interactObj.CompareTag("Interactable"))
             {
-                Debug.Log("j'interagis");
                 interactObj.GetComponent<Interactable>().Interact();
             }
             

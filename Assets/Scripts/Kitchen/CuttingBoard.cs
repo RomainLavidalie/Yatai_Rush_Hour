@@ -64,6 +64,7 @@ public class CuttingBoard : Interactable
             else
             {
                 PlayerController.instance.PickUpObject(ingredient.gameObject);
+                ingredient.gameObject.GetComponent<Collider>().enabled = true;
                 ingredient.gameObject.tag = "Pickup";
                 currentCuttingAmount = 0;
                 ingredient = null;
@@ -85,6 +86,7 @@ public class CuttingBoard : Interactable
                var o = ingredient.gameObject;
                o.transform.parent = placeholder;
                o.transform.localPosition = Vector3.zero;
+               o.GetComponent<Collider>().enabled = false;
                o.tag = "Untagged";
             }
             catch

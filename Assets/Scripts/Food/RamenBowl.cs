@@ -11,19 +11,21 @@ public class RamenBowl : Interactable
     // Start is called before the first frame update
     public override void Interact()
     {
+        
         if (PlayerController.instance.itemInHand == null)
         {
             PlayerController.instance.PickUpObject(gameObject);
         }
         else
         {
+            
             try
             {
                 Food ingredient = PlayerController.instance.itemInHand.GetComponent<Food>();
                 if (ingredient.readyForBowl)
                 {
-                    AddIngredient(ingredient);
-                    Destroy(ingredient.gameObject);
+                    if(AddIngredient(ingredient))
+                        Destroy(ingredient.gameObject);
                 }
 
             }
@@ -34,20 +36,22 @@ public class RamenBowl : Interactable
         }
     }
 
-    private void AddIngredient(Food ing)
+    private bool AddIngredient(Food ing)
     {
-        if (ing.name == "bouillon")
+        if (ing.IdName == "bouillon")
         {
+            Debug.Log("bouillon");
             hasWater = true;
         }
         
         if (ingredientList.Contains(ing.name) || !hasWater)
         {
-            return;
+            return false;
         }
         
         ingredientList.Add(ing.IdName);
         transform.Find(ing.IdName).gameObject.SetActive(true);
+        return true;
     }
 
     private void OnCollisionEnter(Collision other)
