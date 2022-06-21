@@ -20,6 +20,10 @@ public class PhaseTextManager : MonoBehaviour
 
     public float timeTextAppear = 3;
 
+    public int[] ClientToSpawnByPhase;
+    public int[] PasserbyToSpawnByPhase;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,16 +51,20 @@ public class PhaseTextManager : MonoBehaviour
         {
             ActivateText(1);
             Invoke("DeactivateText", timeTextAppear);
+            IASpawner.instance.SpawnIA(1);
+
         } 
         else if (hours.text == secondRush)
         {
             ActivateText(2);
             Invoke("DeactivateText", timeTextAppear);
+            IASpawner.instance.SpawnIA(2);
         } 
         else if (hours.text == finalRush)
         {
             ActivateText(3);
             Invoke("DeactivateText", timeTextAppear);
+            IASpawner.instance.SpawnIA(3);
         }
         
     }

@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 777213635656053168}
   - component: {fileID: 5150816361521124266}
   - component: {fileID: 3425926702349551303}
-  - component: {fileID: 2278713283294132672}
+  - component: {fileID: 1079279509}
   m_Layer: 0
   m_Name: IACharacter
   m_TagString: Untagged
@@ -97,11 +97,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _orderArrived: 0
-  _runSpeedThreshold: 3.7
-  _animControls: {fileID: 1585891512728158036}
   _startPosition: {fileID: 0}
   _orderPosition: {fileID: 0}
   _endPosition: {fileID: 0}
+  _character: {fileID: 5112932625325382228}
+  _runSpeedThreshold: 2.6
+  _foodCustomerUI: {fileID: 0}
+  _animControls: {fileID: 1585891512728158036}
 --- !u!195 &5150816361521124266
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -112,7 +114,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 6
+  m_Speed: 4
   m_Acceleration: 3
   avoidancePriority: 50
   m_AngularSpeed: 200
@@ -132,13 +134,13 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3464070557923992277}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2.7024872
   m_Direction: 1
   m_Center: {x: 0, y: 1.3668734, z: 0}
---- !u!114 &2278713283294132672
+--- !u!114 &1079279509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,10 +149,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3464070557923992277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25bfc515d9b61814992a9b650f6abe8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 76f6b029cacdbe74fbf5b76c4c85423a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ramenBowl: {fileID: 1024799986933797568}
+  command:
+    ingredients: []
+  stateMachine: {fileID: 777213635656053168}
 --- !u!1001 &3518301903316990823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -220,6 +224,11 @@ GameObject:
 --- !u!4 &3988286624193010828 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a88f789a6f3dfb54b9784ed8fd548074, type: 3}
+  m_PrefabInstance: {fileID: 3518301903316990823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5112932625325382228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8513859187771203891, guid: a88f789a6f3dfb54b9784ed8fd548074, type: 3}
   m_PrefabInstance: {fileID: 3518301903316990823}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1585891512728158036

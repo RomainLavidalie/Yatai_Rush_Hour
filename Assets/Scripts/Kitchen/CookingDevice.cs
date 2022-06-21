@@ -109,7 +109,7 @@ public class CookingDevice : Interactable
             try
             {
                 ingredient = PlayerController.instance.itemInHand.GetComponent<CookableFood>();
-                if (ingredient.cookingDevice != deviceType || ingredient.isCooked)
+                if (ingredient.cookingDevice != deviceType || ingredient.isCooked || !ingredient.enabled)
                 {
                     ingredient = null;
                 }   

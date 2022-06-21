@@ -14,11 +14,20 @@ public class FoodCustomerUI : MonoBehaviour
     public Color color;
     private List<GameObject> UnvisibleOrders;
 
+    /*public static FoodCustomerUI instance;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+    }*/
+
     // Start is called before the first frame update
     void Start()
     {
-        AddRamen();
+        Debug.Log("Test 1");
         UnvisibleOrders = new List<GameObject>();
+        Debug.Log("Test 2");
     }
 
     // Update is called once per frame
@@ -56,6 +65,11 @@ public class FoodCustomerUI : MonoBehaviour
         }
     }
 
+    public void ChangeColor(Color clr)
+    {
+        color = clr;
+    }
+
     /// <summary>
     /// Remove the first order from the bar
     /// </summary>
@@ -81,7 +95,7 @@ public class FoodCustomerUI : MonoBehaviour
     /// <returns></returns>
     public GameObject ColorizeOrder(GameObject obj, Color clr)
     {
-        obj.GetComponentInChildren<Image>().color = color;
+        obj.transform.Find("CustomerColor").GetComponent<Image>().color = clr;
         return obj;
     }
 
