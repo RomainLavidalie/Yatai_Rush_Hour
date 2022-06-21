@@ -18,6 +18,7 @@ public class MusicListManager : MonoBehaviour
     public AudioClip endGameMusic;
 
     public GameObject PauseMenu;
+    public GameObject RecipeMenu;
 
     private bool checkOnce = true;
     // Start is called before the first frame update
@@ -32,7 +33,7 @@ public class MusicListManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!source.isPlaying && !PauseMenu.activeSelf && !isGameOver)
+        if (!source.isPlaying && !PauseMenu.activeSelf && !isGameOver && !RecipeMenu.activeSelf)
         {
             musicIndex++;
             if (musicIndex > musics.Count)

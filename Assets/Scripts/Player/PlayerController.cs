@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     //Gestion des input de l'UI
     public FoodCustomerUI _foodCustomerUI;
     public GameObject PauseMenu;
+    public GameObject RecipeMenu;
     public ClockDigital Clock;
     public AudioSource musicSource;
 
@@ -126,13 +127,37 @@ public class PlayerController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
             PauseMenu.SetActive(false);
-            musicSource.Play();
+            if (!RecipeMenu.activeSelf)
+            {
+                musicSource.Play();
+            }
         }
         else
         {
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
             PauseMenu.SetActive(true);
+            musicSource.Pause();
+        }
+    }
+
+    public void OnOpenCloseRecipe()
+    {
+        if (RecipeMenu.activeSelf && !Clock.IsGameOver)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Time.timeScale = 1;
+            RecipeMenu.SetActive(false);
+            if (!PauseMenu.activeSelf)
+            {
+                musicSource.Play();
+            }
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0;
+            RecipeMenu.SetActive(true);
             musicSource.Pause();
         }
     }
