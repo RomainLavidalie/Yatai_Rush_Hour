@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 7189985223464574149}
   - component: {fileID: 6865291231784873546}
   - component: {fileID: 149749859759816647}
+  - component: {fileID: 2331476767483902062}
   m_Layer: 0
   m_Name: Egg
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,6 +64,19 @@ MonoBehaviour:
   nonCutModel: {fileID: 8223869102309629692}
   cutModel: {fileID: 1660992488362915203}
   isCut: 0
+--- !u!65 &2331476767483902062
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3657970047420419102}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.15, z: 0.1}
+  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!1 &5827521757421417990
 GameObject:
   m_ObjectHideFlags: 0
