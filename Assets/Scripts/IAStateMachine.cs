@@ -1,6 +1,8 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = System.Random;
 
 /// <summary>
 /// States IA might go through
@@ -8,6 +10,7 @@ using UnityEngine.AI;
 public enum IABehaviours
     {
         IDLE,
+        PASSING,
         WALKING,
         RUNNING,
         DANCING,
@@ -42,7 +45,6 @@ public class IAStateMachine : MonoBehaviour
     public GameObject _character;
 
     #endregion
-    
     
     #region Private
 
@@ -111,6 +113,10 @@ public class IAStateMachine : MonoBehaviour
                 OnEnterIdle();
                 break;
             
+            case IABehaviours.PASSING:
+                OnEnterPassingby();
+                break;
+            
             case IABehaviours.RUNNING:
                 OnEnterRunning();
                 break;
@@ -141,6 +147,10 @@ public class IAStateMachine : MonoBehaviour
                 OnUpdateIdle();
                 break;
             
+            case IABehaviours.PASSING:
+                OnUpdatePassingby();
+                break;
+            
             case IABehaviours.RUNNING:
                 OnUpdateRunning();
                 break;
@@ -169,6 +179,10 @@ public class IAStateMachine : MonoBehaviour
         {
             case IABehaviours.IDLE:
                 OnExitIdle();
+                break;
+            
+            case IABehaviours.PASSING:
+                OnExitPassingby();
                 break;
             
             case IABehaviours.RUNNING:
@@ -356,12 +370,53 @@ public class IAStateMachine : MonoBehaviour
     }
 
     #endregion
+    
+    #region PASSINGBY State
+
+    private void OnEnterPassingby()
+    {
+        _animControls.SetBool("WALK", true);
+        
+        _animControls.SetTrigger("WALK");
+        _iaControler.agent.destination = _endPosition.position;
+    }
+
+    private void OnUpdatePassingby()
+    {
+        //Teleport to respawn when the agent hit _endPosition
+        if (transform.position.Compare(_endPosition.position, 1))
+        {
+            _iaControler.agent.destination = _startPosition.position;
+        }
+        
+        if (Vector3.Distance(transform.position, _orderPosition.position) < 7f)
+        {
+            if(IASpawner.instance.SetIaAsClient(this))
+                TransitionToState(IABehaviours.ORDERING);
+        }
+        
+        if (transform.position.Compare(_startPosition.position, 1))
+        {
+            _iaControler.agent.destination = _endPosition.position;
+        }
+    }
+
+    private void OnExitPassingby()
+    {
+        _animControls.SetBool("WALK", false);
+    }
+
+    #endregion
 
     #region ORDERING State
 
     private void OnEnterOrdering()
     {
-        
+        try
+        {
+            gameObject.GetComponent<Client>().enabled = true;
+        }
+        catch { }
     }
 
     private void OnUpdateOrdering()

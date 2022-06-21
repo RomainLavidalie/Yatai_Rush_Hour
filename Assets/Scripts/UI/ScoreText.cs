@@ -11,6 +11,7 @@ public class ScoreText : MonoBehaviour
 {
     public int score;
     public TMP_Text textScore;
+    public TMP_Text textScorePauseMenu;
     public int combo;
 
     public static ScoreText instance;
@@ -26,6 +27,7 @@ public class ScoreText : MonoBehaviour
     void Update()
     {
         textScore.text = "Score : " + score;
+        textScorePauseMenu.text = "Score : " + score;
     }
 
     public void IncrementScore(int scoreadd)
@@ -36,7 +38,7 @@ public class ScoreText : MonoBehaviour
 
     public void LoosePoints(int scoreloose)
     {
-        score -= scoreloose;
+        score = Mathf.Max(0, score-scoreloose);
         combo = 1;
     }
 }
