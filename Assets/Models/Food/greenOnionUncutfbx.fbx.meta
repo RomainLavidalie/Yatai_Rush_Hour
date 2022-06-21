@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2ff477e1e9f85f6408657b2f3fa5b974
+guid: a64177f441be5e34bb3f03090a60ddc4
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,23 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.002
-    second: {fileID: 2100000, guid: f1cdf379b65b0d14f9ee2a10dbfa6470, type: 2}
+      name: greenOnionUncutRaw
+    second: {fileID: 2100000, guid: 499e4240b50019c4ab19ce4c7536d7ac, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.004
-    second: {fileID: 2100000, guid: af82f8dd19996384ba6f86c66d4a1b6e, type: 2}
+      name: intersectionOnionUncutRaw
+    second: {fileID: 2100000, guid: a9805714079c8024f9bb8301c5448d29, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.005
-    second: {fileID: 2100000, guid: 3ad40fa3d0ae4b847828f4b0b94a6250, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.006
-    second: {fileID: 2100000, guid: 8f3f2b926caf13a4883b7ea92412b1f8, type: 2}
+      name: whiteOnionUncutRaw
+    second: {fileID: 2100000, guid: 4abe5b9681e18fa47a0eb607d92bc16a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
