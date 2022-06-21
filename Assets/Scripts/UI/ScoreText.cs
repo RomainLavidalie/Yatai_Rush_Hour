@@ -38,7 +38,7 @@ public class ScoreText : MonoBehaviour
 
     public void LoosePoints(int scoreloose)
     {
-        score -= scoreloose;
+        score = Mathf.Max(0, score-scoreloose);
         combo = 1;
     }
 }

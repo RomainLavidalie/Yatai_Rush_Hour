@@ -61,6 +61,7 @@ public class RamenBowl : Interactable
     {
         if (other.collider.CompareTag("Terrain"))
         {
+            ScoreText.instance.LoosePoints(-100);
             Destroy(gameObject);
         }
     }
