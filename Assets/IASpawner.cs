@@ -10,6 +10,9 @@ public class IASpawner : MonoBehaviour
     private List<GameObject> IaActive;
     [SerializeField] private List<GameObject> IaInactive;
     
+    private List<GameObject> passerbyActive;
+    [SerializeField] private List<GameObject> passerbyInactive;
+    
     public int delayMin;
     public int DelayMax;
     
@@ -18,6 +21,9 @@ public class IASpawner : MonoBehaviour
     [SerializeField] private float[] delayMultByPhase;
 
     public static IASpawner instance;
+    
+    public int[] ClientToSpawnByPhase;
+    public int[] PasserbyToSpawnByPhase;
 
     private void Awake()
     {
@@ -28,33 +34,40 @@ public class IASpawner : MonoBehaviour
     private void Start()
     {
         IaActive = new List<GameObject>();
+        passerbyActive = new List<GameObject>();
         _random = new Random();
         foreach (GameObject ia in IaInactive)
         {
             ia.SetActive(false);
         }
+        
+        foreach (GameObject ia in passerbyInactive)
+        {
+            ia.SetActive(false);
+        }
     }
 
-    public void SpawnIA(int nb, int phaseID)
+    public void SpawnIA(int phaseID)
     {
         if (phaseID != phase)
         {
             phase = phaseID;
-            StartCoroutine(Spawn(nb));
+            StartCoroutine(Spawn(ClientToSpawnByPhase[phase], IaInactive, IaActive));
+            StartCoroutine(Spawn(PasserbyToSpawnByPhase[phase], passerbyInactive, passerbyActive));
         }
 
     }
    
-    private IEnumerator Spawn(int nb)
+    private IEnumerator Spawn(int nb, List<GameObject> iaInact, List<GameObject> iaAct)
     {
         for (int i = 0; i < nb; i++)
         {
-            if (IaInactive.Count > 0)
+            if (iaInact.Count > 0)
             {
-                GameObject ia = IaInactive[0];
+                GameObject ia = iaInact[0];
                 ia.SetActive(true);
-                IaActive.Add(ia);
-                IaInactive.Remove(ia);
+                iaAct.Add(ia);
+                iaInact.Remove(ia);
                 yield return new WaitForSeconds(_random.Next(delayMin, DelayMax)*delayMultByPhase[phase]);
             }
         }

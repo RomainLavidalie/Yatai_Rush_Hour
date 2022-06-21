@@ -65,6 +65,11 @@ public class FoodCustomerUI : MonoBehaviour
         }
     }
 
+    public void ChangeColor(Color clr)
+    {
+        color = clr;
+    }
+
     /// <summary>
     /// Remove the first order from the bar
     /// </summary>
@@ -90,7 +95,7 @@ public class FoodCustomerUI : MonoBehaviour
     /// <returns></returns>
     public GameObject ColorizeOrder(GameObject obj, Color clr)
     {
-        obj.GetComponentInChildren<Image>().color = color;
+        obj.transform.Find("CustomerColor").GetComponent<Image>().color = clr;
         return obj;
     }
 

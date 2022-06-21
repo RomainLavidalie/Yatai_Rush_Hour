@@ -39,6 +39,8 @@ public class IAStateMachine : MonoBehaviour
     /// </summary>
     public Transform _endPosition;
 
+    public GameObject _character;
+
     #endregion
     
     
@@ -62,6 +64,8 @@ public class IAStateMachine : MonoBehaviour
 
     [SerializeField] FoodCustomerUI _foodCustomerUI;
     [SerializeField] private Animator _animControls;
+
+    [SerializeField] private IABehaviours initialState;
     
  
 
@@ -80,8 +84,8 @@ public class IAStateMachine : MonoBehaviour
     {
         transform.position = _startPosition.position;
         
-        //we set start state (in this case ORDERING)
-        _currentIAState = IABehaviours.ORDERING;
+        //we set initial state 
+        _currentIAState = initialState;
         OnStateEnter(_currentIAState);
     }
 
@@ -386,6 +390,7 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnExitOrdering()
     {
+        _foodCustomerUI.ChangeColor(_character.GetComponent<SkinnedMeshRenderer>().material.color);
         _foodCustomerUI.AddRamen();
     }
 

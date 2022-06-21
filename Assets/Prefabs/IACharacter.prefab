@@ -100,6 +100,7 @@ MonoBehaviour:
   _startPosition: {fileID: 0}
   _orderPosition: {fileID: 0}
   _endPosition: {fileID: 0}
+  _character: {fileID: 5112932625325382228}
   _runSpeedThreshold: 2.6
   _foodCustomerUI: {fileID: 0}
   _animControls: {fileID: 1585891512728158036}
@@ -223,6 +224,11 @@ GameObject:
 --- !u!4 &3988286624193010828 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a88f789a6f3dfb54b9784ed8fd548074, type: 3}
+  m_PrefabInstance: {fileID: 3518301903316990823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5112932625325382228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8513859187771203891, guid: a88f789a6f3dfb54b9784ed8fd548074, type: 3}
   m_PrefabInstance: {fileID: 3518301903316990823}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1585891512728158036
