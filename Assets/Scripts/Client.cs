@@ -40,6 +40,7 @@ public class Client : MonoBehaviour
     {
         Debug.Log("bonne commande");
         stateMachine._orderArrived = true;
+        
     }
 
     private void Angry()
