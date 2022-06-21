@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: 779c3011a80b5f74e99d1aeb1f1566f9
+guid: 4fa6c6b3ca3652b4989154a0d920f789
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -3876651845247982255
+    second: KnifeLarge|KnifeLarge|KnifeLarge|KnifeLargeAction
   externalObjects: {}
   materials:
     materialImportMode: 2
