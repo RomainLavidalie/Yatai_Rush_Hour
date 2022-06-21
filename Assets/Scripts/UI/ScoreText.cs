@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,9 +9,18 @@ using UnityEngine;
 /// </summary>
 public class ScoreText : MonoBehaviour
 {
-    public static int score;
+    public int score;
     public TMP_Text textScore;
-    public static int combo;
+    public int combo;
+
+    public static ScoreText instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        combo = 1;
+    }
 
     // Update is called once per frame
     void Update()
@@ -18,8 +28,15 @@ public class ScoreText : MonoBehaviour
         textScore.text = "Score : " + score;
     }
 
-    public static void IncrementScore(int scoreadd)
+    public void IncrementScore(int scoreadd)
     {
-        score = score + (scoreadd * combo);
+        score += (scoreadd * combo);
+        combo++;
+    }
+
+    public void LoosePoints(int scoreloose)
+    {
+        score -= scoreloose;
+        combo = 1;
     }
 }

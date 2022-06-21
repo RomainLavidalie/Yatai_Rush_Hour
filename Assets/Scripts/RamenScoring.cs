@@ -22,8 +22,7 @@ public class RamenScoring : MonoBehaviour
     {
         if (collision.transform == ramenBowl)
         {
-            ScoreText.IncrementScore(100);
-            Debug.Log("Touché");
+
         }
     }
 }

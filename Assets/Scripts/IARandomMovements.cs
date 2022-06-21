@@ -83,7 +83,7 @@ public class IARandomMovements : MonoBehaviour
         agent.destination = _agentTarget;
         _hasTarget = true;
         
-        Debug.Log(agent.destination);
+        //Debug.Log(agent.destination);
     }
 
     /// <summary>

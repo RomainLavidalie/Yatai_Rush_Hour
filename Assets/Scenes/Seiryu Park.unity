@@ -1832,6 +1832,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IACharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
+      propertyPath: m_TagString
+      value: Client
+      objectReference: {fileID: 0}
     - target: {fileID: 4753028873858648093, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -4099,6 +4103,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IACharacter (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
+      propertyPath: m_TagString
+      value: Client
+      objectReference: {fileID: 0}
     - target: {fileID: 4753028873858648093, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -4790,6 +4798,10 @@ PrefabInstance:
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Name
       value: IACharacter (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
+      propertyPath: m_TagString
+      value: Client
       objectReference: {fileID: 0}
     - target: {fileID: 4753028873858648093, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6989,6 +7001,10 @@ PrefabInstance:
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Name
       value: IACharacter (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
+      propertyPath: m_TagString
+      value: Client
       objectReference: {fileID: 0}
     - target: {fileID: 4753028873858648093, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -10095,6 +10111,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IACharacter (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
+      propertyPath: m_TagString
+      value: Client
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
 --- !u!4 &1273857168 stripped
@@ -10472,6 +10492,10 @@ PrefabInstance:
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Name
       value: IACharacter (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
+      propertyPath: m_TagString
+      value: Client
       objectReference: {fileID: 0}
     - target: {fileID: 4753028873858648093, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -13071,6 +13095,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IACharacter (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
+      propertyPath: m_TagString
+      value: Client
+      objectReference: {fileID: 0}
     - target: {fileID: 4753028873858648093, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -15368,6 +15396,10 @@ PrefabInstance:
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Name
       value: IACharacter (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
+      propertyPath: m_TagString
+      value: Client
       objectReference: {fileID: 0}
     - target: {fileID: 4753028873858648093, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Materials.Array.data[0]

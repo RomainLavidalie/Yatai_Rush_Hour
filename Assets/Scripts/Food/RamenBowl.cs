@@ -59,10 +59,9 @@ public class RamenBowl : Interactable
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.collider == targetCharacter)
+        if (other.collider.CompareTag("Terrain"))
         {
-            ScoreText.IncrementScore(100);
-            Debug.Log("Touché");
+            Destroy(gameObject);
         }
     }
 }
