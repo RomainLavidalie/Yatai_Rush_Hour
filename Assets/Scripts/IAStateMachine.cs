@@ -39,6 +39,8 @@ public class IAStateMachine : MonoBehaviour
     /// </summary>
     public Transform _endPosition;
 
+    public GameObject _character;
+
     #endregion
     
     
@@ -386,6 +388,7 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnExitOrdering()
     {
+        _foodCustomerUI.ChangeColor(_character.GetComponent<SkinnedMeshRenderer>().material.color);
         _foodCustomerUI.AddRamen();
     }
 
