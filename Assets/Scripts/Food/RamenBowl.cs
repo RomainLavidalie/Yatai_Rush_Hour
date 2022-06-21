@@ -44,7 +44,7 @@ public class RamenBowl : Interactable
             hasWater = true;
         }
         
-        if (ingredientList.Contains(ing.name) || !hasWater)
+        if (ingredientList.Contains(ing.IdName) || !hasWater)
         {
             return false;
         }

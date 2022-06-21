@@ -51,6 +51,8 @@ public class CuttingBoard : Interactable
     {
         if (ingredient != null)
         {
+            if(PlayerController.instance.itemInHand != null)
+                return;
             //Cut the ingredient on the board if it isn't
             if (!ingredient.isCut)
             {
