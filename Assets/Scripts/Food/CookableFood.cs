@@ -20,6 +20,7 @@ public class CookableFood : MonoBehaviour
         
         cookedModel.SetActive(false);
         burnedModel.SetActive(false);
+        nonCookedModel.SetActive(true);
     }
 
     public void Cook()

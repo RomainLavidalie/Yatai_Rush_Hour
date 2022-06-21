@@ -5,13 +5,13 @@ using UnityEngine;
 public class RamenBowl : Interactable
 {
     public List<string> ingredientList;
-    public bool isComplete;
     public CapsuleCollider targetCharacter;
-    
+
+    private bool hasWater;
     // Start is called before the first frame update
     public override void Interact()
     {
-        if (PlayerController.instance.itemInHand == null && isComplete)
+        if (PlayerController.instance.itemInHand == null)
         {
             PlayerController.instance.PickUpObject(gameObject);
         }
@@ -36,24 +36,18 @@ public class RamenBowl : Interactable
 
     private void AddIngredient(Food ing)
     {
-        if (ingredientList.Contains(ing.name))
+        if (ing.name == "bouillon")
+        {
+            hasWater = true;
+        }
+        
+        if (ingredientList.Contains(ing.name) || !hasWater)
         {
             return;
         }
+        
         ingredientList.Add(ing.IdName);
         transform.Find(ing.IdName).gameObject.SetActive(true);
-
-        foreach (Recipe validRecipe in RecipesManager.instance.recipesList)
-        {
-            bool isEqual = Enumerable.SequenceEqual(ingredientList.OrderBy(e => e), validRecipe.ingredients.OrderBy(e => e));
-            if (isEqual)
-            {
-                isComplete = true;
-                break;
-            }
-        }
-        
-        
     }
 
     private void OnCollisionEnter(Collision other)
