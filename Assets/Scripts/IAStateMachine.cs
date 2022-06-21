@@ -1,8 +1,7 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
-using Random = System.Random;
+
 
 /// <summary>
 /// States IA might go through

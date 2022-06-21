@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
+
 
 /// <summary>
 /// Manage the texts that anouce every phases of the game.
