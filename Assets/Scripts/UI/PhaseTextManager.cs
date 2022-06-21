@@ -19,11 +19,7 @@ public class PhaseTextManager : MonoBehaviour
     public string finalRush = "22:00";
 
     public float timeTextAppear = 3;
-
-    public int[] ClientToSpawnByPhase;
-    public int[] PasserbyToSpawnByPhase;
     
-
     // Start is called before the first frame update
     void Start()
     {
