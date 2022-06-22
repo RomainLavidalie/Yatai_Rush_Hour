@@ -150,6 +150,4 @@ sysinfo.txt
 
 # End of https://www.toptal.com/developers/gitignore/api/unity,rider
 
-BuildGL/Build/
-
 BuildGL/
