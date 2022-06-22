@@ -56,7 +56,7 @@ public class IASpawner : MonoBehaviour
         {
             Material mat = _materials[_random.Next(_materials.Count)];
             _materials.Remove(mat);
-            ia._character.GetComponent<SkinnedMeshRenderer>().material = mat;
+            ia.clientMat = mat;
             return true;
             
         }

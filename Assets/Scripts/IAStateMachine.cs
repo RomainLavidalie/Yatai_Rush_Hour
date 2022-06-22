@@ -43,6 +43,8 @@ public class IAStateMachine : MonoBehaviour
 
     public GameObject _character;
 
+    public Material clientMat;
+
     #endregion
     
     #region Private
@@ -390,6 +392,7 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnUpdatePassingby()
     {
+        _animControls.SetBool("WALK", true);
         //Teleport to respawn when the agent hit _endPosition
         if (transform.position.Compare(_endPosition.position, 1))
         {
@@ -419,11 +422,7 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnEnterOrdering()
     {
-        try
-        {
-            _orderArrived = false;
-        }
-        catch { }
+ 
     }
 
     private void OnUpdateOrdering()
@@ -452,8 +451,10 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnExitOrdering()
     {
+        _orderArrived = false;
+        _character.GetComponent<SkinnedMeshRenderer>().material = clientMat;
         gameObject.GetComponent<Client>().OrderFood();
-        _foodCustomerUI.ChangeColor(_character.GetComponent<SkinnedMeshRenderer>().material.color);
+        _foodCustomerUI.ChangeColor(clientMat.color);
         _foodCustomerUI.AddRamen();
     }
 

@@ -424,11 +424,11 @@ PrefabInstance:
       objectReference: {fileID: 2000177074}
     - target: {fileID: 6332262989185830037, guid: 9f01e7aa7cf9945478120771dc72fcc6, type: 3}
       propertyPath: sensitivityX
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6332262989185830037, guid: 9f01e7aa7cf9945478120771dc72fcc6, type: 3}
       propertyPath: sensitivityY
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6332262989185830037, guid: 9f01e7aa7cf9945478120771dc72fcc6, type: 3}
       propertyPath: _foodCustomerUI
@@ -25402,6 +25402,10 @@ PrefabInstance:
       propertyPath: hours
       value: 
       objectReference: {fileID: 1272630596}
+    - target: {fileID: 3494090333839641701, guid: c37c97fd5e290d44492fda76b8b4a7a5, type: 3}
+      propertyPath: rushstart
+      value: 18:45
+      objectReference: {fileID: 0}
     - target: {fileID: 3494090333839641701, guid: c37c97fd5e290d44492fda76b8b4a7a5, type: 3}
       propertyPath: phaseTextParent
       value: 
