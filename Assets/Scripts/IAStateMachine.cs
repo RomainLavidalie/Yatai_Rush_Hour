@@ -67,6 +67,8 @@ public class IAStateMachine : MonoBehaviour
     [SerializeField] private Animator _animControls;
 
     [SerializeField] private IABehaviours initialState;
+
+    [SerializeField] private Material passerbyMat;
     
  
 
@@ -274,6 +276,12 @@ public class IAStateMachine : MonoBehaviour
             _iaControler.RandomTargetAI();
         }
         
+        if (transform.position.Compare(_endPosition.position, 1))
+        {
+            transform.position = _startPosition.position;
+            TransitionToState(IABehaviours.PASSING);
+        }
+        
         //Running => Walking
         if (_agent.velocity.magnitude > 0f && _agent.velocity.magnitude < _runSpeedThreshold)
         {
@@ -335,7 +343,7 @@ public class IAStateMachine : MonoBehaviour
         if (transform.position.Compare(_endPosition.position, 1))
         {
             transform.position = _startPosition.position;
-            TransitionToState(IABehaviours.ORDERING);
+            TransitionToState(IABehaviours.PASSING);
         }
 
         if (changeDestinationTimer > 10)
@@ -374,8 +382,8 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnEnterPassingby()
     {
+        _character.GetComponent<SkinnedMeshRenderer>().material = passerbyMat;
         _animControls.SetBool("WALK", true);
-        
         _animControls.SetTrigger("WALK");
         _iaControler.agent.destination = _endPosition.position;
     }
@@ -413,7 +421,7 @@ public class IAStateMachine : MonoBehaviour
     {
         try
         {
-            gameObject.GetComponent<Client>().enabled = true;
+            _orderArrived = false;
         }
         catch { }
     }
@@ -444,6 +452,7 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnExitOrdering()
     {
+        gameObject.GetComponent<Client>().OrderFood();
         _foodCustomerUI.ChangeColor(_character.GetComponent<SkinnedMeshRenderer>().material.color);
         _foodCustomerUI.AddRamen();
     }
@@ -474,7 +483,7 @@ public class IAStateMachine : MonoBehaviour
 
     private void OnExitServed()
     {
-        
+        IASpawner.instance._materials.Add(_character.GetComponent<SkinnedMeshRenderer>().material);
     }
 
     #endregion

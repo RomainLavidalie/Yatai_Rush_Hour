@@ -19,7 +19,7 @@ public class IASpawner : MonoBehaviour
     [Header("Become Client")]
     public float probability;
     private Random _random;
-    [SerializeField] private List<Material> _materials;
+    public List<Material> _materials;
     
 
     public static IASpawner instance;

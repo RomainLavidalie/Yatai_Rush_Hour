@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,16 +9,25 @@ public class Client : MonoBehaviour
     public Recipe command;
     private List<string> recievedBowl;
     [SerializeField] IAStateMachine stateMachine;
+    [SerializeField] private float timeBonusPoints;
+    private Random rand;
 
-    private void Start()
+
+    private void Update()
     {
-        Random rand = new Random();
+        timeBonusPoints = Mathf.Max(0, timeBonusPoints - Time.deltaTime);
+    }
+
+    public void OrderFood()
+    {
+        rand = new Random();
         command = RecipesManager.instance.recipesList[rand.Next(RecipesManager.instance.recipesList.Count)];
+        timeBonusPoints = 100;
     }
 
     public void OnCollisionEnter(Collision other)
     {
-        if (other.collider.CompareTag("Pickup"))
+        if (other.collider.CompareTag("Pickup") || command == null)
         {
             Angry(50);
             Destroy(other.gameObject);
@@ -33,7 +43,7 @@ public class Client : MonoBehaviour
         }
 
         if (Enumerable.SequenceEqual(recievedBowl.OrderBy(e => e), command.ingredients.OrderBy(e => e)))
-            Happy(100);
+            Happy(100 + Mathf.RoundToInt(timeBonusPoints));
         else
             Angry(100);
         Destroy(other.gameObject);
