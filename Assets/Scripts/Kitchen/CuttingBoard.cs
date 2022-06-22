@@ -9,7 +9,7 @@ public class CuttingBoard : Interactable
     
     [Header("Cutting Settings")]
     [SerializeField] private int cuttingMaxAmount = 100;
-    [SerializeField] private int cuttingAmountPerClick = 10;
+    //[SerializeField] private int cuttingAmountPerClick = 10;
     [SerializeField] private int cuttingDecreaseRate = 20;
     private float currentCuttingAmount = 0;
     
@@ -56,7 +56,7 @@ public class CuttingBoard : Interactable
             //Cut the ingredient on the board if it isn't
             if (!ingredient.isCut)
             {
-                currentCuttingAmount += cuttingAmountPerClick;
+                currentCuttingAmount += ingredient.cuttingAmountPerClick;
                 source.PlayOneShot(sounds[random.Next(sounds.Length)]);
             }
 

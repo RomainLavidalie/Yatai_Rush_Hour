@@ -423,6 +423,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2000177074}
     - target: {fileID: 6332262989185830037, guid: 9f01e7aa7cf9945478120771dc72fcc6, type: 3}
+      propertyPath: sensitivityX
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6332262989185830037, guid: 9f01e7aa7cf9945478120771dc72fcc6, type: 3}
+      propertyPath: sensitivityY
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6332262989185830037, guid: 9f01e7aa7cf9945478120771dc72fcc6, type: 3}
       propertyPath: _foodCustomerUI
       value: 
       objectReference: {fileID: 2000177069}
@@ -531,8 +539,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0, y: 0.2, z: 0}
+  m_Size: {x: 0.5, y: 0.55391866, z: 0.5}
+  m_Center: {x: 0, y: 0.22695932, z: 0}
 --- !u!4 &31197503
 Transform:
   m_ObjectHideFlags: 0
@@ -7445,7 +7453,6 @@ GameObject:
   - component: {fileID: 679262435}
   - component: {fileID: 679262438}
   - component: {fileID: 679262437}
-  - component: {fileID: 679262436}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -7467,20 +7474,6 @@ Transform:
   m_Father: {fileID: 31197503}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &679262436
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679262434}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &679262437
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17173,7 +17166,6 @@ GameObject:
   - component: {fileID: 1540161491}
   - component: {fileID: 1540161494}
   - component: {fileID: 1540161493}
-  - component: {fileID: 1540161492}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -17195,20 +17187,6 @@ Transform:
   m_Father: {fileID: 4059379970959717405}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1540161492
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540161490}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1540161493
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20896,7 +20874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7437430792152958775, guid: ea95aa13fef4ed9499ad5433dbff6bb9, type: 3}
       propertyPath: m_Size.y
-      value: 0.2
+      value: 0.17520332
       objectReference: {fileID: 0}
     - target: {fileID: 7437430792152958775, guid: ea95aa13fef4ed9499ad5433dbff6bb9, type: 3}
       propertyPath: m_Size.z
@@ -20908,7 +20886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7437430792152958775, guid: ea95aa13fef4ed9499ad5433dbff6bb9, type: 3}
       propertyPath: m_Center.y
-      value: 0
+      value: 0.05094242
       objectReference: {fileID: 0}
     - target: {fileID: 7437430792152958775, guid: ea95aa13fef4ed9499ad5433dbff6bb9, type: 3}
       propertyPath: m_Center.z
@@ -23966,6 +23944,14 @@ PrefabInstance:
       propertyPath: cooking
       value: 
       objectReference: {fileID: 8300000, guid: 3776ca46bb9c73c45a912e51275eca0d, type: 3}
+    - target: {fileID: 1969686619322584481, guid: 2b5a43b470cd4c04987a417fdcb0a692, type: 3}
+      propertyPath: m_Size.y
+      value: 0.3754947
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969686619322584481, guid: 2b5a43b470cd4c04987a417fdcb0a692, type: 3}
+      propertyPath: m_Center.y
+      value: 0.23774831
+      objectReference: {fileID: 0}
     - target: {fileID: 1969686619322584482, guid: 2b5a43b470cd4c04987a417fdcb0a692, type: 3}
       propertyPath: m_Name
       value: Grill
@@ -26035,8 +26021,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.3, z: 0.6}
-  m_Center: {x: 0, y: 0.2, z: 0}
+  m_Size: {x: 0.5, y: 0.37662524, z: 0.6}
+  m_Center: {x: 0, y: 0.23831263, z: 0}
 --- !u!1 &6764682668786635870
 GameObject:
   m_ObjectHideFlags: 0

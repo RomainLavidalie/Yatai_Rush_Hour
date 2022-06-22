@@ -4,7 +4,7 @@ public class CuttableFood : MonoBehaviour
 {
     [SerializeField] private GameObject nonCutModel;
     [SerializeField] private GameObject cutModel;
-    
+    public float cuttingAmountPerClick;
     private Food foodData;
 
     public bool isCut;

@@ -64,6 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nonCutModel: {fileID: 8223869102309629692}
   cutModel: {fileID: 1660992488362915203}
+  cuttingAmountPerClick: 50
   isCut: 0
 --- !u!65 &2331476767483902062
 BoxCollider:

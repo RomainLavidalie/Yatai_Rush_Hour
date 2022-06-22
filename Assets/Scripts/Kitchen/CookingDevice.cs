@@ -92,7 +92,7 @@ public class CookingDevice : Interactable
     {
         
         //Pickup food if it's cooked
-        if (ingredient != null && ingredient.isCooked)
+        if (ingredient != null && ingredient.isCooked && PlayerController.instance.itemInHand == null)
         {
             PlayerController.instance.PickUpObject(ingredient.gameObject);
             ingredient.gameObject.tag = "Pickup";
@@ -101,7 +101,6 @@ public class CookingDevice : Interactable
             source.Stop();
             source.clip = null;
         }
-        
         
         if (ingredient == null)
         {
