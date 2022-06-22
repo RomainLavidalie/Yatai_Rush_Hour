@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookingDevice: 0
-  cookingTime: 5
+  cookingTime: 7
   nonCookedModel: {fileID: 1837489930808721180}
   cookedModel: {fileID: 1411310331542463332}
   burnedModel: {fileID: 1884059821915811352}
