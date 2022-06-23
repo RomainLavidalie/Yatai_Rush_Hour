@@ -16,18 +16,19 @@ public class Client : MonoBehaviour
     private void Update()
     {
         timeBonusPoints = Mathf.Max(0, timeBonusPoints - Time.deltaTime);
+        //timeBonusPoints -= Time.deltaTime;
     }
 
     public void OrderFood()
     {
         rand = new Random();
         command = RecipesManager.instance.recipesList[rand.Next(RecipesManager.instance.recipesList.Count)];
-        timeBonusPoints = 100;
+        timeBonusPoints = 50;
     }
 
     public void OnCollisionEnter(Collision other)
     {
-        if (other.collider.CompareTag("Pickup") || command == null)
+        if (other.collider.CompareTag("Pickup"))
         {
             Angry(50);
             Destroy(other.gameObject);
@@ -42,6 +43,12 @@ public class Client : MonoBehaviour
             return;
         }
 
+        if (command == null)
+        {
+            Angry(50);
+            Destroy(other.gameObject);
+            return;
+        }
         if (Enumerable.SequenceEqual(recievedBowl.OrderBy(e => e), command.ingredients.OrderBy(e => e)))
             Happy(100 + Mathf.RoundToInt(timeBonusPoints));
         else
@@ -53,7 +60,8 @@ public class Client : MonoBehaviour
     {
         Debug.Log("bonne commande");
         stateMachine._orderArrived = true;
-        ScoreText.instance.IncrementScore(100);
+        command = null;
+        ScoreText.instance.IncrementScore(win);
         
     }
 

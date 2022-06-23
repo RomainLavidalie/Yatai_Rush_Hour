@@ -40,7 +40,7 @@ public class IASpawner : MonoBehaviour
         {
             try
             {
-                ia.GetComponent<Client>().enabled = false;
+                //ia.GetComponent<Client>().enabled = false;
             }
             catch
             {
