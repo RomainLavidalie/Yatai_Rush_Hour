@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -80,6 +81,11 @@ public class FoodCustomerUI : MonoBehaviour
         }
         catch
         {
+            if (Orders.Count > 0)
+            {
+                Destroy(Orders.First().Value);
+                Orders.Remove(Orders.First().Key);
+            }
 
         }
     }
