@@ -51,7 +51,7 @@ public class FoodCustomerUI : MonoBehaviour
     /// </summary>
     public void AddRamen(string clientID)
     {
-        if (RedBarOrderPanel.transform.childCount>0 && RedBarOrderPanel.transform.childCount % 2 != 0)
+        if (RedBarOrderPanel.transform.childCount> 0)
         {
             GameObject separator = Instantiate(Separator, RedBarOrderPanel.transform);
             Orders.Add(clientID+"_sep", separator);
@@ -81,7 +81,7 @@ public class FoodCustomerUI : MonoBehaviour
         }
         catch
         {
-            if (Orders.Count > 0)
+            if (Orders.First().Key.Contains("_sep"))
             {
                 Destroy(Orders.First().Value);
                 Orders.Remove(Orders.First().Key);

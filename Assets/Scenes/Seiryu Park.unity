@@ -26347,11 +26347,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3494090333839641697, guid: c37c97fd5e290d44492fda76b8b4a7a5, type: 3}
       propertyPath: DelayMax
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3494090333839641697, guid: c37c97fd5e290d44492fda76b8b4a7a5, type: 3}
       propertyPath: delayMin
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3494090333839641697, guid: c37c97fd5e290d44492fda76b8b4a7a5, type: 3}
       propertyPath: probability
@@ -26459,15 +26459,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3494090333839641697, guid: c37c97fd5e290d44492fda76b8b4a7a5, type: 3}
       propertyPath: IaToSpawnByPhase.Array.data[1]
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3494090333839641697, guid: c37c97fd5e290d44492fda76b8b4a7a5, type: 3}
       propertyPath: IaToSpawnByPhase.Array.data[2]
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3494090333839641697, guid: c37c97fd5e290d44492fda76b8b4a7a5, type: 3}
       propertyPath: IaToSpawnByPhase.Array.data[3]
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3494090333839641697, guid: c37c97fd5e290d44492fda76b8b4a7a5, type: 3}
       propertyPath: passerbyInactive.Array.data[0]
