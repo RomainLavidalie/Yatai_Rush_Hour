@@ -21,6 +21,7 @@ public class PhaseTextManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         //show the first phase 1sec before the start of the game
         ingredientPhase = clockScript.StartHour + ":" + (clockScript.StartMinutes + 1);
     }

@@ -14,15 +14,15 @@ public class FoodCustomerUI : MonoBehaviour
     public GameObject RamenOrder;
     public GameObject Separator;
     public Color color;
-    private Dictionary<string, GameObject> Orders;
+    public Dictionary<string, GameObject> Orders;
 
-    /*public static FoodCustomerUI instance;
+    public static FoodCustomerUI instance;
 
     void Awake()
     {
         if (instance == null)
             instance = this;
-    }*/
+    }
 
     // Start is called before the first frame update
     void Start()

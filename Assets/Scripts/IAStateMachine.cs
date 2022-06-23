@@ -45,6 +45,8 @@ public class IAStateMachine : MonoBehaviour
 
     public Material clientMat;
     
+    public FoodCustomerUI _foodCustomerUI;
+    
 
     #endregion
     
@@ -66,7 +68,7 @@ public class IAStateMachine : MonoBehaviour
     /// </summary>
     [SerializeField] private float _runSpeedThreshold;
 
-    [SerializeField] FoodCustomerUI _foodCustomerUI;
+    
     [SerializeField] private Animator _animControls;
 
     [SerializeField] private IABehaviours initialState;
@@ -431,7 +433,7 @@ public class IAStateMachine : MonoBehaviour
         //Ordering => Walking
         _iaControler.SetIATarget(_orderPosition.position);
 
-        if (!transform.position.Compare(_orderPosition.position, 1))
+        if (Vector3.Distance(transform.position, _orderPosition.position) > 0.75f)
         {
             _animControls.Play("Walking");
         }

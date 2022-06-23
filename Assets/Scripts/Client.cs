@@ -42,18 +42,26 @@ public class Client : MonoBehaviour
         {
             return;
         }
-
+        
+        Destroy(other.gameObject);
+        
         if (command == null)
         {
             Angry(50);
-            Destroy(other.gameObject);
             return;
         }
+
         if (Enumerable.SequenceEqual(recievedBowl.OrderBy(e => e), command.ingredients.OrderBy(e => e)))
-            Happy(100 + Mathf.RoundToInt(timeBonusPoints));
+        {
+            int priorityMult = 0;
+            if (stateMachine._foodCustomerUI.Orders.First().Key == gameObject.name)
+                priorityMult = 3;
+            Happy(100 + Mathf.RoundToInt(timeBonusPoints)*priorityMult);
+        }
+
         else
             Angry(100);
-        Destroy(other.gameObject);
+
     }
 
     private void Happy(int win)
