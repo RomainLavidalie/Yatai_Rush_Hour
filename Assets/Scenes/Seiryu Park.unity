@@ -25419,7 +25419,7 @@ PrefabInstance:
       objectReference: {fileID: 1272630596}
     - target: {fileID: 3494090333839641701, guid: c37c97fd5e290d44492fda76b8b4a7a5, type: 3}
       propertyPath: rushstart
-      value: 19:15
+      value: 19:10
       objectReference: {fileID: 0}
     - target: {fileID: 3494090333839641701, guid: c37c97fd5e290d44492fda76b8b4a7a5, type: 3}
       propertyPath: phaseTextParent
