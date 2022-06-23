@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     public ClockDigital Clock;
     public AudioSource musicSource;
 
+    private int test = 0;
     private void Awake()
     {
         if (instance == null)
@@ -112,15 +113,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnAddRamen()
+    /*public void OnAddRamen()
     {
-        _foodCustomerUI.AddRamen();
+        test++;
+        _foodCustomerUI.AddRamen("test"+test);
     }
 
     public void OnRemoveRamen()
     {
-        _foodCustomerUI.RemoveRamen();
-    }
+        _foodCustomerUI.RemoveRamen("test");
+        test--;
+    }*/
 
     public void OnOpenCloseMenu()
     {

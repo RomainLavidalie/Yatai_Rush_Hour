@@ -44,6 +44,7 @@ public class IAStateMachine : MonoBehaviour
     public GameObject _character;
 
     public Material clientMat;
+    
 
     #endregion
     
@@ -455,7 +456,7 @@ public class IAStateMachine : MonoBehaviour
         _character.GetComponent<SkinnedMeshRenderer>().material = clientMat;
         gameObject.GetComponent<Client>().OrderFood();
         _foodCustomerUI.ChangeColor(clientMat.color);
-        _foodCustomerUI.AddRamen();
+        _foodCustomerUI.AddRamen(gameObject.name);
     }
 
     #endregion
@@ -466,7 +467,7 @@ public class IAStateMachine : MonoBehaviour
     {
         _iaControler.SetIATarget(transform.position);
         _animControls.SetTrigger("WIN");
-        _foodCustomerUI.RemoveRamen();
+        _foodCustomerUI.RemoveRamen(gameObject.name);
     }
 
     private void OnUpdateServed()

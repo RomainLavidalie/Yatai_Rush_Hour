@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,7 @@ public class FoodCustomerUI : MonoBehaviour
     public GameObject RamenOrder;
     public GameObject Separator;
     public Color color;
-    private List<GameObject> UnvisibleOrders;
+    private Dictionary<string, GameObject> Orders;
 
     /*public static FoodCustomerUI instance;
 
@@ -26,43 +27,37 @@ public class FoodCustomerUI : MonoBehaviour
     void Start()
     {
         Debug.Log("Test 1");
-        UnvisibleOrders = new List<GameObject>();
+        Orders = new Dictionary<string, GameObject>();
         Debug.Log("Test 2");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (UnvisibleOrders.Count > 0)
+        /*if (Orders.Count > 0)
         {
             if (RedBarOrderPanel.transform.childCount < 5)
             {
                 Instantiate(Separator).transform.parent = RedBarOrderPanel.transform;
                 Instantiate(ColorizeOrder(RamenOrder,color)).transform.parent = RedBarOrderPanel.transform;
-                UnvisibleOrders.RemoveAt(0);
+                Orders.RemoveAt(0);
             }
-            
-        }
+        }*/
     }
 
     /// <summary>
     /// Add a ramen order in the bar (or the list if there is no place)
     /// </summary>
-    public void AddRamen()
+    public void AddRamen(string clientID)
     {
-        if (RedBarOrderPanel.transform.childCount > 4)
+        if (RedBarOrderPanel.transform.childCount>0 && RedBarOrderPanel.transform.childCount % 2 != 0)
         {
-            UnvisibleOrders.Add(ColorizeOrder(RamenOrder,color));
+            GameObject separator = Instantiate(Separator, RedBarOrderPanel.transform);
+            Orders.Add(clientID+"_sep", separator);
+            
         }
-        else if (RedBarOrderPanel.transform.childCount>0 && RedBarOrderPanel.transform.childCount % 2 != 0)
-        {
-            Instantiate(Separator).transform.parent = RedBarOrderPanel.transform;
-            Instantiate(ColorizeOrder(RamenOrder,color)).transform.parent = RedBarOrderPanel.transform;
-        }
-        else
-        {
-            Instantiate(ColorizeOrder(RamenOrder,color)).transform.parent = RedBarOrderPanel.transform;
-        }
+        GameObject command = Instantiate(ColorizeOrder(RamenOrder, color), RedBarOrderPanel.transform);
+        Orders.Add(clientID, command);
     }
 
     public void ChangeColor(Color clr)
@@ -73,18 +68,20 @@ public class FoodCustomerUI : MonoBehaviour
     /// <summary>
     /// Remove the first order from the bar
     /// </summary>
-    public void RemoveRamen()
+    public void RemoveRamen(string clientID)
     {
-        if (RedBarOrderPanel.transform.childCount > 1)
+        Destroy(Orders[clientID]);
+        Orders.Remove(clientID);
+
+        try
         {
-            Destroy(RedBarOrderPanel.transform.GetChild(0).gameObject);
-            Destroy(RedBarOrderPanel.transform.GetChild(1).gameObject);
+            Destroy(Orders[clientID+"_sep"]);
+            Orders.Remove(clientID+"_sep");
         }
-        else
+        catch
         {
-            Destroy(RedBarOrderPanel.transform.GetChild(0).gameObject);
+
         }
-        
     }
 
     /// <summary>

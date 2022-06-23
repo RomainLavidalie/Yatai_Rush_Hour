@@ -2845,7 +2845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Name
-      value: IACharacter (12)
+      value: iaChar013
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_TagString
@@ -3139,7 +3139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Name
-      value: IACharacter
+      value: iaChar001
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_TagString
@@ -3317,7 +3317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Name
-      value: IACharacter (11)
+      value: iaChar012
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_TagString
@@ -6004,7 +6004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Name
-      value: IACharacter (6)
+      value: iaChar007
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_TagString
@@ -7210,7 +7210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Name
-      value: IACharacter (1)
+      value: iaChar002
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_TagString
@@ -10098,7 +10098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Name
-      value: IACharacter (3)
+      value: iaChar004
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_TagString
@@ -12795,7 +12795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Name
-      value: IACharacter (9)
+      value: iaChar010
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_TagString
@@ -13165,7 +13165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Name
-      value: IACharacter (10)
+      value: iaChar011
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_TagString
@@ -14228,6 +14228,7 @@ GameObject:
   - component: {fileID: 1235457853}
   - component: {fileID: 1235457852}
   - component: {fileID: 1235457851}
+  - component: {fileID: 1235457850}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -14251,9 +14252,23 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 166.65234, y: -0.0000076293945}
-  m_SizeDelta: {x: -465.4495, y: 0}
+  m_AnchoredPosition: {x: 123.694885, y: -0.0000076293945}
+  m_SizeDelta: {x: -551.3643, y: 0}
   m_Pivot: {x: 0.49999997, y: 0.49999997}
+--- !u!114 &1235457850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235457848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!114 &1235457851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14848,7 +14863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Name
-      value: IACharacter (7)
+      value: iaChar008
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_TagString
@@ -15260,7 +15275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Name
-      value: IACharacter (5)
+      value: iaChar006
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_TagString
@@ -19407,7 +19422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Name
-      value: IACharacter (4)
+      value: iaChar005
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_TagString
@@ -20871,7 +20886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Name
-      value: IACharacter (8)
+      value: iaChar009
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_TagString
@@ -23424,7 +23439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_Name
-      value: IACharacter (2)
+      value: iaChar003
       objectReference: {fileID: 0}
     - target: {fileID: 3464070557923992277, guid: e7a238bbb754e3c479e28dfb9bcd7a5f, type: 3}
       propertyPath: m_TagString
@@ -25404,7 +25419,7 @@ PrefabInstance:
       objectReference: {fileID: 1272630596}
     - target: {fileID: 3494090333839641701, guid: c37c97fd5e290d44492fda76b8b4a7a5, type: 3}
       propertyPath: rushstart
-      value: 18:45
+      value: 19:15
       objectReference: {fileID: 0}
     - target: {fileID: 3494090333839641701, guid: c37c97fd5e290d44492fda76b8b4a7a5, type: 3}
       propertyPath: phaseTextParent
