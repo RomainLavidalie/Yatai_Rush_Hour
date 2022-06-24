@@ -112,7 +112,7 @@ public class IARandomMovements : MonoBehaviour
     //Gizmos in editor to show radius of generation area and ray to targets
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
+        /*Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, _randomPositionRadius);
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(transform.position, _agentTarget);
@@ -121,7 +121,7 @@ public class IARandomMovements : MonoBehaviour
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireCube(_minPosition, new Vector3(0.01f,3,0.01f));
         Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(_maxPosition, new Vector3(0.01f,3,0.01f));
+        Gizmos.DrawWireCube(_maxPosition, new Vector3(0.01f,3,0.01f));*/
     }
 }
     

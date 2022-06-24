@@ -53,7 +53,7 @@ public class Client : MonoBehaviour
 
         if (Enumerable.SequenceEqual(recievedBowl.OrderBy(e => e), command.ingredients.OrderBy(e => e)))
         {
-            int priorityMult = 0;
+            int priorityMult = 1;
             if (stateMachine._foodCustomerUI.Orders.First().Key == gameObject.name)
                 priorityMult = 3;
             Happy(100 + Mathf.RoundToInt(timeBonusPoints)*priorityMult);

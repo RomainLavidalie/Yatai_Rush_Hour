@@ -495,11 +495,11 @@ public class IAStateMachine : MonoBehaviour
     //Gizmos in editor to show where fixed target positions are
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
+        /*Gizmos.color = Color.green;
         Gizmos.DrawWireCube(_orderPosition.position, new Vector3(.2f,2,.2f));
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(_endPosition.position, new Vector3(.2f,2,.2f));
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(_startPosition.position, new Vector3(.2f,2,.2f));
+        Gizmos.DrawWireCube(_startPosition.position, new Vector3(.2f,2,.2f));*/
     }
 }
