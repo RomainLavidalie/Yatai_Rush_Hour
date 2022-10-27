@@ -20,6 +20,7 @@ public class ClockDigital : MonoBehaviour
     private float minute;
     public bool IsGameOver = false;
     public GameObject continueButton;
+    public Text Username;
 
     public MusicListManager musicListManager;
     
@@ -70,6 +71,7 @@ public class ClockDigital : MonoBehaviour
             musicListManager.isGameOver = true;
             pauseText.text = "Fin de partie";
             continueButton.SetActive(false);
+            
         }
     }
 }

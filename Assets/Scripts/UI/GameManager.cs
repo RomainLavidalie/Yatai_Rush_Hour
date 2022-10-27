@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,7 +11,8 @@ public class GameManager : MonoBehaviour
     public GameObject PauseMenu;
     public ClockDigital Clock;
     public AudioSource musicSource;
-    
+    public ScoreText ScoreManager;
+
     /// <summary>
     /// Reload the scene
     /// </summary>
@@ -44,5 +47,13 @@ public class GameManager : MonoBehaviour
             PauseMenu.SetActive(true);
             musicSource.Pause();
         }
+    }
+
+    public void OnClickSend()
+    {
+        if (ReferenceEquals(Leaderboard.Instance, null))
+            return;
+        
+        Leaderboard.Instance.SendScore(Clock.Username.text, ScoreManager.score);
     }
 }
